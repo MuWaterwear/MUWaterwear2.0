@@ -469,7 +469,7 @@ async function createStripeProduct(product: StripeProduct) {
     return {
       ...product,
       stripe_product_id: productId,
-      stripe_price_id: priceId
+      stripe_price_id: priceId || undefined
     }
   } catch (error) {
     console.error(`❌ Error creating ${product.name}:`, error)

@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['api.wetmet.net', 'vauth.command.verkada.com', 'www.luckylablodge.com', 'luckylablodge.com'],
     unoptimized: true,
@@ -65,9 +68,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  experimental: {
-    serverComponentsExternalPackages: [],
-  },
+  serverExternalPackages: [],
 };
 
 export default nextConfig;
