@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
+  
+  html, body {
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  body {
+    position: relative;
+  }
+  
+  /* Prevent horizontal overflow on mobile - GLOBAL FOR ALL PAGES */
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      position: relative !important;
+    }
+    
+    * {
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* Ensure all page containers don't exceed viewport */
+    .container,
+    main,
+    section,
+    div,
+    header,
+    footer {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+    }
+    
+    /* Constrain large transforms on mobile - ALL PAGES */
+    img[style*="scale(9.0)"],
+    img[style*="scale(5.0)"],
+    img[style*="scale(4.0)"],
+    img[style*="scale(3.0)"],
+    [style*="scale(9.0)"],
+    [style*="scale(5.0)"],
+    [style*="scale(4.0)"],
+    [style*="scale(3.0)"] {
+      transform: scale(1.8) !important;
+      max-width: 100% !important;
+    }
+    
+    /* Fix any elements with fixed widths that exceed viewport - ALL PAGES */
+    [style*="width: 700px"],
+    [style*="width:700px"],
+    [style*="width: 340px"],
+    [style*="width:340px"],
+    [style*="width: 320px"],
+    [style*="width:320px"] {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    
+    /* Prevent carousel and grid overflow */
+    .grid,
+    [class*="grid-"],
+    [style*="grid-template-columns"],
+    [style*="display: flex"],
+    .flex {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+    }
+    
+    /* Fix infinite scroll containers */
+    [style*="width: "][style*="px"] {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+    
+    /* Ensure video elements don't cause overflow */
+    video {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    
+    /* Fix transform positioning that might cause overflow */
+    [style*="translateX"] {
+      max-width: 100% !important;
+    }
+    
+    /* Additional safety for product grids and carousels */
+    [class*="product"],
+    [class*="carousel"],
+    [class*="infinite"] {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+  }
+}
+
+
+
+/* Import mobile-specific styles */
+@import '../responsive/styles/mobile.css';
+
+/* Custom animations for About page */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.animate-wave {
+  animation: wave 4s linear infinite;
+}
+
+/* Custom dark scrollbar styling for cart sidebar */
+.cart-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cart-scroll::-webkit-scrollbar-track {
+  background: #1e293b; /* slate-800 */
+  border-radius: 4px;
+}
+
+.cart-scroll::-webkit-scrollbar-thumb {
+  background: #475569; /* slate-600 */
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.cart-scroll::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
+}
+
+/* Firefox scrollbar styling */
+.cart-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #1e293b; /* thumb track */
+}
