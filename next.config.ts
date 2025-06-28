@@ -66,6 +66,11 @@ const nextConfig: NextConfig = {
         source: '/webcam-proxy/luckylablodge/:path*',
         destination: 'http://www.luckylablodge.com/:path*',
       },
+      // Route image requests through API for proper URL decoding
+      {
+        source: '/images/:path*',
+        destination: '/api/images/:path*',
+      },
     ];
   },
   serverExternalPackages: [],

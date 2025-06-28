@@ -305,7 +305,7 @@ export default function ApparelPage() {
         "/images/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/BACK.png",
         "/images/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/SIDE.png",
         "/images/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/BACK (2).png",
-        "/images/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/BACK(2) .png"
+        "/images/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/BACK (2).png"
       ],
       colors: [
         { name: "Front (2)", hex: "#DC2626" },
