@@ -4,11 +4,14 @@ import path from 'path'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
   try {
+    // Await the params since they're now async in Next.js 15+
+    const resolvedParams = await params
+    
     // Get the file path from the URL parameters
-    const filePath = params.path.join('/')
+    const filePath = resolvedParams.path.join('/')
     
     // Decode any URL-encoded characters in the path
     const decodedPath = decodeURIComponent(filePath)
