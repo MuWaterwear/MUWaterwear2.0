@@ -514,7 +514,7 @@ export default function LakeWashingtonPage() {
       price: 33,
       images: [
         "/images/LAKE-WA-APPAREL/WASHINGTON-WATERSKI-TEE/Front, Peony.png",
-        "/images/LAKE-WA-APPAREL/WASHINGTON-WATERSKI-TEE/Back, Peony.png",
+      "/images/LAKE-WA-APPAREL/WASHINGTON-WATERSKI-TEE/Back, Peony.png",
         "/images/LAKE-WA-APPAREL/WASHINGTON-WATERSKI-TEE/Front, Black.png",
         "/images/LAKE-WA-APPAREL/WASHINGTON-WATERSKI-TEE/Back, Black.png",
         "/images/LAKE-WA-APPAREL/WASHINGTON-WATERSKI-TEE/Front, Midnight.png",

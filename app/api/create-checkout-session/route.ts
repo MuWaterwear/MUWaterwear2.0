@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
           currency: 'usd',
           product_data: {
             name: couponCode === 'LINDBERGH-LAKE737' ? `${item.name} (Actual Cost)` : item.name,
-            images: [item.image.startsWith('/') ? `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}${encodeURI(item.image)}` : item.image],
+            images: [item.image.startsWith('/') ? `${process.env.NEXT_PUBLIC_BASE_URL || 'https://muwaterwear.com'}${encodeURI(item.image)}` : item.image],
             metadata: {
               size: item.size || 'N/A',
               actualCost: couponCode === 'LINDBERGH-LAKE737' ? 'true' : 'false',
@@ -126,8 +126,8 @@ export async function POST(request: NextRequest) {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://muwaterwear.com'}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://muwaterwear.com'}`,
       automatic_tax: {
         enabled: true,
       },
