@@ -1,26 +1,34 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu"
-import { ShoppingCart, Menu, Waves, Mountain, Anchor, Droplets, ChevronDown } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { useEffect, useState } from "react"
-import ShoppingCartSidebar from "@/components/ShoppingCartSidebar"
-import { useCart } from "@/contexts/CartContext"
-import { MobileOnly, DesktopOnly } from "@/responsive/components/ResponsiveLayout"
-import MobileNavigation from "@/responsive/components/MobileNavigation"
-import MobileShoppingCart from "@/responsive/components/MobileShoppingCart"
-import NewsletterSignup from "@/components/NewsletterSignup"
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { DropdownMenuItem } from '@/components/ui/dropdown-menu'
+import { ShoppingCart, Menu, Waves, Mountain, Anchor, Droplets, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { useCart } from '@/contexts/CartContext'
+
+import MobileNavigation from '@/components/responsive/MobileNavigation'
+import NavigationBar from '@/components/NavigationBar'
+import NewsletterSignup from '@/components/NewsletterSignup'
+import UserAccountButton from '@/components/UserAccountButton'
+import Head from 'next/head'
+import { Responsive, MobileOnly, DesktopOnly } from '@/components/responsive/ResponsiveLayout'
+import Footer from '@/components/Footer'
 
 export default function Component() {
   const { setIsCartOpen, getCartItemCount } = useCart()
   const [showContactEmail, setShowContactEmail] = useState(false)
   const [showReturnsPolicy, setShowReturnsPolicy] = useState(false)
   const [showShippingPolicy, setShowShippingPolicy] = useState(false)
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   // Wave animation background
   useEffect(() => {
@@ -36,21 +44,34 @@ export default function Component() {
       }
     `
     document.head.appendChild(style)
-    
+
     return () => {
       document.head.removeChild(style)
     }
   }, [])
 
   return (
+    <>
+      <Head>
+        <link
+          rel="preload"
+          href="/videos/main-page-background.mp4"
+          as="video"
+          type="video/mp4"
+        />
+      </Head>
     <div className="min-h-screen bg-slate-950 text-white">
       {/* Subtle wave background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-20">
-          <svg className="absolute bottom-0 w-full h-96" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path 
-              fill="url(#oceanGradient)" 
-              fillOpacity="0.1" 
+          <svg
+            className="absolute bottom-0 w-full h-96"
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill="url(#oceanGradient)"
+              fillOpacity="0.1"
               d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
               style={{ animation: 'wave 20s ease-in-out infinite' }}
             />
@@ -63,171 +84,20 @@ export default function Component() {
           </svg>
         </div>
       </div>
+      {/* Desktop Navigation */}
+      <DesktopOnly>
+        <NavigationBar onMobileMenuOpen={() => setMobileFiltersOpen(true)} />
+      </DesktopOnly>
+
       {/* Mobile Navigation */}
       <MobileOnly>
         <MobileNavigation onCartOpen={() => setIsCartOpen(true)} />
       </MobileOnly>
 
-      {/* Desktop Header */}
-      <DesktopOnly>
-        <header className="border-b border-gray-800 bg-black/95 backdrop-blur-sm sticky top-0 z-50">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <Link
-                  href="/"
-                  className="relative flex items-center justify-center py-1 cursor-pointer hover:opacity-80 transition-opacity focus:ring-2 focus:ring-cyan-400/50 focus:outline-none rounded"
-                  aria-label="MU Waterwear Home"
-                >
-                  <p className="text-xs text-gray-400 tracking-[0.2em] font-light">CA • OR • WA • ID • MT</p>
-                  <Image
-                    src="/images/Untitled design (52).png"
-                    alt="MU Waterwear Logo"
-                    width={200}
-                    height={80}
-                    className="absolute top-full right-0 h-10 w-auto transition-all duration-300 hover:scale-105"
-                    style={{ transform: 'scale(3.0) translateX(1rem) translateY(0.4rem)' }}
-                    priority
-                  />
-                </Link>
-              </div>
-
-              <nav className="hidden md:flex items-center space-x-8">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      className="text-gray-300 hover:text-cyan-400 transition-colors font-medium flex items-center gap-1"
-                    >
-                      WATERWAYS
-                      <ChevronDown className="h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-gray-900 border-gray-700 text-white w-72 min-w-72">
-                    <DropdownMenuItem className="hover:bg-gray-800 focus:bg-gray-800 py-4 px-6 rounded-md">
-                      <Link href="/coeur-dalene" className="w-full flex items-center justify-start gap-4 px-2">
-                        <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
-                          <Image
-                            src="/images/lake-icon.png"
-                            alt="Lakes"
-                            width={40}
-                            height={40}
-                            className="w-10 h-10 object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Coeur D' Alene Lake, ID </span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-gray-800 focus:bg-gray-800 py-4 px-6 rounded-md">
-                      <Link href="/detroit-lake" className="w-full flex items-center justify-start gap-4 px-2">
-                        <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
-                          <Image
-                            src="/images/waterway-outline-2.png"
-                            alt="Bays"
-                            width={40}
-                            height={40}
-                            className="w-10 h-10 object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Detroit Lake, OR </span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-gray-800 focus:bg-gray-800 py-4 px-6 rounded-md">
-                      <Link href="/flathead" className="w-full flex items-center justify-start gap-4 px-2">
-                        <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
-                          <Image
-                            src="/images/stream-icon.png"
-                            alt="Streams"
-                            width={40}
-                            height={40}
-                            className="w-10 h-10 object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Flathead Lake, MT </span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-gray-800 focus:bg-gray-800 py-4 px-6 rounded-md">
-                      <Link href="/lake-tahoe" className="w-full flex items-center justify-start gap-4 px-2">
-                        <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
-                          <Image
-                            src="/images/laketahoeicon.svg"
-                            alt="Lake Tahoe"
-                            width={40}
-                            height={40}
-                            className="w-10 h-10 object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Lake Tahoe, CA/NV</span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-gray-800 focus:bg-gray-800 py-4 px-6 rounded-md">
-                      <Link href="/lake-washington" className="w-full flex items-center justify-start gap-4 px-2">
-                        <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
-                          <Image
-                            src="/images/waterway-outline-1.png"
-                            alt="Coastlines"
-                            width={40}
-                            height={40}
-                            className="w-10 h-10 object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Lake Washington, WA </span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="hover:bg-gray-800 focus:bg-gray-800 py-4 px-6 rounded-md">
-                      <Link href="/lindbergh" className="w-full flex items-center justify-start gap-4 px-2">
-                        <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
-                          <Image
-                            src="/images/river-icon.png"
-                            alt="Rivers"
-                            width={40}
-                            height={40}
-                            className="w-10 h-10 object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Lindbergh Lake, MT</span>
-                      </Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <Link href="/gear" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">
-                  GEAR
-                </Link>
-                <Link href="/apparel" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">
-                  APPAREL
-                </Link>
-                <Link href="/accessories" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">
-                  ACCESSORIES
-                </Link>
-                <Link href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">
-                  ABOUT
-                </Link>
-              </nav>
-
-                          <div className="flex items-center space-x-4">
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="text-gray-300 hover:text-cyan-400 relative"
-                onClick={() => setIsCartOpen(true)}
-              >
-                  <ShoppingCart className="h-5 w-5" />
-                  {getCartItemCount() > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-cyan-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                      {getCartItemCount()}
-                    </span>
-                  )}
-                </Button>
-              </div>
-            </div>
-          </div>
-        </header>
-      </DesktopOnly>
-
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden md:h-screen sm:h-[45vh] sm:min-h-[320px] sm:max-h-[420px]">
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black z-10" />
-        <video 
+        <video
           autoPlay={true}
           muted={true}
           loop={true}
@@ -241,10 +111,10 @@ export default function Component() {
             filter: 'contrast(1.1) saturate(1.2) brightness(0.8)',
             backfaceVisibility: 'hidden',
             transform: 'translateZ(0)',
-            willChange: 'transform'
+            willChange: 'transform',
           }}
         >
-                          <source src="/videos/hero-background.mp4" type="video/mp4" />
+            <source src="/videos/main-page-background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950 z-15" />
@@ -353,8 +223,8 @@ export default function Component() {
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto font-light">
               Get exclusive access to new drops, lake reports, and gear that never hits the shelves.
             </p>
-            <NewsletterSignup 
-              source="homepage" 
+            <NewsletterSignup
+              source="homepage"
               placeholder="Enter your email"
               buttonText="SIGN UP"
             />
@@ -363,143 +233,8 @@ export default function Component() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-800 py-16 mt-20 relative z-10">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Image
-                  src="/images/Mu (2).svg"
-                  alt="MU Waterwear Logo"
-                  width={60}
-                  height={24}
-                  className="h-5 w-auto"
-                  style={{ transform: 'scale(5.0)' }}
-                />
-                <span className="text-xl font-bold">WATERWEAR</span>
-              </div>
-              <p className="text-slate-400 mb-4 font-light">Crafting legends on the waters of the West since day one.</p>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4 text-cyan-400">SHOP</h4>
-              <ul className="space-y-2 text-slate-400">
-                <li>
-                  <Link href="/gear" className="hover:text-white transition-colors font-light">
-                    Gear
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/apparel" className="hover:text-white transition-colors font-light">
-                    Apparel
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors font-light">
-                    Accessories
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4 text-cyan-400">SUPPORT</h4>
-              <ul className="space-y-2 text-slate-400">
-                <li>
-                  <Link href="/size guide.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-light">
-                    Size Guide
-                  </Link>
-                </li>
-                <li>
-                  {showReturnsPolicy ? (
-                    <span className="text-slate-300 font-light">
-                      14 day return policy across all items, upon delivery
-                    </span>
-                  ) : (
-                    <button 
-                      onClick={() => setShowReturnsPolicy(true)}
-                      className="hover:text-white transition-colors font-light text-left"
-                    >
-                      Returns
-                    </button>
-                  )}
-                </li>
-                <li>
-                  {showShippingPolicy ? (
-                    <span className="text-slate-300 font-light">
-                      We charge standard shipping rate but free shipping on all apparel and accessories
-                    </span>
-                  ) : (
-                    <button 
-                      onClick={() => setShowShippingPolicy(true)}
-                      className="hover:text-white transition-colors font-light text-left"
-                    >
-                      Shipping
-                    </button>
-                  )}
-                </li>
-                <li>
-                  {showContactEmail ? (
-                    <span className="text-slate-300 font-light">
-                      info@muwaterwear.com
-                    </span>
-                  ) : (
-                    <button 
-                      onClick={() => setShowContactEmail(true)}
-                      className="hover:text-white transition-colors font-light text-left"
-                    >
-                      Contact
-                    </button>
-                  )}
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4 text-cyan-400">CONNECT</h4>
-              <ul className="space-y-2 text-slate-400">
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors font-light">
-                    Instagram
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors font-light">
-                    Facebook
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors font-light">
-                    YouTube
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors font-light">
-                    Newsletter
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-500">
-            <p className="font-light">&copy; 2024 MU Waterwear. Engineered for water. Built for performance.</p>
-            <div className="mt-4">
-              <Link href="/privacy-policy" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm">
-                Privacy Policy
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Shopping Cart - Responsive */}
-      <DesktopOnly>
-        <ShoppingCartSidebar />
-      </DesktopOnly>
-      <MobileOnly>
-        <MobileShoppingCart />
-      </MobileOnly>
+      <Footer />
     </div>
+    </>
   )
 }

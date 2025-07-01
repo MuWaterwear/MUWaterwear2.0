@@ -72,6 +72,7 @@ npx tsx scripts/setup-printify.ts
 ```
 
 This will show you:
+
 - Your existing products
 - Available product templates
 - Product mapping template
@@ -111,7 +112,7 @@ npx tsx scripts/setup-printify.ts
 Edit `app/api/stripe-webhook/route.ts` and update the `PRODUCT_MAPPING` object:
 
 ```typescript
-const PRODUCT_MAPPING: Record<string, { printifyProductId: string, variantId: number }> = {
+const PRODUCT_MAPPING: Record<string, { printifyProductId: string; variantId: number }> = {
   'CDA Board Tee': { printifyProductId: 'actual_printify_id_1', variantId: 12345 },
   'CDA Dive Tee': { printifyProductId: 'actual_printify_id_2', variantId: 12346 },
   // ... add all your products
@@ -132,16 +133,19 @@ const PRODUCT_MAPPING: Record<string, { printifyProductId: string, variantId: nu
 ### 6.2 Debug Common Issues
 
 **Webhook not receiving events:**
+
 - Check webhook URL is correct
 - Verify webhook secret in `.env.local`
 - Check Stripe webhook logs for delivery attempts
 
 **Product mapping errors:**
+
 - Ensure product names match exactly
 - Check Printify product IDs are correct
 - Verify variant IDs exist
 
 **Printify API errors:**
+
 - Check access token is valid
 - Verify shop ID is correct
 - Ensure API scopes are sufficient
@@ -191,4 +195,4 @@ If you encounter issues:
 
 ---
 
-🎉 **Congratulations!** Your print-on-demand automation is now set up. Orders from your website will automatically be sent to Printify for fulfillment! 
+🎉 **Congratulations!** Your print-on-demand automation is now set up. Orders from your website will automatically be sent to Printify for fulfillment!

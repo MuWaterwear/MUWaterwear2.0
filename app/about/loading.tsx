@@ -9,5 +9,5 @@ export default function Loading() {
         <p className="text-white/60 text-sm">Loading...</p>
       </div>
     </div>
-  );
-} 
+  )
+}

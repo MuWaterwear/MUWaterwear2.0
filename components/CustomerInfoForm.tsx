@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import React, { useState } from "react"
-import { X, User, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import React, { useState } from 'react'
+import { X, User, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 interface CustomerInfoFormProps {
   isOpen: boolean
@@ -11,17 +11,22 @@ interface CustomerInfoFormProps {
   isProcessing?: boolean
 }
 
-export default function CustomerInfoForm({ isOpen, onClose, onSubmit, isProcessing = false }: CustomerInfoFormProps) {
+export default function CustomerInfoForm({
+  isOpen,
+  onClose,
+  onSubmit,
+  isProcessing = false,
+}: CustomerInfoFormProps) {
   const [customerData, setCustomerData] = useState({
     firstName: '',
     lastName: '',
-    email: ''
+    email: '',
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {}
-    
+
     if (!customerData.firstName.trim()) {
       newErrors.firstName = 'First name is required'
     }
@@ -33,7 +38,7 @@ export default function CustomerInfoForm({ isOpen, onClose, onSubmit, isProcessi
     } else if (!/\S+@\S+\.\S+/.test(customerData.email)) {
       newErrors.email = 'Please enter a valid email'
     }
-    
+
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -86,29 +91,27 @@ export default function CustomerInfoForm({ isOpen, onClose, onSubmit, isProcessi
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  First Name *
-                </label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">First Name *</label>
                 <input
                   type="text"
                   required
                   value={customerData.firstName}
-                  onChange={(e) => updateField('firstName', e.target.value)}
+                  onChange={e => updateField('firstName', e.target.value)}
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
                   placeholder="John"
                   disabled={isProcessing}
                 />
-                {errors.firstName && <p className="text-red-400 text-sm mt-1">{errors.firstName}</p>}
+                {errors.firstName && (
+                  <p className="text-red-400 text-sm mt-1">{errors.firstName}</p>
+                )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Last Name *
-                </label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Last Name *</label>
                 <input
                   type="text"
                   required
                   value={customerData.lastName}
-                  onChange={(e) => updateField('lastName', e.target.value)}
+                  onChange={e => updateField('lastName', e.target.value)}
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
                   placeholder="Doe"
                   disabled={isProcessing}
@@ -125,7 +128,7 @@ export default function CustomerInfoForm({ isOpen, onClose, onSubmit, isProcessi
                 type="email"
                 required
                 value={customerData.email}
-                onChange={(e) => updateField('email', e.target.value)}
+                onChange={e => updateField('email', e.target.value)}
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
                 placeholder="john@example.com"
                 disabled={isProcessing}
@@ -134,7 +137,7 @@ export default function CustomerInfoForm({ isOpen, onClose, onSubmit, isProcessi
             </div>
 
             <div className="pt-4">
-              <Button 
+              <Button
                 type="submit"
                 disabled={isProcessing}
                 className="w-full bg-cyan-400 hover:bg-cyan-500 text-black font-bold py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
@@ -163,4 +166,4 @@ export default function CustomerInfoForm({ isOpen, onClose, onSubmit, isProcessi
       </div>
     </div>
   )
-} 
+}

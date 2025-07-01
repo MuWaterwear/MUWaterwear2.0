@@ -1,7 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-
-
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 :root {
   --radius: 0.625rem;
@@ -77,33 +75,35 @@
     border-color: var(--border);
     outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
   }
-  
-  html, body {
+
+  html,
+  body {
     background-color: var(--background);
     color: var(--foreground);
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
   }
-  
+
   body {
     position: relative;
   }
-  
+
   /* Prevent horizontal overflow on mobile - GLOBAL FOR ALL PAGES */
   @media (max-width: 768px) {
-    html, body {
+    html,
+    body {
       overflow-x: hidden !important;
       width: 100% !important;
       max-width: 100% !important;
       position: relative !important;
     }
-    
+
     * {
       max-width: 100% !important;
       box-sizing: border-box !important;
     }
-    
+
     /* Ensure all page containers don't exceed viewport */
     .container,
     main,
@@ -114,72 +114,77 @@
       overflow-x: hidden !important;
       max-width: 100% !important;
     }
-    
+
     /* Constrain large transforms on mobile - ALL PAGES */
-    img[style*="scale(9.0)"],
-    img[style*="scale(5.0)"],
-    img[style*="scale(4.0)"],
-    img[style*="scale(3.0)"],
-    [style*="scale(9.0)"],
-    [style*="scale(5.0)"],
-    [style*="scale(4.0)"],
-    [style*="scale(3.0)"] {
+    img[style*='scale(9.0)'],
+    img[style*='scale(5.0)'],
+    img[style*='scale(4.0)'],
+    img[style*='scale(3.0)'],
+    [style*='scale(9.0)'],
+    [style*='scale(5.0)'],
+    [style*='scale(4.0)'],
+    [style*='scale(3.0)'] {
       transform: scale(1.8) !important;
       max-width: 100% !important;
     }
-    
+
     /* Fix any elements with fixed widths that exceed viewport - ALL PAGES */
-    [style*="width: 700px"],
-    [style*="width:700px"],
-    [style*="width: 340px"],
-    [style*="width:340px"],
-    [style*="width: 320px"],
-    [style*="width:320px"] {
+    [style*='width: 700px'],
+    [style*='width:700px'],
+    [style*='width: 340px'],
+    [style*='width:340px'],
+    [style*='width: 320px'],
+    [style*='width:320px'] {
       width: 100% !important;
       max-width: 100% !important;
     }
-    
+
     /* Prevent carousel and grid overflow */
     .grid,
-    [class*="grid-"],
-    [style*="grid-template-columns"],
-    [style*="display: flex"],
+    [class*='grid-'],
+    [style*='grid-template-columns'],
+    [style*='display: flex'],
     .flex {
       overflow-x: hidden !important;
       max-width: 100% !important;
     }
-    
+
     /* Fix infinite scroll containers */
-    [style*="width: "][style*="px"] {
+    [style*='width: '][style*='px'] {
       max-width: 100% !important;
       overflow-x: hidden !important;
     }
-    
+
     /* Ensure video elements don't cause overflow */
     video {
       max-width: 100% !important;
       width: 100% !important;
     }
-    
+
     /* Fix transform positioning that might cause overflow */
-    [style*="translateX"] {
+    [style*='translateX'] {
       max-width: 100% !important;
     }
-    
+
     /* Additional safety for product grids and carousels */
-    [class*="product"],
-    [class*="carousel"],
-    [class*="infinite"] {
+    [class*='product'],
+    [class*='carousel'],
+    [class*='infinite'] {
       max-width: 100% !important;
       overflow-x: hidden !important;
+    }
+
+    header[role], header.sticky {
+      display: none !important;
+    }
+
+    .desktop-hero {
+      display: none !important;
     }
   }
 }
 
-
-
-/* Import mobile-specific styles */
-@import '../responsive/styles/mobile.css';
+/* Mobile-specific styles now handled by Tailwind responsive utilities */
 
 /* Custom animations for About page */
 @keyframes scroll {
@@ -253,4 +258,50 @@
 .cart-scroll {
   scrollbar-width: thin;
   scrollbar-color: #475569 #1e293b; /* thumb track */
+}
+
+/* Cart Error Notification Animations */
+@keyframes slide-in-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-slide-in-from-top {
+  animation: slide-in-from-top 0.3s ease-out;
+}
+
+/* Search functionality styles */
+.search-highlight {
+  background: #fef08a; /* yellow-200 */
+  color: #374151; /* gray-700 */
+  padding: 1px 2px;
+  border-radius: 2px;
+}
+
+.search-results-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.search-results-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+
+.search-results-exit {
+  opacity: 1;
+}
+
+.search-results-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }

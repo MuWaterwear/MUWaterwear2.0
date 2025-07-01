@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { PrintifyAPI } from '@/lib/printify'
+import { PrintifyAPI } from '@/lib/integrations/printify'
 
 export async function GET() {
   try {
@@ -7,10 +7,7 @@ export async function GET() {
     const shopId = process.env.PRINTIFY_SHOP_ID
 
     if (!accessToken || !shopId) {
-      return NextResponse.json(
-        { error: 'Printify credentials not configured' },
-        { status: 500 }
-      )
+      return NextResponse.json({ error: 'Printify credentials not configured' }, { status: 500 })
     }
 
     const printify = new PrintifyAPI(accessToken, shopId)
@@ -19,9 +16,6 @@ export async function GET() {
     return NextResponse.json(orders)
   } catch (error) {
     console.error('Error fetching Printify orders:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch orders' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Failed to fetch orders' }, { status: 500 })
   }
-} 
+}

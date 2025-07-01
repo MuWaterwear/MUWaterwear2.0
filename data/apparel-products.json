@@ -1,0 +1,3210 @@
+[
+  {
+    "id": "mu-gets-dark-tee",
+    "name": "Mu Gets Dark Tee",
+    "category": "tees",
+    "description": "Mu Gets Dark Tee from our MU APPAREL collection",
+    "price": 35,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-GETS-DARK-TEE/Back, Black .png",
+      "/images/APPAREL/MU-APPAREL/MU-GETS-DARK-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-ski-rip-tee",
+    "name": "Mu Ski Rip Tee",
+    "category": "tees",
+    "description": "Mu Ski Rip Tee from our MU APPAREL collection",
+    "price": 35,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-SKI-RIP-TEE/Back, Black.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKI-RIP-TEE/Back, Bay.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKI-RIP-TEE/Back, Boysenberry.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKI-RIP-TEE/Back, Island Reef.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKI-RIP-TEE/Back, Ivory.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKI-RIP-TEE/Back, Lagoon Blue.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKI-RIP-TEE/Back, Seafoam.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKI-RIP-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Boysenberry",
+        "hex": "#888888"
+      },
+      {
+        "name": "Island Reef",
+        "hex": "#888888"
+      },
+      {
+        "name": "Ivory",
+        "hex": "#F3F4F6"
+      },
+      {
+        "name": "Lagoon Blue",
+        "hex": "#888888"
+      },
+      {
+        "name": "Seafoam",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-wager-tee",
+    "name": "Mu Wager Tee",
+    "category": "tees",
+    "description": "Mu Wager Tee from our MU APPAREL collection",
+    "price": 35,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-WAGER-TEE/Back, Black.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAGER-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-wake-community-tee",
+    "name": "Mu Wake Community Tee",
+    "category": "tees",
+    "description": "Mu Wake Community Tee from our MU APPAREL collection",
+    "price": 35,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Back, Black.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Back, Khaki.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Back, Lagoon Blue.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Back, Midnight.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Back, Peony.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Back, Topaz Blue.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Front, Black.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Front, Khaki.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Front, Lagoon Blue.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Front, Midnight.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Front, Peony.png",
+      "/images/APPAREL/MU-APPAREL/MU-WAKE-COMMUNITY-TEE/Front, Topaz Blue.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Lagoon Blue",
+        "hex": "#888888"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "Peony",
+        "hex": "#F9A8D4"
+      },
+      {
+        "name": "Topaz Blue",
+        "hex": "#38BDF8"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-iswim-tee",
+    "name": "Mu Iswim Tee",
+    "category": "swim",
+    "description": "Mu Iswim Tee from our MU APPAREL collection",
+    "price": 35,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-ISWIM-TEE/Back, Black.png",
+      "/images/APPAREL/MU-APPAREL/MU-ISWIM-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-light-blue-rash-gaurd",
+    "name": "Mu Light Blue Rash Gaurd",
+    "category": "uv-protection",
+    "description": "Mu Light Blue Rash Gaurd from our MU APPAREL collection",
+    "price": 45,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-LIGHT-BLUE-RASH-GAURD/SECOND-FEATURED-IMAGE (2).png",
+      "/images/APPAREL/MU-APPAREL/MU-LIGHT-BLUE-RASH-GAURD/all-over-print-mens-rash-guard-white-front-6859da5647695.png",
+      "/images/APPAREL/MU-APPAREL/MU-LIGHT-BLUE-RASH-GAURD/SECOND-FEATURED-IMAGE (1).png"
+    ],
+    "colors": [
+      {
+        "name": "6859da5647695",
+        "hex": "#888888"
+      },
+      {
+        "name": "Image (1)",
+        "hex": "#888888"
+      },
+      {
+        "name": "Image (2)",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-ocean-green-one-piece-swimsuit",
+    "name": "Mu Ocean Green One Piece Swimsuit",
+    "category": "swim",
+    "description": "Mu Ocean Green One Piece Swimsuit from our MU APPAREL collection",
+    "price": 31,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-ONE-PIECE-SWIMSUIT/second.png",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-ONE-PIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-front-685af42d8dfb2.png",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-ONE-PIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-back-685af42d8e1b4.png",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-ONE-PIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-left-685af42d8e12a.png",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-ONE-PIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-left-back-685af42d8e2dd.png",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-ONE-PIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-right-685af42d8e089.png",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-ONE-PIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-right-back-685af42d8e370.png",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-ONE-PIECE-SWIMSUIT/first.png"
+    ],
+    "colors": [
+      {
+        "name": "685af42d8e1b4",
+        "hex": "#888888"
+      },
+      {
+        "name": "685af42d8dfb2",
+        "hex": "#888888"
+      },
+      {
+        "name": "685af42d8e12a",
+        "hex": "#888888"
+      },
+      {
+        "name": "685af42d8e2dd",
+        "hex": "#888888"
+      },
+      {
+        "name": "685af42d8e089",
+        "hex": "#888888"
+      },
+      {
+        "name": "685af42d8e370",
+        "hex": "#888888"
+      },
+      {
+        "name": "First",
+        "hex": "#888888"
+      },
+      {
+        "name": "Second",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-ocean-green-swim-shorts",
+    "name": "Mu Ocean Green Swim Shorts",
+    "category": "swim",
+    "description": "Mu Ocean Green Swim Shorts from our MU APPAREL collection",
+    "price": 30,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-SWIM-SHORTS/18.svg",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-SWIM-SHORTS/19.svg"
+    ],
+    "colors": [
+      {
+        "name": "18",
+        "hex": "#888888"
+      },
+      {
+        "name": "19",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-red-tide-one-piece-swimsuit",
+    "name": "Mu Red Tide One Piece Swimsuit",
+    "category": "swim",
+    "description": "Mu Red Tide One Piece Swimsuit from our MU APPAREL collection",
+    "price": 31,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/FRONT(2) .png",
+      "/images/APPAREL/MU-APPAREL/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/FRONT.png",
+      "/images/APPAREL/MU-APPAREL/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/BACK (2).png",
+      "/images/APPAREL/MU-APPAREL/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/BACK.png",
+      "/images/APPAREL/MU-APPAREL/MU-RED-TIDE-ONE-PIECE-SWIMSUIT/SIDE.png"
+    ],
+    "colors": [
+      {
+        "name": "(2)",
+        "hex": "#888888"
+      },
+      {
+        "name": "Default",
+        "hex": "#888888"
+      },
+      {
+        "name": "Side",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-red-tide-swim-shorts",
+    "name": "Mu Red Tide Swim Shorts",
+    "category": "swim",
+    "description": "Mu Red Tide Swim Shorts from our MU APPAREL collection",
+    "price": 30,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-RED-TIDE-SWIM-SHORTS/Front.png"
+    ],
+    "colors": [
+      {
+        "name": "Default",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-sky-blue-onepiece-swimsuit",
+    "name": "Mu Sky Blue Onepiece Swimsuit",
+    "category": "swim",
+    "description": "Mu Sky Blue Onepiece Swimsuit from our MU APPAREL collection",
+    "price": 31,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-ONEPIECE-SWIMSUIT/FIRST FEATURED IMAGE.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-ONEPIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-front-6859d4903b767.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-ONEPIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-back-6859d4903b92c.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-ONEPIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-left-6859d4903b8a0.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-ONEPIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-left-back-6859d4903ba37.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-ONEPIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-right-6859d4903b7fd.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-ONEPIECE-SWIMSUIT/all-over-print-one-piece-swimsuit-white-right-back-6859d4903babb.png",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-ONEPIECE-SWIMSUIT/SECOND FEATURED IMAGE.png"
+    ],
+    "colors": [
+      {
+        "name": "6859d4903b92c",
+        "hex": "#888888"
+      },
+      {
+        "name": "6859d4903b767",
+        "hex": "#888888"
+      },
+      {
+        "name": "6859d4903b8a0",
+        "hex": "#888888"
+      },
+      {
+        "name": "6859d4903ba37",
+        "hex": "#888888"
+      },
+      {
+        "name": "6859d4903b7fd",
+        "hex": "#888888"
+      },
+      {
+        "name": "6859d4903babb",
+        "hex": "#888888"
+      },
+      {
+        "name": "First Featured Image",
+        "hex": "#888888"
+      },
+      {
+        "name": "Second Featured Image",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-sky-blue-swim-shorts",
+    "name": "Mu Sky Blue Swim Shorts",
+    "category": "swim",
+    "description": "Mu Sky Blue Swim Shorts from our MU APPAREL collection",
+    "price": 30,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-SWIM-SHORTS/15.svg",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-SWIM-SHORTS/16.svg"
+    ],
+    "colors": [
+      {
+        "name": "15",
+        "hex": "#888888"
+      },
+      {
+        "name": "16",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-sun-protection-fishing-hoodie",
+    "name": "Mu Sun Protection Fishing Hoodie",
+    "category": "hoodies",
+    "description": "Mu Sun Protection Fishing Hoodie from our MU APPAREL collection",
+    "price": 60,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-SUN-PROTECTION-FISHING-HOODIE/Front.png",
+      "/images/APPAREL/MU-APPAREL/MU-SUN-PROTECTION-FISHING-HOODIE/Back.png"
+    ],
+    "colors": [
+      {
+        "name": "Default",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "MU"
+  },
+  {
+    "id": "cda-board-tee",
+    "name": "Cda Board Tee",
+    "category": "tees",
+    "description": "Cda Board Tee from our CDA APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-BOARD-TEE/Back, Bay.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-BOARD-TEE/Back, Black.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-BOARD-TEE/Back, Khaki.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-BOARD-TEE/Back, True Navy.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-BOARD-TEE/Back, Watermelon.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-BOARD-TEE/Back, White.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-BOARD-TEE/Front, White.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-dive-tee",
+    "name": "Cda Dive Tee",
+    "category": "tees",
+    "description": "Cda Dive Tee from our CDA APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-DIVE-TEE/Back, Bay.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-DIVE-TEE/Back, Black.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-DIVE-TEE/Back, Khaki.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-DIVE-TEE/Back, True Navy.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-DIVE-TEE/Back, Watermelon.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-DIVE-TEE/Back, White.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-DIVE-TEE/Front, White.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-fish-tee",
+    "name": "Cda Fish Tee",
+    "category": "tees",
+    "description": "Cda Fish Tee from our CDA APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-FISH-TEE/Front, Bay.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-FISH-TEE/Front, Black.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-FISH-TEE/Front, Khaki.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-FISH-TEE/Front, Sage.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-FISH-TEE/Front, True Navy.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-FISH-TEE/Front, Watermelon.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-FISH-TEE/Back, Sage.png"
+    ],
+    "colors": [
+      {
+        "name": "Sage",
+        "hex": "#A3A380"
+      },
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-lake-tee",
+    "name": "Cda Lake Tee",
+    "category": "tees",
+    "description": "Cda Lake Tee from our CDA APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-LAKE-TEE/Front, White.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-LAKE-TEE/Front, Bay.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-LAKE-TEE/Front, Black.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-LAKE-TEE/Front, Khaki.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-LAKE-TEE/Front, True Navy.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-LAKE-TEE/Front, Watermelon.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-LAKE-TEE/Back, White.png"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-sail-long-sleeve-shirt",
+    "name": "Cda Sail Long Sleeve Shirt",
+    "category": "long-sleeve",
+    "description": "Cda Sail Long Sleeve Shirt from our CDA APPAREL collection",
+    "price": 40,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-SAIL-LONG-SLEEVE-SHIRT/Ivory.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SAIL-LONG-SLEEVE-SHIRT/Ocean-Blue.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SAIL-LONG-SLEEVE-SHIRT/Salmon.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SAIL-LONG-SLEEVE-SHIRT/Ivory-Backside.png"
+    ],
+    "colors": [
+      {
+        "name": "Side",
+        "hex": "#888888"
+      },
+      {
+        "name": "Ivory",
+        "hex": "#F3F4F6"
+      },
+      {
+        "name": "Blue",
+        "hex": "#888888"
+      },
+      {
+        "name": "Salmon",
+        "hex": "#F87171"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-ski-tee",
+    "name": "Cda Ski Tee",
+    "category": "tees",
+    "description": "Cda Ski Tee from our CDA APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-SKI-TEE/Back, Bay.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SKI-TEE/Back, Black.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SKI-TEE/Back, Khaki.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SKI-TEE/Back, True Navy.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SKI-TEE/Back, Watermelon.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SKI-TEE/Back, White.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SKI-TEE/Front, White.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-surf-tee",
+    "name": "Cda Surf Tee",
+    "category": "tees",
+    "description": "Cda Surf Tee from our CDA APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-SURF-TEE/Back, Bay.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SURF-TEE/Back, Black.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SURF-TEE/Back, Khaki.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SURF-TEE/Back, True Navy.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SURF-TEE/Back, Watermelon.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SURF-TEE/Back, White.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SURF-TEE/Front, Watermelon.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SURF-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-swim-long-sleeve-shirt",
+    "name": "Cda Swim Long Sleeve Shirt",
+    "category": "long-sleeve",
+    "description": "Cda Swim Long Sleeve Shirt from our CDA APPAREL collection",
+    "price": 40,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-LONG-SLEEVE-SHIRT/Dark-Green.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-LONG-SLEEVE-SHIRT/Light-Blue.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-LONG-SLEEVE-SHIRT/Ocean-Blue-Backside.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-LONG-SLEEVE-SHIRT/Sea-Green.png"
+    ],
+    "colors": [
+      {
+        "name": "Green",
+        "hex": "#16A34A"
+      },
+      {
+        "name": "Blue",
+        "hex": "#888888"
+      },
+      {
+        "name": "Side",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-swim-tee",
+    "name": "Cda Swim Tee",
+    "category": "swim",
+    "description": "Cda Swim Tee from our CDA APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Midnight-Blue.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Red.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Green.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Red-Backside.png"
+    ],
+    "colors": [
+      {
+        "name": "Green",
+        "hex": "#16A34A"
+      },
+      {
+        "name": "Blue",
+        "hex": "#888888"
+      },
+      {
+        "name": "Side",
+        "hex": "#888888"
+      },
+      {
+        "name": "Red",
+        "hex": "#EF4444"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-under-armor-polo",
+    "name": "Cda Under Armor Polo",
+    "category": "polos",
+    "description": "Cda Under Armor Polo from our CDA APPAREL collection",
+    "price": 65,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-black-front-685a34c055c76.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-grey-front-685a34c0560fb.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-navy-front-685a34c055fc0.png"
+    ],
+    "colors": [
+      {
+        "name": "685a34c055c76",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a34c0560fb",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a34c055fc0",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "cda-waterski-tee",
+    "name": "Cda Waterski Tee",
+    "category": "tees",
+    "description": "Cda Waterski Tee from our CDA APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Back, Black.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Back, Burnt Orange.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Back, Midnight.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Back, Peony.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Back, Topaz Blue.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Front, Black.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Front, Burnt Orange.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Front, Midnight.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Front, Peony.png",
+      "/images/APPAREL/CDA-APPAREL/CDA-WATERSKI-TEE/Front, Topaz Blue.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Burnt Orange",
+        "hex": "#EA580C"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "Peony",
+        "hex": "#F9A8D4"
+      },
+      {
+        "name": "Topaz Blue",
+        "hex": "#38BDF8"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "CDA"
+  },
+  {
+    "id": "detroit-board-tee",
+    "name": "Detroit Board Tee",
+    "category": "tees",
+    "description": "Detroit Board Tee from our DETROIT APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-BOARD-TEE/Back, Black.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-BOARD-TEE/Back, Khaki.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-BOARD-TEE/Back, True Navy.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-BOARD-TEE/Back, Watermelon.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-BOARD-TEE/Back, White.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-BOARD-TEE/Front, Watermelon.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "DETROIT"
+  },
+  {
+    "id": "detroit-dive-tee",
+    "name": "Detroit Dive Tee",
+    "category": "tees",
+    "description": "Detroit Dive Tee from our DETROIT APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-DIVE-TEE/Back, Black.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-DIVE-TEE/Back, Khaki.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-DIVE-TEE/Back, True Navy.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-DIVE-TEE/Back, Watermelon.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-DIVE-TEE/Back, White.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-DIVE-TEE/Front, Watermelon.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "DETROIT"
+  },
+  {
+    "id": "detroit-fish-tee",
+    "name": "Detroit Fish Tee",
+    "category": "tees",
+    "description": "Detroit Fish Tee from our DETROIT APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-FISH-TEE/Front, Black.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-FISH-TEE/Front, Khaki.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-FISH-TEE/Front, Sage.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-FISH-TEE/Front, True Navy.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-FISH-TEE/Front, Watermelon.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-FISH-TEE/Back, Watermelon.png"
+    ],
+    "colors": [
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Sage",
+        "hex": "#A3A380"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "DETROIT"
+  },
+  {
+    "id": "detroit-ski-tee",
+    "name": "Detroit Ski Tee",
+    "category": "tees",
+    "description": "Detroit Ski Tee from our DETROIT APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SKI-TEE/Back, Black.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SKI-TEE/Back, Khaki.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SKI-TEE/Back, True Navy.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SKI-TEE/Back, Watermelon.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SKI-TEE/Back, White.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SKI-TEE/Front, Watermelon.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "DETROIT"
+  },
+  {
+    "id": "detroit-surf-tee",
+    "name": "Detroit Surf Tee",
+    "category": "tees",
+    "description": "Detroit Surf Tee from our DETROIT APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SURF-TEE/Back, Black.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SURF-TEE/Back, Khaki.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SURF-TEE/Back, True Navy.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SURF-TEE/Back, Watermelon.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SURF-TEE/Back, White.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-SURF-TEE/Front, Watermelon.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "DETROIT"
+  },
+  {
+    "id": "detroit-traditional-logo-tee",
+    "name": "Detroit Traditional Logo Tee",
+    "category": "tees",
+    "description": "Detroit Traditional Logo Tee from our DETROIT APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-TRADITIONAL-LOGO-TEE/Front, True Navy.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-TRADITIONAL-LOGO-TEE/Back, Watermelon.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-TRADITIONAL-LOGO-TEE/Front, Black.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-TRADITIONAL-LOGO-TEE/Front, Khaki.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-TRADITIONAL-LOGO-TEE/Front, Watermelon.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-TRADITIONAL-LOGO-TEE/Front, White.png"
+    ],
+    "colors": [
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "DETROIT"
+  },
+  {
+    "id": "detroit-under-armor-polo",
+    "name": "Detroit Under Armor Polo",
+    "category": "polos",
+    "description": "Detroit Under Armor Polo from our DETROIT APPAREL collection",
+    "price": 65,
+    "images": [
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-black-front-685a419a5105b.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-grey-front-685a419a517e7.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-navy-front-685a419a516b9.png"
+    ],
+    "colors": [
+      {
+        "name": "685a419a5105b",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a419a517e7",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a419a516b9",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "DETROIT"
+  },
+  {
+    "id": "detroit-waterski-tee",
+    "name": "Detroit Waterski Tee",
+    "category": "tees",
+    "description": "Detroit Waterski Tee from our DETROIT APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Back, Black.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Back, Burnt Orange.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Back, Midnight.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Back, Peony.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Back, Topaz Blue.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Front, Black.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Front, Burnt Orange.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Front, Midnight.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Front, Peony.png",
+      "/images/APPAREL/DETROIT-APPAREL/DETROIT-WATERSKI-TEE/Front, Topaz Blue.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Burnt Orange",
+        "hex": "#EA580C"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "Peony",
+        "hex": "#F9A8D4"
+      },
+      {
+        "name": "Topaz Blue",
+        "hex": "#38BDF8"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "DETROIT"
+  },
+  {
+    "id": "flathead-board-tee",
+    "name": "Flathead Board Tee",
+    "category": "tees",
+    "description": "Flathead Board Tee from our FLATHEAD APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-BOARD-TEE/Back, Bay.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-BOARD-TEE/Back, Black.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-BOARD-TEE/Back, Khaki.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-BOARD-TEE/Back, True Navy.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-BOARD-TEE/Back, Watermelon.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-BOARD-TEE/Back, White.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-BOARD-TEE/Front, Bay.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "FLATHEAD"
+  },
+  {
+    "id": "flathead-dive-tee",
+    "name": "Flathead Dive Tee",
+    "category": "tees",
+    "description": "Flathead Dive Tee from our FLATHEAD APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-DIVE-TEE/Back, Bay.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-DIVE-TEE/Back, Black.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-DIVE-TEE/Back, Khaki.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-DIVE-TEE/Back, True Navy.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-DIVE-TEE/Back, Watermelon.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-DIVE-TEE/Back, White.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-DIVE-TEE/Front, Bay.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "FLATHEAD"
+  },
+  {
+    "id": "flathead-fish-tee",
+    "name": "Flathead Fish Tee",
+    "category": "tees",
+    "description": "Flathead Fish Tee from our FLATHEAD APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-FISH-TEE/Front, Bay.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-FISH-TEE/Front, Black.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-FISH-TEE/Front, Khaki.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-FISH-TEE/Front, Sage.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-FISH-TEE/Front, True Navy.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-FISH-TEE/Front, Watermelon.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-FISH-TEE/Back, Bay.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Sage",
+        "hex": "#A3A380"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "FLATHEAD"
+  },
+  {
+    "id": "flathead-lake-tee",
+    "name": "Flathead Lake Tee",
+    "category": "tees",
+    "description": "Flathead Lake Tee from our FLATHEAD APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-LAKE-TEE/Front, Bay.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-LAKE-TEE/Back, Bay.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-LAKE-TEE/Back, Black.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-LAKE-TEE/Back, Khaki.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-LAKE-TEE/Back, True Navy.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-LAKE-TEE/Back, Watermelon.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-LAKE-TEE/Back, White.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "FLATHEAD"
+  },
+  {
+    "id": "flathead-ski-tee",
+    "name": "Flathead Ski Tee",
+    "category": "tees",
+    "description": "Flathead Ski Tee from our FLATHEAD APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SKI-TEE/Back, Bay.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SKI-TEE/Back, Black.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SKI-TEE/Back, Khaki.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SKI-TEE/Back, True Navy.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SKI-TEE/Back, Watermelon.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SKI-TEE/Back, White.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SKI-TEE/Front, Bay.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "FLATHEAD"
+  },
+  {
+    "id": "flathead-surf-tee",
+    "name": "Flathead Surf Tee",
+    "category": "tees",
+    "description": "Flathead Surf Tee from our FLATHEAD APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SURF-TEE/Back, Bay.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SURF-TEE/Back, Black.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SURF-TEE/Back, Khaki.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SURF-TEE/Back, True Navy.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SURF-TEE/Back, Watermelon.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SURF-TEE/Back, White.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-SURF-TEE/Front, Bay.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "FLATHEAD"
+  },
+  {
+    "id": "flathead-under-armor-polo",
+    "name": "Flathead Under Armor Polo",
+    "category": "polos",
+    "description": "Flathead Under Armor Polo from our FLATHEAD APPAREL collection",
+    "price": 65,
+    "images": [
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-black-front-685a36acf0e18.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-grey-front-685a36acf1215.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-navy-front-685a36acf10e7.png"
+    ],
+    "colors": [
+      {
+        "name": "685a36acf0e18",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a36acf1215",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a36acf10e7",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "FLATHEAD"
+  },
+  {
+    "id": "flathead-waterski-tee",
+    "name": "Flathead Waterski Tee",
+    "category": "tees",
+    "description": "Flathead Waterski Tee from our FLATHEAD APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Back, Black.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Back, Burnt Orange.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Back, Midnight.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Back, Topaz Blue.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Back, Watermelon.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Front, Black.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Front, Burnt Orange.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Front, Midnight.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Front, Topaz Blue.png",
+      "/images/APPAREL/FLATHEAD-APPAREL/FLATHEAD-WATERSKI-TEE/Front, Watermelon.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Burnt Orange",
+        "hex": "#EA580C"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "Topaz Blue",
+        "hex": "#38BDF8"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "FLATHEAD"
+  },
+  {
+    "id": "lindbergh-charles-lindbergh-pocket-tee",
+    "name": "Lindbergh Charles Lindbergh Pocket Tee",
+    "category": "tees",
+    "description": "Lindbergh Charles Lindbergh Pocket Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Black-Front.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Maroon.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Navy.png"
+    ],
+    "colors": [
+      {
+        "name": "Default",
+        "hex": "#888888"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Maroon",
+        "hex": "#888888"
+      },
+      {
+        "name": "Navy",
+        "hex": "#1E3A8A"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lake-tahoe-surf-tee",
+    "name": "Lake Tahoe Surf Tee",
+    "category": "tees",
+    "description": "Lake Tahoe Surf Tee from our TAHOE APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/BLACK-BACK.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/KHAKI-BACK.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/WHITE-BACK.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/BLACK-FRONT.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/KHAKI-FRONT.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/WHITE-FRONT.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "lindbergh-adidas-polo",
+    "name": "Lindbergh Adidas Polo",
+    "category": "polos",
+    "description": "Lindbergh Adidas Polo from our LINDBERGH APPAREL collection",
+    "price": 55,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-ADIDAS-POLO/Front (1).png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-ADIDAS-POLO/Front (2).png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-ADIDAS-POLO/Front.png"
+    ],
+    "colors": [
+      {
+        "name": "(1)",
+        "hex": "#888888"
+      },
+      {
+        "name": "(2)",
+        "hex": "#888888"
+      },
+      {
+        "name": "Default",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-board-tee",
+    "name": "Lindbergh Board Tee",
+    "category": "tees",
+    "description": "Lindbergh Board Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-BOARD-TEE/Back, Bay.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-BOARD-TEE/Back, Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-BOARD-TEE/Back, Khaki.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-BOARD-TEE/Back, True Navy.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-BOARD-TEE/Back, Watermelon.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-BOARD-TEE/Back, White.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-BOARD-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-dive-tee",
+    "name": "Lindbergh Dive Tee",
+    "category": "tees",
+    "description": "Lindbergh Dive Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-DIVE-TEE/Back, Bay.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-DIVE-TEE/Back, Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-DIVE-TEE/Back, Khaki.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-DIVE-TEE/Back, True Navy.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-DIVE-TEE/Back, Watermelon.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-DIVE-TEE/Back, White.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-DIVE-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-fish-tee",
+    "name": "Lindbergh Fish Tee",
+    "category": "tees",
+    "description": "Lindbergh Fish Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-FISH-TEE/Front, Bay.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-FISH-TEE/Front, Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-FISH-TEE/Front, Khaki.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-FISH-TEE/Front, Sage.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-FISH-TEE/Front, True Navy.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-FISH-TEE/Front, Watermelon.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-FISH-TEE/Back, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Sage",
+        "hex": "#A3A380"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-lake-tee",
+    "name": "Lindbergh Lake Tee",
+    "category": "tees",
+    "description": "Lindbergh Lake Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-LAKE-TEE/Front, Bay.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-LAKE-TEE/Front, Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-LAKE-TEE/Front, Khaki.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-LAKE-TEE/Front, True Navy.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-LAKE-TEE/Front, Watermelon.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-LAKE-TEE/Front, White.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-LAKE-TEE/Back, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-ski-tee",
+    "name": "Lindbergh Ski Tee",
+    "category": "tees",
+    "description": "Lindbergh Ski Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SKI-TEE/Back, Bay.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SKI-TEE/Back, Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SKI-TEE/Back, Khaki.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SKI-TEE/Back, True Navy.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SKI-TEE/Back, Watermelon.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SKI-TEE/Back, White.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SKI-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-surf-tee",
+    "name": "Lindbergh Surf Tee",
+    "category": "tees",
+    "description": "Lindbergh Surf Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SURF-TEE/Back, Bay.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SURF-TEE/Back, Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SURF-TEE/Back, Khaki.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SURF-TEE/Back, True Navy.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SURF-TEE/Back, Watermelon.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SURF-TEE/Back, White.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SURF-TEE/Front, Black.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-swim-long-sleeve-shirt",
+    "name": "Lindbergh Swim Long Sleeve Shirt",
+    "category": "long-sleeve",
+    "description": "Lindbergh Swim Long Sleeve Shirt from our LINDBERGH APPAREL collection",
+    "price": 40,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-LONG-SLEEVE-SHIRT/MUSTARD.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-LONG-SLEEVE-SHIRT/RED-FRONTSIDE.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-LONG-SLEEVE-SHIRT/RED.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-LONG-SLEEVE-SHIRT/SEA-FOAM.png"
+    ],
+    "colors": [
+      {
+        "name": "Mustard",
+        "hex": "#888888"
+      },
+      {
+        "name": "Side",
+        "hex": "#888888"
+      },
+      {
+        "name": "Red",
+        "hex": "#EF4444"
+      },
+      {
+        "name": "Foam",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-swim-tee",
+    "name": "Lindbergh Swim Tee",
+    "category": "swim",
+    "description": "Lindbergh Swim Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-TEE/Cumin.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-TEE/Khaki-Backside.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-TEE/Khaki.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-TEE/True-Navy.png"
+    ],
+    "colors": [
+      {
+        "name": "Cumin",
+        "hex": "#888888"
+      },
+      {
+        "name": "Side",
+        "hex": "#888888"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Navy",
+        "hex": "#1E3A8A"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-under-armor-polo",
+    "name": "Lindbergh Under Armor Polo",
+    "category": "polos",
+    "description": "Lindbergh Under Armor Polo from our LINDBERGH APPAREL collection",
+    "price": 65,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-black-front-685a41d2b759d.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-grey-front-685a41d2b7ab3.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-navy-front-685a41d2b797f.png"
+    ],
+    "colors": [
+      {
+        "name": "685a41d2b759d",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a41d2b7ab3",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a41d2b797f",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "lindbergh-waterski-tee",
+    "name": "Lindbergh Waterski Tee",
+    "category": "tees",
+    "description": "Lindbergh Waterski Tee from our LINDBERGH APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Back, Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Back, Burnt Orange.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Back, Midnight.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Back, Peony.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Back, Topaz Blue.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Front, Black.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Front, Burnt Orange.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Front, Midnight.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Front, Peony.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-WATERSKI-TEE/Front, Topaz Blue.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Burnt Orange",
+        "hex": "#EA580C"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "Peony",
+        "hex": "#F9A8D4"
+      },
+      {
+        "name": "Topaz Blue",
+        "hex": "#38BDF8"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "LINDBERGH"
+  },
+  {
+    "id": "tahoe-board-tee",
+    "name": "Tahoe Board Tee",
+    "category": "tees",
+    "description": "Tahoe Board Tee from our TAHOE APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-BOARD-TEE/Back, Bay.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-BOARD-TEE/Back, Black.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-BOARD-TEE/Back, Khaki.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-BOARD-TEE/Back, True Navy.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-BOARD-TEE/Back, Watermelon.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-BOARD-TEE/Back, White.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-BOARD-TEE/Front, Khaki.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "tahoe-dive-tee",
+    "name": "Tahoe Dive Tee",
+    "category": "tees",
+    "description": "Tahoe Dive Tee from our TAHOE APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-DIVE-TEE/Back, Bay.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-DIVE-TEE/Back, Black.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-DIVE-TEE/Back, Khaki.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-DIVE-TEE/Back, True Navy.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-DIVE-TEE/Back, Watermelon.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-DIVE-TEE/Back, White.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-DIVE-TEE/Front, Khaki.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "tahoe-fish-tee",
+    "name": "Tahoe Fish Tee",
+    "category": "tees",
+    "description": "Tahoe Fish Tee from our TAHOE APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-FISH-TEE/Front, Bay.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-FISH-TEE/Front, Black.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-FISH-TEE/Front, Khaki.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-FISH-TEE/Front, Sage.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-FISH-TEE/Front, True Navy.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-FISH-TEE/Front, Watermelon.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-FISH-TEE/Back, Khaki.png"
+    ],
+    "colors": [
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Sage",
+        "hex": "#A3A380"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "tahoe-lake-tee",
+    "name": "Tahoe Lake Tee",
+    "category": "tees",
+    "description": "Tahoe Lake Tee from our TAHOE APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-LAKE-TEE/Front, Bay.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-LAKE-TEE/Front, Black.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-LAKE-TEE/Front, Khaki.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-LAKE-TEE/Front, True Navy.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-LAKE-TEE/Front, Watermelon.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-LAKE-TEE/Front, White.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-LAKE-TEE/Back, Khaki.png"
+    ],
+    "colors": [
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "tahoe-ski-tee",
+    "name": "Tahoe Ski Tee",
+    "category": "tees",
+    "description": "Tahoe Ski Tee from our TAHOE APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-SKI-TEE/Back, Bay.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-SKI-TEE/Back, Black.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-SKI-TEE/Back, Khaki.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-SKI-TEE/Back, True Navy.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-SKI-TEE/Back, Watermelon.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-SKI-TEE/Back, White.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-SKI-TEE/Front, Khaki.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "lake-tahoe-kings-beach",
+    "name": "Lake Tahoe Kings Beach",
+    "category": "other",
+    "description": "Lake Tahoe Kings Beach from our TAHOE APPAREL collection",
+    "price": 35,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-KINGS-BEACH/BUTTER-FRONT.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-KINGS-BEACH/ISLAND-GREEN-FRONT.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-KINGS-BEACH/ISLAND-REEF-FRONT.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-KINGS-BEACH/BUTTER-BACK.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-KINGS-BEACH/ISLAND-GREEN-BACK.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-KINGS-BEACH/ISLAND-REEF-BACK.png"
+    ],
+    "colors": [
+      {
+        "name": "Default",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "tahoe-under-armor-polo",
+    "name": "Tahoe Under Armor Polo",
+    "category": "polos",
+    "description": "Tahoe Under Armor Polo from our TAHOE APPAREL collection",
+    "price": 65,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-black-front-685a41b58b5bc.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-grey-front-685a41b58bf71.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-navy-front-685a41b58bd50.png"
+    ],
+    "colors": [
+      {
+        "name": "685a41b58b5bc",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a41b58bf71",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a41b58bd50",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "tahoe-waterski-tee",
+    "name": "Tahoe Waterski Tee",
+    "category": "tees",
+    "description": "Tahoe Waterski Tee from our TAHOE APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Back, Black.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Back, Burnt Orange.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Back, Midnight.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Back, Peony.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Back, Topaz Blue.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Front, Black.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Front, Burnt Orange.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Front, Midnight.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Front, Peony.png",
+      "/images/APPAREL/TAHOE-APPAREL/TAHOE-WATERSKI-TEE/Front, Topaz Blue.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Burnt Orange",
+        "hex": "#EA580C"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "Peony",
+        "hex": "#F9A8D4"
+      },
+      {
+        "name": "Topaz Blue",
+        "hex": "#38BDF8"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
+  },
+  {
+    "id": "washington-board-tee",
+    "name": "Washington Board Tee",
+    "category": "tees",
+    "description": "Washington Board Tee from our WASHINGTON APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOARD-TEE/Back, Bay.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOARD-TEE/Back, Black.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOARD-TEE/Back, Khaki.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOARD-TEE/Back, True Navy.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOARD-TEE/Back, Watermelon.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOARD-TEE/Back, White.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOARD-TEE/Front, True Navy.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  },
+  {
+    "id": "washington-boat-longsleeve",
+    "name": "Washington Boat Longsleeve",
+    "category": "long-sleeve",
+    "description": "Washington Boat Longsleeve from our WASHINGTON APPAREL collection",
+    "price": 40,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/BAYVIEW-GREEN.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/BLOSSOM.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/WATERMELON-FRONTSIDE.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/WATERMELON.png"
+    ],
+    "colors": [
+      {
+        "name": "Green",
+        "hex": "#16A34A"
+      },
+      {
+        "name": "Blossom",
+        "hex": "#888888"
+      },
+      {
+        "name": "Side",
+        "hex": "#888888"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  },
+  {
+    "id": "washington-dive-tee",
+    "name": "Washington Dive Tee",
+    "category": "tees",
+    "description": "Washington Dive Tee from our WASHINGTON APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-DIVE-TEE/Back, Bay.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-DIVE-TEE/Back, Black.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-DIVE-TEE/Back, Khaki.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-DIVE-TEE/Back, True Navy.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-DIVE-TEE/Back, Watermelon.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-DIVE-TEE/Back, White.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-DIVE-TEE/Front, True Navy.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  },
+  {
+    "id": "washington-fish-tee",
+    "name": "Washington Fish Tee",
+    "category": "tees",
+    "description": "Washington Fish Tee from our WASHINGTON APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-FISH-TEE/Front, Bay.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-FISH-TEE/Front, Black.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-FISH-TEE/Front, Khaki.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-FISH-TEE/Front, Sage.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-FISH-TEE/Front, True Navy.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-FISH-TEE/Front, Watermelon.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-FISH-TEE/Back, True Navy.png"
+    ],
+    "colors": [
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Sage",
+        "hex": "#A3A380"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  },
+  {
+    "id": "washington-lake-tee",
+    "name": "Washington Lake Tee",
+    "category": "tees",
+    "description": "Washington Lake Tee from our WASHINGTON APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-LAKE-TEE/Front, Bay.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-LAKE-TEE/Front, Black.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-LAKE-TEE/Front, Khaki.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-LAKE-TEE/Front, True Navy.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-LAKE-TEE/Front, Watermelon.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-LAKE-TEE/Front, White.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-LAKE-TEE/Back, True Navy.png"
+    ],
+    "colors": [
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  },
+  {
+    "id": "washington-ski-tee",
+    "name": "Washington Ski Tee",
+    "category": "tees",
+    "description": "Washington Ski Tee from our WASHINGTON APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SKI-TEE/Back, Bay.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SKI-TEE/Back, Black.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SKI-TEE/Back, Khaki.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SKI-TEE/Back, True Navy.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SKI-TEE/Back, Watermelon.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SKI-TEE/Back, White.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SKI-TEE/Front, True Navy.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  },
+  {
+    "id": "washington-surf-tee",
+    "name": "Washington Surf Tee",
+    "category": "tees",
+    "description": "Washington Surf Tee from our WASHINGTON APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SURF-TEE/Back, Bay.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SURF-TEE/Back, Black.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SURF-TEE/Back, Khaki.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SURF-TEE/Back, True Navy.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SURF-TEE/Back, Watermelon.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SURF-TEE/Back, White.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-SURF-TEE/Front, True Navy.png"
+    ],
+    "colors": [
+      {
+        "name": "Bay",
+        "hex": "#7DD3FC"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "True Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Watermelon",
+        "hex": "#FB7185"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  },
+  {
+    "id": "washington-under-armor-polo",
+    "name": "Washington Under Armor Polo",
+    "category": "polos",
+    "description": "Washington Under Armor Polo from our WASHINGTON APPAREL collection",
+    "price": 65,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-black-front-685a41fd72504.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-grey-front-685a41fd72988.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-UNDER-ARMOR-POLO/under-armour-mens-polo-shirt-navy-front-685a41fd72841.png"
+    ],
+    "colors": [
+      {
+        "name": "685a41fd72504",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a41fd72988",
+        "hex": "#888888"
+      },
+      {
+        "name": "685a41fd72841",
+        "hex": "#888888"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  },
+  {
+    "id": "washington-waterski-tee",
+    "name": "Washington Waterski Tee",
+    "category": "tees",
+    "description": "Washington Waterski Tee from our WASHINGTON APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Back, Black.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Back, Burnt Orange.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Back, Midnight.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Back, Peony.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Back, Topaz Blue.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Front, Black.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Front, Burnt Orange.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Front, Midnight.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Front, Peony.png",
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-WATERSKI-TEE/Front, Topaz Blue.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Burnt Orange",
+        "hex": "#EA580C"
+      },
+      {
+        "name": "Midnight",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "Peony",
+        "hex": "#F9A8D4"
+      },
+      {
+        "name": "Topaz Blue",
+        "hex": "#38BDF8"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "WASHINGTON"
+  }
+]

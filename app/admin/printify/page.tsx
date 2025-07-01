@@ -38,11 +38,11 @@ export default function PrintifyAdminPage() {
   const fetchData = async () => {
     try {
       setLoading(true)
-      
+
       // Fetch products and orders from your API
       const [productsRes, ordersRes] = await Promise.all([
         fetch('/api/printify/products'),
-        fetch('/api/printify/orders')
+        fetch('/api/printify/orders'),
       ])
 
       if (productsRes.ok) {
@@ -66,9 +66,9 @@ export default function PrintifyAdminPage() {
       const response = await fetch('/api/test-webhook', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ test: true })
+        body: JSON.stringify({ test: true }),
       })
-      
+
       if (response.ok) {
         alert('Webhook test successful!')
       } else {
@@ -94,7 +94,7 @@ export default function PrintifyAdminPage() {
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Printify Admin Dashboard</h1>
-        
+
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
             {error}
@@ -129,23 +129,33 @@ export default function PrintifyAdminPage() {
           <h2 className="text-xl font-semibold mb-4">Setup Instructions</h2>
           <div className="space-y-4">
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm mr-3">1</div>
+              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm mr-3">
+                1
+              </div>
               <span>Create Printify account and get API token</span>
             </div>
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm mr-3">2</div>
+              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm mr-3">
+                2
+              </div>
               <span>Add environment variables to .env.local</span>
             </div>
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm mr-3">3</div>
+              <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm mr-3">
+                3
+              </div>
               <span>Create products in Printify dashboard</span>
             </div>
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm mr-3">4</div>
+              <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm mr-3">
+                4
+              </div>
               <span>Update product mapping in webhook</span>
             </div>
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-gray-400 rounded-full flex items-center justify-center text-white text-sm mr-3">5</div>
+              <div className="w-6 h-6 bg-gray-400 rounded-full flex items-center justify-center text-white text-sm mr-3">
+                5
+              </div>
               <span>Set up Stripe webhook endpoint</span>
             </div>
           </div>
@@ -171,7 +181,7 @@ export default function PrintifyAdminPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {products.map((product) => (
+                  {products.map(product => (
                     <tr key={product.id} className="border-t">
                       <td className="px-4 py-2 font-mono text-sm">{product.id}</td>
                       <td className="px-4 py-2">{product.title}</td>
@@ -179,8 +189,8 @@ export default function PrintifyAdminPage() {
                       <td className="px-4 py-2">
                         {product.variants?.length > 0 && (
                           <span>
-                            ${Math.min(...product.variants.map(v => v.price / 100)).toFixed(2)} - 
-                            ${Math.max(...product.variants.map(v => v.price / 100)).toFixed(2)}
+                            ${Math.min(...product.variants.map(v => v.price / 100)).toFixed(2)} - $
+                            {Math.max(...product.variants.map(v => v.price / 100)).toFixed(2)}
                           </span>
                         )}
                       </td>
@@ -198,7 +208,9 @@ export default function PrintifyAdminPage() {
           {orders.length === 0 ? (
             <div className="text-center text-gray-500 py-8">
               <p>No orders found.</p>
-              <p className="text-sm mt-2">Orders will appear here after customers complete checkout.</p>
+              <p className="text-sm mt-2">
+                Orders will appear here after customers complete checkout.
+              </p>
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -213,16 +225,20 @@ export default function PrintifyAdminPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {orders.map((order) => (
+                  {orders.map(order => (
                     <tr key={order.id} className="border-t">
                       <td className="px-4 py-2 font-mono text-sm">{order.id}</td>
                       <td className="px-4 py-2 font-mono text-sm">{order.external_id}</td>
                       <td className="px-4 py-2">
-                        <span className={`px-2 py-1 rounded-full text-xs ${
-                          order.status === 'fulfilled' ? 'bg-green-100 text-green-800' :
-                          order.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-gray-100 text-gray-800'
-                        }`}>
+                        <span
+                          className={`px-2 py-1 rounded-full text-xs ${
+                            order.status === 'fulfilled'
+                              ? 'bg-green-100 text-green-800'
+                              : order.status === 'pending'
+                                ? 'bg-yellow-100 text-yellow-800'
+                                : 'bg-gray-100 text-gray-800'
+                          }`}
+                        >
                           {order.status}
                         </span>
                       </td>
@@ -240,4 +256,4 @@ export default function PrintifyAdminPage() {
       </div>
     </div>
   )
-} 
+}

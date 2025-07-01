@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import React, { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import React, { useState, useEffect } from 'react'
+import { Button } from '@/components/ui/button'
 
 interface NewsletterSignupProps {
   source: 'homepage' | 'gear' | 'apparel' | 'accessories' | 'about'
@@ -10,11 +10,11 @@ interface NewsletterSignupProps {
   className?: string
 }
 
-export default function NewsletterSignup({ 
-  source, 
-  placeholder = "Enter your email", 
-  buttonText = "SIGN UP",
-  className = ""
+export default function NewsletterSignup({
+  source,
+  placeholder = 'Enter your email',
+  buttonText = 'SIGN UP',
+  className = '',
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -24,7 +24,7 @@ export default function NewsletterSignup({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!email.trim()) {
       setMessage('Please enter your email address')
       setIsSuccess(false)
@@ -50,7 +50,7 @@ export default function NewsletterSignup({
         },
         body: JSON.stringify({
           email: email.trim(),
-          source
+          source,
         }),
       })
 
@@ -59,13 +59,13 @@ export default function NewsletterSignup({
       }
 
       const result = await response.json()
-      
+
       if (result.success) {
         setMessage(result.message)
         setIsSuccess(true)
         setShowAnimation(true)
         setEmail('') // Clear the form
-        
+
         // Hide animation after 3 seconds
         setTimeout(() => {
           setShowAnimation(false)
@@ -74,7 +74,6 @@ export default function NewsletterSignup({
         setMessage(result.error || 'Failed to subscribe')
         setIsSuccess(false)
       }
-
     } catch (error) {
       console.error('Newsletter signup error:', error)
       setMessage('There was an error. Please try again.')
@@ -90,21 +89,21 @@ export default function NewsletterSignup({
       {showAnimation && (
         <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
           <div className="animate-bounce bg-green-500 rounded-full p-4 shadow-lg">
-            <svg 
-              className="w-8 h-8 text-white animate-pulse" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-8 h-8 text-white animate-pulse"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={3} 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
                 d="M5 13l4 4L19 7"
               />
             </svg>
           </div>
-          
+
           {/* Celebration particles */}
           <div className="absolute inset-0 pointer-events-none">
             {[...Array(8)].map((_, i) => (
@@ -115,7 +114,7 @@ export default function NewsletterSignup({
                   left: `${20 + Math.random() * 60}%`,
                   top: `${20 + Math.random() * 60}%`,
                   animationDelay: `${Math.random() * 0.5}s`,
-                  animationDuration: `${0.8 + Math.random() * 0.4}s`
+                  animationDuration: `${0.8 + Math.random() * 0.4}s`,
                 }}
               />
             ))}
@@ -123,8 +122,8 @@ export default function NewsletterSignup({
         </div>
       )}
 
-      <form 
-        onSubmit={handleSubmit} 
+      <form
+        onSubmit={handleSubmit}
         className={`flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto transition-all duration-300 ${
           showAnimation ? 'scale-105 opacity-90' : 'scale-100 opacity-100'
         }`}
@@ -132,17 +131,17 @@ export default function NewsletterSignup({
         <input
           type="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
           placeholder={placeholder}
           disabled={isSubmitting || showAnimation}
           className="flex-1 px-6 py-4 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all disabled:opacity-50"
         />
-        <Button 
+        <Button
           type="submit"
           disabled={isSubmitting || showAnimation}
           className={`font-bold px-8 py-4 shadow-lg transition-all disabled:opacity-50 ${
-            isSuccess && showAnimation 
-              ? 'bg-green-500 hover:bg-green-600 text-white shadow-green-500/20 hover:shadow-green-500/30' 
+            isSuccess && showAnimation
+              ? 'bg-green-500 hover:bg-green-600 text-white shadow-green-500/20 hover:shadow-green-500/30'
               : 'bg-cyan-500 hover:bg-cyan-600 text-slate-950 shadow-cyan-500/20 hover:shadow-cyan-500/30'
           }`}
         >
@@ -153,16 +152,16 @@ export default function NewsletterSignup({
             </div>
           ) : showAnimation ? (
             <div className="flex items-center gap-2">
-              <svg 
-                className="w-4 h-4 animate-pulse" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-4 h-4 animate-pulse"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
                   d="M5 13l4 4L19 7"
                 />
               </svg>
@@ -173,14 +172,16 @@ export default function NewsletterSignup({
           )}
         </Button>
       </form>
-      
+
       {message && (
-        <div className={`mt-4 text-center text-sm transition-all duration-300 ${
-          isSuccess ? 'text-green-400 animate-pulse' : 'text-red-400'
-        }`}>
+        <div
+          className={`mt-4 text-center text-sm transition-all duration-300 ${
+            isSuccess ? 'text-green-400 animate-pulse' : 'text-red-400'
+          }`}
+        >
           {message}
         </div>
       )}
     </div>
   )
-} 
+}

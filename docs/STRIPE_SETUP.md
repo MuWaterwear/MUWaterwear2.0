@@ -18,7 +18,7 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
 1. **Create a Stripe Account**: Go to [stripe.com](https://stripe.com) and sign up
 2. **Access Dashboard**: Log into your [Stripe Dashboard](https://dashboard.stripe.com)
-3. **Get API Keys**: 
+3. **Get API Keys**:
    - Go to Developers → API Keys
    - Copy the **Publishable key** (starts with `pk_test_`) → Use for `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
    - Copy the **Secret key** (starts with `sk_test_`) → Use for `STRIPE_SECRET_KEY`
@@ -44,6 +44,7 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ## Testing
 
 Use Stripe's test card numbers:
+
 - **Success**: `4242 4242 4242 4242`
 - **Declined**: `4000 0000 0000 0002`
 - **Requires Authentication**: `4000 0025 0000 3155`
@@ -58,4 +59,4 @@ Use Stripe's test card numbers:
 ---
 
 **Built for water. Forged for legends.**
-*MU Waterwear - Premium water sports gear with secure checkout* 
+_MU Waterwear - Premium water sports gear with secure checkout_

@@ -1,0 +1,621 @@
+[
+  {
+    "id": "gear-cascade-backpack-portland",
+    "name": "Cascade Backpack Portland Gear",
+    "category": "packs",
+    "description": "Premium cascade backpack designed for extended outdoor adventures",
+    "price": 129,
+    "images": [
+      "/images/gear/Cascade-Backpack-PORTLAND-GEAR/BLACK.png",
+      "/images/gear/Cascade-Backpack-PORTLAND-GEAR/BEIGE.png",
+      "/images/gear/Cascade-Backpack-PORTLAND-GEAR/GREEN.png",
+      "/images/gear/Cascade-Backpack-PORTLAND-GEAR/2.png",
+      "/images/gear/Cascade-Backpack-PORTLAND-GEAR/3.png",
+      "/images/gear/Cascade-Backpack-PORTLAND-GEAR/4.png",
+      "/images/gear/Cascade-Backpack-PORTLAND-GEAR/5.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Beige",
+        "hex": "#D2B48C"
+      },
+      {
+        "name": "Green",
+        "hex": "#22C55E"
+      }
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-cascade-backpack-compact",
+    "name": "Cascade Backpack Compact",
+    "category": "packs",
+    "description": "Compact cascade backpack perfect for day trips and light hiking",
+    "price": 89,
+    "images": [
+      "/images/gear/CASCADE-BACKPACK-COMPACT/BLACK.png",
+      "/images/gear/CASCADE-BACKPACK-COMPACT/SIZE-COMPARE.png",
+      "/images/gear/CASCADE-BACKPACK-COMPACT/FOG.png",
+      "/images/gear/CASCADE-BACKPACK-COMPACT/NAVY.png",
+      "/images/gear/CASCADE-BACKPACK-COMPACT/ROSE.png",
+      "/images/gear/CASCADE-BACKPACK-COMPACT/CREAM.png",
+      "/images/gear/CASCADE-BACKPACK-COMPACT/CLOUD.png",
+      "/images/gear/CASCADE-BACKPACK-COMPACT/BLUSH.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Fog",
+        "hex": "#9CA3AF"
+      },
+      {
+        "name": "Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Rose",
+        "hex": "#F43F5E"
+      },
+      {
+        "name": "Cream",
+        "hex": "#FEF3C7"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#E5E7EB"
+      },
+      {
+        "name": "Blush",
+        "hex": "#FCA5A5"
+      }
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-cascade-duffle-bag",
+    "name": "Cascade Duffle Bag",
+    "category": "packs",
+    "description": "Large capacity duffle bag for extended trips and gear storage",
+    "price": 99,
+    "images": [
+      "/images/gear/CASCADE-DUFFLE-BAG/BLACK.png",
+      "/images/gear/CASCADE-DUFFLE-BAG/BLUSH.png",
+      "/images/gear/CASCADE-DUFFLE-BAG/CREAM.png",
+      "/images/gear/CASCADE-DUFFLE-BAG/FOG.png",
+      "/images/gear/CASCADE-DUFFLE-BAG/NAVY.png",
+      "/images/gear/CASCADE-DUFFLE-BAG/SKY.png",
+      "/images/gear/CASCADE-DUFFLE-BAG/7.png",
+      "/images/gear/CASCADE-DUFFLE-BAG/8.png",
+      "/images/gear/CASCADE-DUFFLE-BAG/9.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Blush",
+        "hex": "#FCA5A5"
+      },
+      {
+        "name": "Cream",
+        "hex": "#FEF3C7"
+      },
+      {
+        "name": "Fog",
+        "hex": "#9CA3AF"
+      },
+      {
+        "name": "Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Sky",
+        "hex": "#87CEEB"
+      }
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-cascade-crossbody-bag",
+    "name": "Cascade Crossbody Bag",
+    "category": "packs",
+    "description": "Versatile crossbody bag for everyday carry and light adventures",
+    "price": 49,
+    "images": [
+      "/images/gear/Cascade Crossbody Bag/BLACK.png",
+      "/images/gear/Cascade Crossbody Bag/BLUSH.png",
+      "/images/gear/Cascade Crossbody Bag/CREAM.png",
+      "/images/gear/Cascade Crossbody Bag/FOG.png",
+      "/images/gear/Cascade Crossbody Bag/NAVY.png",
+      "/images/gear/Cascade Crossbody Bag/SKY.png",
+      "/images/gear/Cascade Crossbody Bag/7.png",
+      "/images/gear/Cascade Crossbody Bag/8.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Blush",
+        "hex": "#FCA5A5"
+      },
+      {
+        "name": "Cream",
+        "hex": "#FEF3C7"
+      },
+      {
+        "name": "Fog",
+        "hex": "#9CA3AF"
+      },
+      {
+        "name": "Navy",
+        "hex": "#1E3A8A"
+      },
+      {
+        "name": "Sky",
+        "hex": "#87CEEB"
+      }
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-2025-mens-fusion-wetsuit",
+    "name": "2025 Men's Fusion Wetsuit",
+    "category": "diving",
+    "description": "High-performance men's fusion wetsuit for cold water diving",
+    "price": 449,
+    "images": [
+      "/images/gear/2025-MENS-FUSION-WETSUIT/6.png",
+      "/images/gear/2025-MENS-FUSION-WETSUIT/5.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-2025-mens-sprint-wetsuit",
+    "name": "2025 Men's Sprint Wetsuit",
+    "category": "diving",
+    "description": "Lightweight men's sprint wetsuit for warm water activities",
+    "price": 374,
+    "images": [
+      "/images/gear/2025-MENS-SPRINT-WETSUIT/1.png",
+      "/images/gear/2025-MENS-SPRINT-WETSUIT/2.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-2025-mens-thermal-wetsuit",
+    "name": "2025 Men's Thermal Wetsuit",
+    "category": "diving",
+    "description": "Thermal protection men's wetsuit for extreme cold water",
+    "price": 524,
+    "images": [
+      "/images/gear/2025-MENS-THERMAL-WETSUIT/7.png",
+      "/images/gear/2025-MENS-THERMAL-WETSUIT/8.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-2025-womens-fusion-wetsuit",
+    "name": "2025 Women's Fusion Wetsuit",
+    "category": "diving",
+    "description": "High-performance women's fusion wetsuit for cold water diving",
+    "price": 449,
+    "images": [
+      "/images/gear/2025-WOMENS-FUSION-WESUIT/3.png",
+      "/images/gear/2025-WOMENS-FUSION-WESUIT/4.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-2025-womens-sprint-wetsuit",
+    "name": "2025 Women's Sprint Wetsuit",
+    "category": "diving",
+    "description": "Lightweight women's sprint wetsuit for warm water activities",
+    "price": 374,
+    "images": [
+      "/images/gear/2025-WOMENS-SPRINT-WETSUIT/11.png",
+      "/images/gear/2025-WOMENS-SPRINT-WETSUIT/12.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-2025-womens-thermal-wetsuit",
+    "name": "2025 Women's Thermal Wetsuit",
+    "category": "diving",
+    "description": "Thermal protection women's wetsuit for extreme cold water",
+    "price": 524,
+    "images": [
+      "/images/gear/2025-WOMENS-THERMAL-WETSUIT/9.png",
+      "/images/gear/2025-WOMENS-THERMAL-WETSUIT/10.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-tusa-paragon-mask",
+    "name": "Tusa Paragon Mask - Energy Orange",
+    "category": "diving",
+    "description": "High-visibility diving mask with energy orange accents",
+    "price": 220,
+    "images": [
+      "/images/gear/Tusa Paragon Mask - Energy Orange/13.png",
+      "/images/gear/Tusa Paragon Mask - Energy Orange/14.png"
+    ],
+    "colors": [
+      {
+        "name": "Energy Orange",
+        "hex": "#EA580C"
+      }
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "featured": false
+  },
+  {
+    "id": "gear-tusa-hyflex-vesna",
+    "name": "TUSA HyFlex Vesna",
+    "category": "diving",
+    "description": "Professional diving fins with advanced HyFlex technology",
+    "price": 89,
+    "images": [
+      "/images/gear/TUSA HyFlex Vesna/Untitled design (41).png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#0891B2"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "featured": false
+  },
+  {
+    "id": "gear-obrien-valhalla-wakeboard",
+    "name": "O'Brien Valhalla Wakeboard w Access Boots 2022",
+    "category": "marine",
+    "description": "High-performance wakeboard with Access boots for advanced riders",
+    "price": 649,
+    "images": [
+      "/images/gear/O'Brien Valhalla Wakeboard w Access Boots 2022/3.png",
+      "/images/gear/O'Brien Valhalla Wakeboard w Access Boots 2022/4.png",
+      "/images/gear/O'Brien Valhalla Wakeboard w Access Boots 2022/5.png",
+      "/images/gear/O'Brien Valhalla Wakeboard w Access Boots 2022/6.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#7C3AED"
+      }
+    ],
+    "sizes": [
+      "139cm",
+      "143cm",
+      "147cm"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-havana-inflatable-sup",
+    "name": "Havana Inflatable Stand Up Paddleboard Package",
+    "category": "marine",
+    "description": "Complete inflatable SUP package with paddle, pump, and accessories",
+    "price": 399,
+    "prices": [
+      399,
+      449,
+      499
+    ],
+    "images": [
+      "/images/gear/Havana-Inflatable-Stand-Up-Paddleboard-Package/1.png",
+      "/images/gear/Havana-Inflatable-Stand-Up-Paddleboard-Package/2.png",
+      "/images/gear/Havana-Inflatable-Stand-Up-Paddleboard-Package/3.png",
+      "/images/gear/Havana-Inflatable-Stand-Up-Paddleboard-Package/4.png",
+      "/images/gear/Havana-Inflatable-Stand-Up-Paddleboard-Package/5.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#0EA5E9"
+      }
+    ],
+    "sizes": [
+      {
+        "name": "10'6\"",
+        "price": 399
+      },
+      {
+        "name": "11'0\"",
+        "price": 449
+      },
+      {
+        "name": "11'6\"",
+        "price": 499
+      }
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-high-pressure-sup",
+    "name": "High Pressure Stand Up Printed Beach Paddle Board",
+    "category": "marine",
+    "description": "High-pressure inflatable SUP with vibrant beach print design",
+    "price": 329,
+    "images": [
+      "/images/gear/High Pressure Stand Up Printed Beach Paddle Boad/1.png",
+      "/images/gear/High Pressure Stand Up Printed Beach Paddle Boad/2.png",
+      "/images/gear/High Pressure Stand Up Printed Beach Paddle Boad/3.png"
+    ],
+    "colors": [
+      {
+        "name": "Beach Print",
+        "hex": "#06B6D4"
+      }
+    ],
+    "sizes": [
+      "10'6\""
+    ],
+    "featured": false
+  },
+  {
+    "id": "gear-liquid-force-guapo-wakesurf",
+    "name": "Liquid Force Guapo Wakesurf Board",
+    "category": "marine",
+    "description": "Premium wakesurf board for intermediate to advanced riders",
+    "price": 459,
+    "images": [
+      "/images/gear/Liquid Force Guapo Wakesurf Board/2.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#EF4444"
+      }
+    ],
+    "sizes": [
+      "4'8\"",
+      "5'0\"",
+      "5'2\""
+    ],
+    "featured": false
+  },
+  {
+    "id": "gear-hyperlite-shim-wakesurf",
+    "name": "Hyperlite Shim Wakesurf Board",
+    "category": "marine",
+    "description": "Versatile wakesurf board suitable for all skill levels",
+    "price": 399,
+    "images": [
+      "/images/gear/Hyperlite Shim Wakesurf Board/1.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#10B981"
+      }
+    ],
+    "sizes": [
+      "4'6\"",
+      "4'10\"",
+      "5'2\""
+    ],
+    "featured": false
+  },
+  {
+    "id": "gear-obrien-sequence-slalom-ski",
+    "name": "O'Brien Sequence Slalom Ski w Z9 & RTS 2020",
+    "category": "marine",
+    "description": "Professional slalom water ski with Z9 binding and RTS system",
+    "price": 549,
+    "images": [
+      "/images/gear/O'Brien Sequence Slalom Ski w Z9 & RTS 2020/7.png",
+      "/images/gear/O'Brien Sequence Slalom Ski w Z9 & RTS 2020/8.png",
+      "/images/gear/O'Brien Sequence Slalom Ski w Z9 & RTS 2020/9.png"
+    ],
+    "colors": [
+      {
+        "name": "Standard",
+        "hex": "#1E40AF"
+      }
+    ],
+    "sizes": [
+      "67\"",
+      "68\"",
+      "69\""
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-hogg-20qt-cooler",
+    "name": "HOGG 20 QT Cooler",
+    "category": "storage",
+    "description": "Compact 20-quart cooler perfect for day trips and small gatherings",
+    "price": 159,
+    "images": [
+      "/images/gear/HOGG-20-QT-COOLER/WHITE.png",
+      "/images/gear/HOGG-20-QT-COOLER/CLEAR-SKY.png",
+      "/images/gear/HOGG-20-QT-COOLER/DESERT-FLOWER.png",
+      "/images/gear/HOGG-20-QT-COOLER/FROSTED-GREY.png",
+      "/images/gear/HOGG-20-QT-COOLER/MINT.png",
+      "/images/gear/HOGG-20-QT-COOLER/TAN.png",
+      "/images/gear/HOGG-20-QT-COOLER/WATERCRESS.png"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Clear Sky",
+        "hex": "#87CEEB"
+      },
+      {
+        "name": "Desert Flower",
+        "hex": "#EDC9AF"
+      },
+      {
+        "name": "Frosted Grey",
+        "hex": "#9CA3AF"
+      },
+      {
+        "name": "Mint",
+        "hex": "#98FB98"
+      },
+      {
+        "name": "Tan",
+        "hex": "#D2B48C"
+      },
+      {
+        "name": "Watercress",
+        "hex": "#9ACD32"
+      }
+    ],
+    "sizes": [
+      "20 QT"
+    ],
+    "featured": true
+  },
+  {
+    "id": "gear-hogg-35qt-cooler",
+    "name": "HOGG 35 QT Cooler",
+    "category": "storage",
+    "description": "Large 35-quart wheeled cooler for extended adventures and events",
+    "price": 219,
+    "images": [
+      "/images/gear/HOGG-35-QT-COOLER/WHITE.png",
+      "/images/gear/HOGG-35-QT-COOLER/FROSTED-GREY.png",
+      "/images/gear/HOGG-35-QT-COOLER/FROSTED-TAN.png",
+      "/images/gear/HOGG-35-QT-COOLER/HARVEST-RED.png",
+      "/images/gear/HOGG-35-QT-COOLER/8.png",
+      "/images/gear/HOGG-35-QT-COOLER/6.png",
+      "/images/gear/HOGG-35-QT-COOLER/4.png",
+      "/images/gear/HOGG-35-QT-COOLER/2.png"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Frosted Grey",
+        "hex": "#9CA3AF"
+      },
+      {
+        "name": "Frosted Tan",
+        "hex": "#D2B48C"
+      },
+      {
+        "name": "Harvest Red",
+        "hex": "#DC2626"
+      }
+    ],
+    "sizes": [
+      "35 QT"
+    ],
+    "featured": true
+  }
+]

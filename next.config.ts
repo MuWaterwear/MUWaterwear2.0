@@ -1,11 +1,16 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['api.wetmet.net', 'vauth.command.verkada.com', 'www.luckylablodge.com', 'luckylablodge.com'],
+    domains: [
+      'api.wetmet.net',
+      'vauth.command.verkada.com',
+      'www.luckylablodge.com',
+      'luckylablodge.com',
+    ],
     unoptimized: true,
   },
   async headers() {
@@ -54,7 +59,7 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-    ];
+    ]
   },
   async rewrites() {
     return [
@@ -71,9 +76,9 @@ const nextConfig: NextConfig = {
         source: '/images/:path*',
         destination: '/api/images/:path*',
       },
-    ];
+    ]
   },
   serverExternalPackages: [],
-};
+}
 
-export default nextConfig;
+export default nextConfig

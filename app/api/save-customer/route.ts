@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import connectDB from '@/lib/mongodb'
+import connectDB from '@/lib/core/database'
 import Customer from '@/lib/models/Customer'
 
 export async function POST(request: NextRequest) {
@@ -17,10 +17,7 @@ export async function POST(request: NextRequest) {
     // Validate email format
     const emailRegex = /\S+@\S+\.\S+/
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Invalid email format' }, { status: 400 })
     }
 
     // Connect to MongoDB
@@ -35,7 +32,7 @@ export async function POST(request: NextRequest) {
       customer.lastName = lastName.trim()
       customer.fullName = `${firstName.trim()} ${lastName.trim()}`
       customer.updatedAt = new Date()
-      
+
       await customer.save()
 
       console.log('Updated existing customer:', customer.email)
@@ -44,7 +41,7 @@ export async function POST(request: NextRequest) {
         success: true,
         message: 'Customer information updated',
         customerId: customer._id,
-        isNewCustomer: false
+        isNewCustomer: false,
       })
     } else {
       // Create new customer
@@ -53,7 +50,7 @@ export async function POST(request: NextRequest) {
         lastName: lastName.trim(),
         email: email.toLowerCase().trim(),
         fullName: `${firstName.trim()} ${lastName.trim()}`,
-        source: 'website_checkout'
+        source: 'website_checkout',
       })
 
       await customer.save()
@@ -64,19 +61,18 @@ export async function POST(request: NextRequest) {
         success: true,
         message: 'Customer information saved',
         customerId: customer._id,
-        isNewCustomer: true
+        isNewCustomer: true,
       })
     }
-
   } catch (error) {
     console.error('Error saving customer data:', error)
-    
+
     return NextResponse.json(
-      { 
+      {
         error: 'Failed to save customer information',
-        details: error instanceof Error ? error.message : 'Unknown error'
+        details: error instanceof Error ? error.message : 'Unknown error',
       },
       { status: 500 }
     )
   }
-} 
+}
