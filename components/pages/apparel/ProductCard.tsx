@@ -144,4 +144,14 @@ export default function ProductCard({
                       selectedColorIndex === index 
                         ? 'border-cyan-400 scale-110' 
                         : 'border-transparent hover:border-slate-600'
-                    } ${isMobile ? 'w-5 h-5 min-w-[20px] min-h-[20px]' : 'w-4 h-4'}`
+                    } ${isMobile ? 'w-5 h-5 min-w-[20px] min-h-[20px]' : 'w-4 h-4'}`}
+                  ></button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
