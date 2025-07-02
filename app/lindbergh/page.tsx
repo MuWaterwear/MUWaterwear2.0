@@ -88,7 +88,7 @@ export default function LindberghLakePage() {
   }
 
   const webcamConfig = {
-    src: 'http://www.luckylablodge.com/mjpg/video.mjpg',
+    src: '/api/webcam-proxy/mjpg/video.mjpg',
     title: 'Lindbergh Lake Live Webcam',
   }
 
