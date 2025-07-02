@@ -9,6 +9,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { ToastProvider } from '@/contexts/ToastContext'
 import { Responsive, MobileOnly, DesktopOnly } from '@/components/responsive/ResponsiveLayout'
 import ShoppingCartSidebar from '@/components/ShoppingCartSidebar'
+import MobileCartSidebar from '@/components/responsive/MobileCartSidebar'
 
 const actor = Actor({
   weight: '400',
@@ -39,6 +40,7 @@ export default function RootLayout({
                 <CartErrorNotification />
                 <GlobalMobileNav />
                 <ShoppingCartSidebar />
+                <MobileCartSidebar />
               </CartProvider>
             </SessionProvider>
           </ToastProvider>

@@ -16,7 +16,6 @@ import NavigationBar from '@/components/NavigationBar'
 import MobileNavigation from '@/components/responsive/MobileNavigation'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import { DesktopOnly, MobileOnly } from '@/components/responsive/ResponsiveLayout'
-import ResponsiveLayout from '@/components/responsive/MobileShoppingCart'
 import Footer from '@/components/Footer'
 import ExpandedImageModal from '@/components/pages/apparel/ExpandedImageModal'
 import { wetsuits, paddleBoards, bags, coolers, wakeboards } from '@/data/gear-products'
@@ -139,7 +138,7 @@ export default function GearPage() {
     setIsCartOpen(true)
   }
 
-  // Handle image click to open expanded view
+  // Handle image click to open expanded view (prevent on swipe)
   const handleImageClick = (imageSrc: string, productId: string) => {
     const product = [...bags, ...wetsuits, ...paddleBoards, ...coolers, ...wakeboards].find(p => p.id === productId)
     if (!product) return
@@ -274,7 +273,6 @@ export default function GearPage() {
   }, [])
 
   return (
-    <ResponsiveLayout>
     <div className="min-h-screen bg-slate-950 text-white">
       {/* Subtle wave background */}
       <div className="fixed inset-0 pointer-events-none">
@@ -427,11 +425,11 @@ export default function GearPage() {
                   onMouseEnter={() => setHoveredProduct(product.id)}
                   onMouseLeave={() => setHoveredProduct(null)}
                 >
-                  <div className="relative bg-slate-900/50 rounded-lg border border-slate-800/50 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full max-sm:h-auto max-sm:block sm:overflow-hidden">
+                  <div className="relative bg-slate-900/50 rounded-lg border border-slate-800/50 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full sm:overflow-hidden">
                     {/* Product Image */}
-                    <div className="relative aspect-square bg-gradient-to-b from-slate-800/50 to-slate-900/50 overflow-hidden max-sm:h-[350px] max-sm:min-h-[350px] max-sm:aspect-auto">
+                    <div className="relative aspect-square bg-gradient-to-b from-slate-800/50 to-slate-900/50 overflow-hidden sm:aspect-square">
                       <div
-                        className="absolute inset-0 cursor-pointer flex items-center justify-center max-sm:relative max-sm:h-full"
+                        className="w-full h-full cursor-pointer flex items-center justify-center"
                         onClick={() => handleImageClick(
                             product.images[currentColorIndex] || product.images[0],
                             product.id
@@ -441,7 +439,7 @@ export default function GearPage() {
                           src={product.images[currentColorIndex] || product.images[0]}
                           alt={product.name}
                           fill
-                          className="object-contain p-4 transition-transform duration-500 scale-[1.5] group-hover:scale-[1.6] sm:scale-[3] sm:group-hover:scale-[3.3] max-sm:object-contain max-sm:w-full max-sm:h-full max-sm:relative"
+                          className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-[3.5] group-hover:scale-[3.6] sm:scale-[2.5] sm:group-hover:scale-[2.7]"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           priority={false}
                         />
@@ -454,7 +452,7 @@ export default function GearPage() {
                         </div>
                       )}
 
-                      {/* Image Navigation for Multiple Images */}
+                      {/* Image Navigation for Multiple Images - Desktop Only */}
                       {hasMultipleImages && (
                         <>
                           <button
@@ -463,7 +461,7 @@ export default function GearPage() {
                               const prevIndex = currentColorIndex === 0 ? product.images.length - 1 : currentColorIndex - 1
                               setSelectedColor({ ...selectedColor, [product.id]: prevIndex })
                             }}
-                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 md:p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-20"
+                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-20 hidden sm:block"
                             aria-label="Previous image"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -477,7 +475,7 @@ export default function GearPage() {
                               const nextIndex = (currentColorIndex + 1) % product.images.length
                               setSelectedColor({ ...selectedColor, [product.id]: nextIndex })
                             }}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 md:p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-20"
+                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-20 hidden sm:block"
                             aria-label="Next image"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -485,23 +483,30 @@ export default function GearPage() {
                             </svg>
                           </button>
 
-                          {/* Image Dots */}
-                          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                          {product.images.map((_, index) => (
-                            <button
-                              key={index}
+                          {/* Image Dots - Desktop Only */}
+                          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity z-20 hidden sm:flex">
+                            {product.images.map((_, index) => (
+                              <button
+                                key={index}
                                 onClick={(e) => {
-                                e.stopPropagation()
-                                setSelectedColor({ ...selectedColor, [product.id]: index })
-                              }}
+                                  e.stopPropagation()
+                                  setSelectedColor({ ...selectedColor, [product.id]: index })
+                                }}
                                 className={`w-1.5 h-1.5 rounded-full transition-all ${
                                   currentColorIndex === index ? 'bg-white w-3' : 'bg-white/60'
                                 }`}
                                 aria-label={`View image ${index + 1}`}
-                            />
-                          ))}
-                        </div>
+                              />
+                            ))}
+                          </div>
                         </>
+                      )}
+
+                      {/* Mobile Image Counter - Show current image indicator */}
+                      {hasMultipleImages && (
+                        <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full sm:hidden">
+                          {currentColorIndex + 1}/{product.images.length}
+                        </div>
                       )}
                     </div>
 
@@ -510,15 +515,15 @@ export default function GearPage() {
                       {/* Name and Price */}
                       <div className="space-y-1 flex-1">
                         <h3 className="font-semibold text-white text-sm md:text-base line-clamp-2 max-sm:line-clamp-none">
-                              {product.name}
-                            </h3>
+                          {product.name}
+                        </h3>
                         <p className="text-xs md:text-sm text-slate-400 line-clamp-2 max-sm:line-clamp-3">
-                                {product.description}
-                              </p>
+                          {product.description}
+                        </p>
                         <div className="text-cyan-400 font-bold text-lg md:text-xl">
                           ${product.price}
-                            </div>
-                          </div>
+                        </div>
+                      </div>
 
                       {/* Colors */}
                       {product.colors && product.colors.length > 1 && (
@@ -526,36 +531,38 @@ export default function GearPage() {
                           <p className="text-xs text-slate-400 font-medium">Color:</p>
                           <div className="flex flex-wrap gap-2">
                             {product.colors.map((color, index) => (
-                            <button
+                              <button
                                 key={color.name}
                                 onClick={() => setSelectedColor({ ...selectedColor, [product.id]: index })}
-                                className={`relative group/color transition-all ${
+                                className={`relative group/color transition-all touch-manipulation ${
                                   selectedColor[product.id] === index ? 'scale-110' : ''
                                 }`}
                                 title={color.name}
+                                aria-label={`Select ${color.name} color`}
+                                aria-pressed={selectedColor[product.id] === index}
                               >
                                 <div
-                                  className={`w-8 h-8 rounded-full border-2 transition-all ${
+                                  className={`w-10 h-10 sm:w-8 sm:h-8 rounded-full border-2 transition-all ${
                                     selectedColor[product.id] === index
-                                      ? 'border-cyan-400'
+                                      ? 'border-cyan-400 shadow-lg shadow-cyan-400/25'
                                       : 'border-slate-600 hover:border-slate-400'
                                   }`}
                                   style={{ backgroundColor: color.hex }}
                                 />
                                 {selectedColor[product.id] === index && (
-                                  <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] text-cyan-400 whitespace-nowrap">
+                                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-cyan-400 whitespace-nowrap font-medium">
                                     {color.name}
-                          </div>
+                                  </div>
                                 )}
-                          </button>
+                              </button>
                             ))}
+                          </div>
                         </div>
-                            </div>
-                          )}
+                      )}
 
                       {/* Sizes */}
                       {product.sizes && product.sizes.length > 0 && (
-                              <div className="space-y-2">
+                        <div className="space-y-2">
                           <p className="text-xs text-slate-400 font-medium">Size:</p>
                           <div className="flex flex-wrap gap-2">
                             {product.sizes.map((size: any, sizeIndex: number) => {
@@ -564,7 +571,7 @@ export default function GearPage() {
                               const sizeName = isObjectSize ? size.name : size
                               const sizePrice = isObjectSize ? size.price : null
                               
-                                    return (
+                              return (
                                 <button
                                   key={sizeName}
                                   onClick={() => setSelectedSize({ ...selectedSize, [product.id]: sizeName })}
@@ -579,21 +586,21 @@ export default function GearPage() {
                                 </button>
                               )
                             })}
-                              </div>
-                              </div>
-                            )}
+                          </div>
+                        </div>
+                      )}
 
                       {/* Add to Cart Button - Always at bottom */}
-                          <button
-                            onClick={() => handleQuickAdd(product)}
+                      <button
+                        onClick={() => handleQuickAdd(product)}
                         className="w-full py-2.5 md:py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-300 text-sm md:text-base flex items-center justify-center gap-2 mt-auto"
-                          >
+                      >
                         <ShoppingCart className="w-4 h-4" />
                         {!selectedSize[product.id] && product.sizes && product.sizes.length > 0 
                           ? 'Select Size' 
                           : 'Add to Cart'}
-                          </button>
-                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               )
@@ -627,6 +634,5 @@ export default function GearPage() {
         onNavigate={navigateExpandedImage}
       />
     </div>
-    </ResponsiveLayout>
   )
 }

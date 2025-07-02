@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 border-t border-slate-800 py-16 mt-20">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           <div>
             <h4 className="font-bold mb-4 text-cyan-400">SHOP</h4>
             <ul className="space-y-2 text-slate-400">
@@ -73,16 +73,6 @@ export default function Footer() {
                 )}
               </li>
             </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-4 text-cyan-400">NEWSLETTER</h4>
-            <p className="text-slate-400 mb-4">Join the MU community for exclusive drops and updates.</p>
-            <NewsletterSignup 
-              source="apparel" 
-              placeholder="Enter email"
-              buttonText="JOIN"
-              className="w-full"
-            />
           </div>
         </div>
         
