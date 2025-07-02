@@ -1,8 +1,11 @@
 import { NextRequest } from 'next/server'
 
-export async function GET(req: NextRequest, { params }: { params: { path: string[] } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
+  // Resolve the async params object (Next.js 15)
+  const { path } = await params
+
   // Reconstruct the target URL using the path segments after /api/webcam-proxy/
-  const targetPath = params.path.join('/')
+  const targetPath = path.join('/')
   const targetUrl = `http://www.luckylablodge.com/${targetPath}`
 
   // Proxy the request to the target over HTTP
