@@ -17,8 +17,14 @@ import MobileNavigation from '@/components/responsive/MobileNavigation'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import { DesktopOnly, MobileOnly } from '@/components/responsive/ResponsiveLayout'
 import Footer from '@/components/Footer'
-import ExpandedImageModal from '@/components/pages/apparel/ExpandedImageModal'
+import dynamic from 'next/dynamic'
 import { wetsuits, paddleBoards, bags, coolers, wakeboards } from '@/data/gear-products'
+
+// Dynamically load the expanded image modal only when needed (client-side only)
+const ExpandedImageModal = dynamic(() => import('@/components/pages/apparel/ExpandedImageModal'), {
+  ssr: false,
+  loading: () => null,
+})
 
 export default function GearPage() {
   const [showContactEmail, setShowContactEmail] = useState(false)

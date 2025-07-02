@@ -6,8 +6,13 @@ import { X } from "lucide-react"
 import NavigationBar from "@/components/NavigationBar"
 import Footer from "@/components/Footer"
 import ApparelGrid from "@/components/pages/apparel/ApparelGrid"
-import ExpandedImageModal from "@/components/pages/apparel/ExpandedImageModal"
+import dynamic from 'next/dynamic'
 import { allProducts, categories, getProductsByCategory } from "@/lib/features/apparel-products"
+
+const ExpandedImageModal = dynamic(() => import('@/components/pages/apparel/ExpandedImageModal'), {
+  ssr: false,
+  loading: () => null,
+})
 
 export default function ApparelPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")

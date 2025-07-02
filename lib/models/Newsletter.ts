@@ -7,7 +7,6 @@ const NewsletterSchema = new mongoose.Schema(
       required: true,
       lowercase: true,
       trim: true,
-      index: true,
       unique: true, // Prevent duplicate email subscriptions
     },
     // Track subscription status

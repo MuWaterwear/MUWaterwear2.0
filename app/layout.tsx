@@ -8,8 +8,14 @@ import GlobalMobileNav from '@/components/responsive/GlobalMobileNav'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { ToastProvider } from '@/contexts/ToastContext'
 import { Responsive, MobileOnly, DesktopOnly } from '@/components/responsive/ResponsiveLayout'
-import ShoppingCartSidebar from '@/components/ShoppingCartSidebar'
+import dynamic from 'next/dynamic'
 import MobileCartSidebar from '@/components/responsive/MobileCartSidebar'
+
+// Load the (heavy) desktop-only cart sidebar on the client only
+const ShoppingCartSidebar = dynamic(() => import('@/components/ShoppingCartSidebar'), {
+  ssr: false,
+  loading: () => null,
+})
 
 const actor = Actor({
   weight: '400',
