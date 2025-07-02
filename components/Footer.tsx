@@ -92,6 +92,10 @@ export default function Footer() {
             <Link href="/privacy-policy" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm">
               Privacy Policy
             </Link>
+            <span className="mx-2 text-slate-600">|</span>
+            <Link href="/terms" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>

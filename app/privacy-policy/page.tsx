@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
       • Opt-out of marketing communications
       • Data portability where applicable
       
-      To exercise these rights, please contact us at privacy@muwaterwear.com`,
+      To exercise these rights, please contact us at info@muwaterwear.com`,
     },
     {
       title: 'Cookies and Tracking',
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
       content: `If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
       
       MU Waterwear
-      Email: privacy@muwaterwear.com
+      Email: info@muwaterwear.com
       Phone: 1-800-MU-WATER
       
       We aim to respond to all privacy-related inquiries within 48 hours.`,
@@ -173,7 +173,7 @@ export default function PrivacyPolicyPage() {
         title="Questions About Your Privacy?"
         description="Our team is here to help you understand how we protect your data."
         primaryButtonText="Contact Privacy Team"
-        primaryButtonHref="mailto:privacy@muwaterwear.com"
+        primaryButtonHref="mailto:info@muwaterwear.com"
         secondaryButtonText="View Terms of Service"
         secondaryButtonHref="/terms"
       />

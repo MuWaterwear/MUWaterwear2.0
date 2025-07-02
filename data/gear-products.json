@@ -374,31 +374,7 @@
     ],
     "featured": false
   },
-  {
-    "id": "gear-obrien-valhalla-wakeboard",
-    "name": "O'Brien Valhalla Wakeboard w Access Boots 2022",
-    "category": "marine",
-    "description": "High-performance wakeboard with Access boots for advanced riders",
-    "price": 649,
-    "images": [
-      "/images/gear/O'Brien Valhalla Wakeboard w Access Boots 2022/3.png",
-      "/images/gear/O'Brien Valhalla Wakeboard w Access Boots 2022/4.png",
-      "/images/gear/O'Brien Valhalla Wakeboard w Access Boots 2022/5.png",
-      "/images/gear/O'Brien Valhalla Wakeboard w Access Boots 2022/6.png"
-    ],
-    "colors": [
-      {
-        "name": "Standard",
-        "hex": "#7C3AED"
-      }
-    ],
-    "sizes": [
-      "139cm",
-      "143cm",
-      "147cm"
-    ],
-    "featured": true
-  },
+
   {
     "id": "gear-havana-inflatable-sup",
     "name": "Havana Inflatable Stand Up Paddleboard Package",
@@ -461,74 +437,9 @@
     ],
     "featured": false
   },
-  {
-    "id": "gear-liquid-force-guapo-wakesurf",
-    "name": "Liquid Force Guapo Wakesurf Board",
-    "category": "marine",
-    "description": "Premium wakesurf board for intermediate to advanced riders",
-    "price": 459,
-    "images": [
-      "/images/gear/Liquid Force Guapo Wakesurf Board/2.png"
-    ],
-    "colors": [
-      {
-        "name": "Standard",
-        "hex": "#EF4444"
-      }
-    ],
-    "sizes": [
-      "4'8\"",
-      "5'0\"",
-      "5'2\""
-    ],
-    "featured": false
-  },
-  {
-    "id": "gear-hyperlite-shim-wakesurf",
-    "name": "Hyperlite Shim Wakesurf Board",
-    "category": "marine",
-    "description": "Versatile wakesurf board suitable for all skill levels",
-    "price": 399,
-    "images": [
-      "/images/gear/Hyperlite Shim Wakesurf Board/1.png"
-    ],
-    "colors": [
-      {
-        "name": "Standard",
-        "hex": "#10B981"
-      }
-    ],
-    "sizes": [
-      "4'6\"",
-      "4'10\"",
-      "5'2\""
-    ],
-    "featured": false
-  },
-  {
-    "id": "gear-obrien-sequence-slalom-ski",
-    "name": "O'Brien Sequence Slalom Ski w Z9 & RTS 2020",
-    "category": "marine",
-    "description": "Professional slalom water ski with Z9 binding and RTS system",
-    "price": 549,
-    "images": [
-      "/images/gear/O'Brien Sequence Slalom Ski w Z9 & RTS 2020/7.png",
-      "/images/gear/O'Brien Sequence Slalom Ski w Z9 & RTS 2020/8.png",
-      "/images/gear/O'Brien Sequence Slalom Ski w Z9 & RTS 2020/9.png"
-    ],
-    "colors": [
-      {
-        "name": "Standard",
-        "hex": "#1E40AF"
-      }
-    ],
-    "sizes": [
-      "67\"",
-      "68\"",
-      "69\""
-    ],
-    "featured": true
-  },
+
+
+
   {
     "id": "gear-hogg-20qt-cooler",
     "name": "HOGG 20 QT Cooler",

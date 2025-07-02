@@ -146,7 +146,7 @@ export default function AboutPage() {
 
             {/* Lindbergh Lake */}
             <a
-              href="https://llhoa.com"
+              href="https://www.eventbrite.com/e/lindbergh-lake-waters-clean-up-tickets-1450904437229?aff=oddtdtcreator"
               target="_blank"
               rel="noopener noreferrer"
               className="relative w-32 h-40 hover:scale-105 transition-transform duration-300 group cursor-pointer"

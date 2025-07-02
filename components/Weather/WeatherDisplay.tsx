@@ -33,13 +33,14 @@ export function WeatherDisplay({
   }, [weatherData, onDataLoaded]);
 
   const handleRefresh = () => {
-    setCurrentLocation(location); // Force re-fetch
-    refetchWaterTemp(); // Also refresh water temperature
+    // Refresh logic kept for internal use (no UI button)
+    setCurrentLocation(location);
+    refetchWaterTemp();
   };
 
   if (isLoading) {
     return (
-      <Card className={`p-6 bg-gray-50 ${className}`}>
+      <Card className={`p-4 bg-gray-50 ${className}`}>
         <div className="flex items-center justify-center space-x-4 animate-pulse">
           <div className="w-full text-center">
             <div className="h-6 bg-gray-200 rounded mb-4 mx-auto w-3/4"></div>
@@ -52,7 +53,7 @@ export function WeatherDisplay({
 
   if (error) {
     return (
-      <Card className={`p-6 bg-red-50 text-red-800 ${className}`}>
+      <Card className={`p-4 bg-red-50 text-red-800 ${className}`}>
         <div className="text-center">
           <h3 className="text-lg font-semibold mb-2">Weather Data Unavailable</h3>
           <p className="mb-4">{error}</p>
@@ -70,7 +71,7 @@ export function WeatherDisplay({
 
   if (!weatherData) {
     return (
-      <Card className={`p-6 bg-gray-50 ${className}`}>
+      <Card className={`p-4 bg-gray-50 ${className}`}>
         <div className="text-center text-gray-500">
           No weather data available
         </div>
@@ -79,7 +80,7 @@ export function WeatherDisplay({
   }
 
   return (
-    <Card className={`p-6 bg-white shadow-md ${className}`}>
+    <Card className={`p-4 bg-white shadow-md ${className}`}>
       <div className="flex flex-col space-y-4">
         {/* Location and Condition */}
         <div className="flex items-center justify-between">
@@ -165,19 +166,10 @@ export function WeatherDisplay({
           </div>
         </div>
         
-        {/* Footer */}
-        <div className="flex justify-between items-center border-t pt-2 mt-2">
-          <p className="text-xs text-muted-foreground">
-            Last updated: {weatherData.current.last_updated}
-          </p>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            onClick={handleRefresh}
-          >
-            Refresh
-          </Button>
-        </div>
+        {/* Last Updated */}
+        <p className="text-xs text-muted-foreground text-right">
+          Last updated: {weatherData.current.last_updated}
+        </p>
       </div>
     </Card>
   );

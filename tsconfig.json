@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
+      "@/components/*": ["./components/*"],
       "@/lib/core/*": ["./lib/core/*"],
       "@/lib/features/*": ["./lib/features/*"],
       "@/lib/integrations/*": ["./lib/integrations/*"],

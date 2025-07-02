@@ -17,7 +17,7 @@ export default function WeatherWebcamSection({ location, webcamSrc, webcamTitle,
       {/* Desktop: show weather and webcam side by side */}
       <DesktopOnly>
         <div className="grid grid-cols-2 gap-8">
-          <WeatherDisplay location={location} lakemonsterUrl={lakemonsterUrl} className="shadow-lg bg-slate-800 border-slate-700" />
+          <WeatherDisplay location={location} lakemonsterUrl={lakemonsterUrl} className="shadow-lg bg-slate-800 border-slate-700 self-start h-auto" />
           <div className="w-full h-full rounded-lg overflow-hidden">
             {/* Webcam Wrapper with 4:3 aspect ratio for better visibility */}
             <div className="w-full rounded-lg overflow-hidden relative pb-[75%]">{/* 4/3 */}

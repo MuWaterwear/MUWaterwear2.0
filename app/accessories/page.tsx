@@ -568,7 +568,7 @@ export default function AccessoriesPage() {
             willChange: 'transform',
           }}
         >
-          <source src="/videos/gear.mp4" type="video/mp4" />
+          <source src="/videos/accessories-background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950" />
