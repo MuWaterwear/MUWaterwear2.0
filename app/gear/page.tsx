@@ -445,7 +445,7 @@ export default function GearPage() {
                           src={product.images[currentColorIndex] || product.images[0]}
                           alt={product.name}
                           fill
-                          className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-[3.5] group-hover:scale-[3.6] sm:scale-[2.5] sm:group-hover:scale-[2.7]"
+                          className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-100 group-hover:scale-105 sm:scale-100 sm:group-hover:scale-110"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           priority={false}
                         />

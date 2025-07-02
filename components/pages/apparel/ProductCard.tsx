@@ -73,7 +73,9 @@ export default function ProductCard({
             <Image
               src={featuredImage}
               alt={product.name}
-              fill
+              width={400}
+              height={400}
+              quality={75}
               className={`transition-transform duration-500 pointer-events-none ${
                 product.id === 'uv-mu-paddleboard' 
                   ? 'object-cover scale-150 group-hover:scale-[1.7]' 
@@ -83,7 +85,8 @@ export default function ProductCard({
                   ? 'object-cover scale-100 group-hover:scale-[1.2]'
                   : 'object-cover group-hover:scale-110'
               }`}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+              placeholder="blur"
             />
           </div>
           
@@ -141,96 +144,4 @@ export default function ProductCard({
                       selectedColorIndex === index 
                         ? 'border-cyan-400 scale-110' 
                         : 'border-transparent hover:border-slate-600'
-                    } ${isMobile ? 'w-5 h-5 min-w-[20px] min-h-[20px]' : 'w-4 h-4'}`}
-                    style={{ backgroundColor: color.hex }}
-                    title={color.name}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Size Selection & Add to Cart */}
-          <div className={`space-y-2 ${isMobile ? 'pt-1' : 'pt-1'}`}>
-            {/* Size Selection */}
-            <div className="flex flex-wrap gap-1">
-              {product.sizes.map((size) => (
-                <button
-                  key={size}
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    onSizeChange(size)
-                  }}
-                  className={`px-2 py-1 rounded transition-all ${
-                    selectedSize === size
-                      ? 'bg-cyan-500 text-slate-950 font-medium'
-                      : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-                  } ${isMobile ? 'text-xs min-w-[28px] min-h-[28px] flex items-center justify-center' : 'text-xs'}`}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
-
-            {/* Action Buttons */}
-            <div className={`flex gap-2 ${isMobile ? 'gap-1' : ''}`}>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation()
-                  if (!selectedSize) {
-                    alert('Please select a size first')
-                    return
-                  }
-                  onQuickAdd(product)
-                }}
-                disabled={!selectedSize}
-                className={`flex-1 bg-slate-800 hover:bg-cyan-500 text-white hover:text-slate-950 rounded font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${
-                  isMobile ? 'py-2.5 text-xs' : 'py-2 text-sm'
-                }`}
-              >
-                {selectedSize ? 'Add to Cart' : 'Select Size'}
-              </button>
-              {!isMobile && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    onToggleDetails()
-                  }}
-                  className="px-3 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded text-sm font-medium transition-all duration-200"
-                >
-                  {expandedDetails ? '↑' : '↓'}
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* Expanded Details - Desktop only */}
-          {expandedDetails && !isMobile && (
-            <div className="px-4 pb-4 border-t border-slate-700/50 mt-3 pt-3 space-y-3">
-              <div>
-                <h4 className="text-sm font-medium text-cyan-400 mb-2">Details</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  {product.description || "Premium quality apparel designed for water sports enthusiasts. Made with performance materials for comfort and durability."}
-                </p>
-              </div>
-              
-              {product.featuresList && (
-                <div>
-                  <h4 className="text-sm font-medium text-cyan-400 mb-2">Features</h4>
-                  <ul className="text-xs text-slate-300 space-y-1">
-                    {product.featuresList.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <span className="text-cyan-400 mt-0.5">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
+                    } ${isMobile ? 'w-5 h-5 min-w-[20px] min-h-[20px]' : 'w-4 h-4'}`
