@@ -7,7 +7,6 @@ import Image, { ImageProps } from 'next/image'
 export const FadeImage = (props: ImageProps) => (
   <Image
     {...props}
-    placeholder="blur"
     className={`${props.className ?? ''} opacity-0 animate-fadeIn`} // Tailwind animate-fadeIn declared in config
   />
 ) 

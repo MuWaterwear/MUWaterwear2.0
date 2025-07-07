@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useCart } from "@/contexts/CartContext"
-import ProductCard from "@/components/pages/apparel/ProductCard"
+import UnifiedProductCard from "@/components/shared/UnifiedProductCard"
 import { Product } from "@/lib/features/apparel-products"
 import { useMobile } from "@/hooks/useMobile"
 
@@ -51,6 +51,19 @@ export default function ApparelGrid({
     setIsCartOpen(true)
   }
 
+  // Type-safe wrapper for unified product card
+  const handleUnifiedQuickAdd = (unifiedProduct: any) => {
+    const product = unifiedProduct as Product
+    handleQuickAdd(product)
+  }
+
+  // Helper function to map color index to correct image index for special products
+  const getImageIndexForColor = (product: any, colorIndex: number) => {
+    // Add special handling for products with non-standard image arrays
+    // Currently no apparel products need this, but keeping for consistency
+    return colorIndex
+  }
+
   const toggleDetails = (productId: string) => {
     setExpandedDetails(expandedDetails === productId ? null : productId)
   }
@@ -68,19 +81,23 @@ export default function ApparelGrid({
                   key={product.id}
                   className={`${isFullWidth ? 'col-span-2' : 'col-span-1'} relative transform transition-all duration-300`}
                 >
-                  <ProductCard
+                  <UnifiedProductCard
                     key={product.id}
                     product={product}
-                    onQuickAdd={handleQuickAdd}
+                    variant="apparel"
+                    onQuickAdd={handleUnifiedQuickAdd}
                     onImageClick={onImageClick}
                     selectedSize={selectedSize[product.id] || ''}
                     selectedColorIndex={selectedColor[product.id] || 0}
-                    onSizeChange={(size) => setSelectedSize({ ...selectedSize, [product.id]: size })}
-                    onColorChange={(index) => handleColorChange(product.id, index)}
+                    onSizeChange={(size: string) => setSelectedSize({ ...selectedSize, [product.id]: size })}
+                    onColorChange={(index: number) => handleColorChange(product.id, index)}
                     expandedDetails={expandedDetails === product.id}
                     onToggleDetails={() => toggleDetails(product.id)}
                     isFullWidth={isFullWidth}
                     isMobile={isMobile}
+                    showImageNavigation={true}
+                    imageScale={150}
+                    getImageIndexForColor={getImageIndexForColor}
                   />
                 </div>
               );
@@ -90,18 +107,22 @@ export default function ApparelGrid({
           // Desktop Layout
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {products.map((product) => (
-              <ProductCard
+              <UnifiedProductCard
                 key={product.id}
                 product={product}
-                onQuickAdd={handleQuickAdd}
+                variant="apparel"
+                onQuickAdd={handleUnifiedQuickAdd}
                 onImageClick={onImageClick}
                 selectedSize={selectedSize[product.id] || ''}
                 selectedColorIndex={selectedColor[product.id] || 0}
-                onSizeChange={(size) => setSelectedSize({ ...selectedSize, [product.id]: size })}
-                onColorChange={(index) => handleColorChange(product.id, index)}
+                onSizeChange={(size: string) => setSelectedSize({ ...selectedSize, [product.id]: size })}
+                onColorChange={(index: number) => handleColorChange(product.id, index)}
                 expandedDetails={expandedDetails === product.id}
                 onToggleDetails={() => toggleDetails(product.id)}
                 isMobile={false}
+                showImageNavigation={true}
+                imageScale={150}
+                getImageIndexForColor={getImageIndexForColor}
               />
             ))}
           </div>

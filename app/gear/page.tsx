@@ -85,6 +85,18 @@ export default function GearPage() {
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
 
+  // Helper function to map color index to correct image index for Cascade Backpack Compact
+  const getImageIndexForColor = (product: any, colorIndex: number) => {
+    if (product.id === 'gear-cascade-backpack-compact') {
+      // For Cascade Backpack Compact, skip the SIZE-COMPARE image at index 1
+      // Images: [BLACK, SIZE-COMPARE, FOG, NAVY, ROSE, CREAM, CLOUD, BLUSH]
+      // Colors: [Black, Fog, Navy, Rose, Cream, Cloud, Blush]
+      if (colorIndex === 0) return 0 // Black -> BLACK.png
+      return colorIndex + 1 // Skip SIZE-COMPARE, so Fog(1) -> FOG.png(2), etc.
+    }
+    return colorIndex
+  }
+
   // Filter products based on selected category
   const filteredProducts =
     selectedCategory === 'all'
@@ -137,7 +149,7 @@ export default function GearPage() {
       name: `${product.name} - ${colorName}${product.id === 'gear-havana-inflatable-sup' ? ` - ${sizeName}` : product.id === 'gear-2025-mens-sprint-wetsuit' || product.id === 'gear-2025-womens-fusion-wetsuit' || product.id === 'gear-2025-mens-fusion-wetsuit' || product.id === 'gear-2025-mens-thermal-wetsuit' || product.id === 'gear-2025-womens-thermal-wetsuit' ? ` - Size ${sizeName}` : ''}`,
       price: `$${itemPrice}`,
       size: product.id === 'gear-havana-inflatable-sup' ? sizeName : size,
-      image: product.images[colorIndex] || product.images[0],
+      image: product.images[getImageIndexForColor(product, colorIndex)] || product.images[0],
     }
 
     addToCart(cartItem)
@@ -421,6 +433,7 @@ export default function GearPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-fr max-sm:auto-rows-auto">
             {filteredProducts.map(product => {
               const currentColorIndex = selectedColor[product.id] || 0
+              const currentImageIndex = getImageIndexForColor(product, currentColorIndex)
               const isHovered = hoveredProduct === product.id
               const hasMultipleImages = product.images.length > 1
 
@@ -437,15 +450,15 @@ export default function GearPage() {
                       <div
                         className="w-full h-full cursor-pointer flex items-center justify-center"
                         onClick={() => handleImageClick(
-                            product.images[currentColorIndex] || product.images[0],
+                            product.images[currentImageIndex] || product.images[0],
                             product.id
                         )}
                       >
                         <Image
-                          src={product.images[currentColorIndex] || product.images[0]}
+                          src={product.images[currentImageIndex] || product.images[0]}
                           alt={product.name}
                           fill
-                          className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-100 group-hover:scale-105 sm:scale-100 sm:group-hover:scale-110"
+                          className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-[3] group-hover:scale-[3.1] sm:scale-[3] sm:group-hover:scale-[3.1]"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           priority={false}
                         />
@@ -499,7 +512,7 @@ export default function GearPage() {
                                   setSelectedColor({ ...selectedColor, [product.id]: index })
                                 }}
                                 className={`w-1.5 h-1.5 rounded-full transition-all ${
-                                  currentColorIndex === index ? 'bg-white w-3' : 'bg-white/60'
+                                  currentImageIndex === index ? 'bg-white w-3' : 'bg-white/60'
                                 }`}
                                 aria-label={`View image ${index + 1}`}
                               />
@@ -511,7 +524,7 @@ export default function GearPage() {
                       {/* Mobile Image Counter - Show current image indicator */}
                       {hasMultipleImages && (
                         <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full sm:hidden">
-                          {currentColorIndex + 1}/{product.images.length}
+                          {currentImageIndex + 1}/{product.images.length}
                         </div>
                       )}
                     </div>
