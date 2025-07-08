@@ -174,20 +174,7 @@ export default function MobileCartSidebar() {
           isCartOpen && isAnimating ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        {/* Status Bar */}
-        <div className="flex justify-between items-center px-4 py-1 text-xs text-gray-400 bg-black">
-          <span>9:41</span>
-          <div className="flex items-center gap-1">
-            <div className="flex gap-1">
-              <div className="w-1 h-3 bg-white rounded-sm"></div>
-              <div className="w-1 h-3 bg-white rounded-sm"></div>
-              <div className="w-1 h-3 bg-white rounded-sm"></div>
-              <div className="w-1 h-3 bg-gray-600 rounded-sm"></div>
-            </div>
-            <span className="ml-1">📶</span>
-            <span>🔋</span>
-          </div>
-        </div>
+
 
         {/* Cart Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-800 bg-gray-950">
