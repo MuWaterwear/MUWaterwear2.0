@@ -22,6 +22,8 @@ import { DesktopOnly, MobileOnly } from '@/components/responsive/ResponsiveLayou
 import MobileProductGrid from '@/components/responsive/MobileProductGrid'
 import Footer from '@/components/Footer'
 import ProductCard from '@/components/Product/ProductCard'
+import OptimizedImage from '@/components/ui/optimized-image'
+import { preloadProductImages } from '@/lib/core/image-preloader'
 
 export default function AccessoriesPage() {
   const [showContactEmail, setShowContactEmail] = useState(false)
@@ -386,6 +388,19 @@ export default function AccessoriesPage() {
           )
         : allProducts.filter(p => p.category === selectedCategory)
 
+  // Preload critical images for better performance
+  useEffect(() => {
+    const preloadCriticalImages = async () => {
+      try {
+        await preloadProductImages(filteredProducts, 8)
+      } catch (error) {
+        console.warn('Failed to preload product images:', error)
+      }
+    }
+    
+    preloadCriticalImages()
+  }, [filteredProducts])
+
   const handleQuickAdd = (product: any) => {
     const size = selectedSize[product.id] || product.sizes[Math.floor(product.sizes.length / 2)]
     const colorIndex = selectedColor[product.id] || 0
@@ -652,9 +667,10 @@ export default function AccessoriesPage() {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {filteredProducts.map(product => {
+            {filteredProducts.map((product, index) => {
               const currentColorIndex = selectedColor[product.id] || 0
               const isHovered = hoveredProduct === product.id
+              const isAboveFold = index < 8 // First 8 products are likely above the fold
 
               return (
                 <div
@@ -674,12 +690,12 @@ export default function AccessoriesPage() {
                     <div className="relative aspect-square overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50">
                       {/* Hero Background SVG behind product image */}
                       <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
-                        <Image
+                        <OptimizedImage
                           src="/Untitled design (68).svg"
                           alt="Background"
                           fill
                           className="object-cover"
-                          style={{ transform: 'scale(4)' }}
+                          priority={false}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
@@ -694,7 +710,7 @@ export default function AccessoriesPage() {
                           )
                         }}
                       >
-                        <Image
+                        <OptimizedImage
                           src={product.images[currentColorIndex] || product.images[0]}
                           alt={product.name}
                           fill
@@ -703,6 +719,8 @@ export default function AccessoriesPage() {
                               ? 'object-cover scale-[0.7] group-hover:scale-[0.85]'
                               : 'object-contain scale-[0.7] group-hover:scale-[0.85]'
                           }`}
+                          priority={isAboveFold}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
 
@@ -865,7 +883,7 @@ export default function AccessoriesPage() {
                 onMouseLeave={handleMouseUp}
                 style={{ cursor: imageZoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default' }}
               >
-                <Image
+                <OptimizedImage
                   src={currentFeaturedImage || '/placeholder.svg'}
                   alt="Expanded Product"
                   width={800}
@@ -875,11 +893,8 @@ export default function AccessoriesPage() {
                       ? 'max-h-[98vh] min-h-[80vh]'
                       : 'max-h-[90vh]'
                   }`}
-                  style={{
-                    transform: `scale(${expandedProductId === 'supplement-magnesium-zinc' ? imageZoom * 1.5 : imageZoom}) translate(${imagePosition.x / imageZoom}px, ${imagePosition.y / imageZoom}px)`,
-                    transformOrigin: 'center center',
-                  }}
-                  draggable={false}
+                  priority={true}
+                  sizes="(max-width: 768px) 100vw, 80vw"
                 />
               </div>
 
