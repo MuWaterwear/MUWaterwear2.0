@@ -45,7 +45,7 @@
     "colors": [
       {
         "name": "Bay",
-        "hex": "#7DD3FC"
+        "hex": "#A3B1A5"
       },
       {
         "name": "Black",
@@ -53,23 +53,23 @@
       },
       {
         "name": "Boysenberry",
-        "hex": "#888888"
+        "hex": "#553A50"
       },
       {
         "name": "Island Reef",
-        "hex": "#888888"
+        "hex": "#B2E2D0"
       },
       {
         "name": "Ivory",
-        "hex": "#F3F4F6"
+        "hex": "#FFFFF0"
       },
       {
         "name": "Lagoon Blue",
-        "hex": "#888888"
+        "hex": "#4CBBB9"
       },
       {
         "name": "Seafoam",
-        "hex": "#888888"
+        "hex": "#C1E3D0"
       }
     ],
     "sizes": [
@@ -207,16 +207,8 @@
     ],
     "colors": [
       {
-        "name": "6859da5647695",
-        "hex": "#888888"
-      },
-      {
-        "name": "Image (1)",
-        "hex": "#888888"
-      },
-      {
-        "name": "Image (2)",
-        "hex": "#888888"
+        "name": "Light Blue",
+        "hex": "#7DD3FC"
       }
     ],
     "sizes": [
@@ -248,36 +240,8 @@
     ],
     "colors": [
       {
-        "name": "685af42d8e1b4",
-        "hex": "#888888"
-      },
-      {
-        "name": "685af42d8dfb2",
-        "hex": "#888888"
-      },
-      {
-        "name": "685af42d8e12a",
-        "hex": "#888888"
-      },
-      {
-        "name": "685af42d8e2dd",
-        "hex": "#888888"
-      },
-      {
-        "name": "685af42d8e089",
-        "hex": "#888888"
-      },
-      {
-        "name": "685af42d8e370",
-        "hex": "#888888"
-      },
-      {
-        "name": "First",
-        "hex": "#888888"
-      },
-      {
-        "name": "Second",
-        "hex": "#888888"
+        "name": "Ocean Green",
+        "hex": "#059669"
       }
     ],
     "sizes": [
@@ -303,12 +267,8 @@
     ],
     "colors": [
       {
-        "name": "18",
-        "hex": "#888888"
-      },
-      {
-        "name": "19",
-        "hex": "#888888"
+        "name": "Ocean Green",
+        "hex": "#059669"
       }
     ],
     "sizes": [
@@ -337,16 +297,8 @@
     ],
     "colors": [
       {
-        "name": "(2)",
-        "hex": "#888888"
-      },
-      {
-        "name": "Default",
-        "hex": "#888888"
-      },
-      {
-        "name": "Side",
-        "hex": "#888888"
+        "name": "Red Tide",
+        "hex": "#DC2626"
       }
     ],
     "sizes": [
@@ -371,8 +323,8 @@
     ],
     "colors": [
       {
-        "name": "Default",
-        "hex": "#888888"
+        "name": "Red Tide",
+        "hex": "#DC2626"
       }
     ],
     "sizes": [
@@ -404,36 +356,8 @@
     ],
     "colors": [
       {
-        "name": "6859d4903b92c",
-        "hex": "#888888"
-      },
-      {
-        "name": "6859d4903b767",
-        "hex": "#888888"
-      },
-      {
-        "name": "6859d4903b8a0",
-        "hex": "#888888"
-      },
-      {
-        "name": "6859d4903ba37",
-        "hex": "#888888"
-      },
-      {
-        "name": "6859d4903b7fd",
-        "hex": "#888888"
-      },
-      {
-        "name": "6859d4903babb",
-        "hex": "#888888"
-      },
-      {
-        "name": "First Featured Image",
-        "hex": "#888888"
-      },
-      {
-        "name": "Second Featured Image",
-        "hex": "#888888"
+        "name": "Sky Blue",
+        "hex": "#38BDF8"
       }
     ],
     "sizes": [
@@ -459,12 +383,8 @@
     ],
     "colors": [
       {
-        "name": "15",
-        "hex": "#888888"
-      },
-      {
-        "name": "16",
-        "hex": "#888888"
+        "name": "Sky Blue",
+        "hex": "#38BDF8"
       }
     ],
     "sizes": [
@@ -727,16 +647,12 @@
     ],
     "colors": [
       {
-        "name": "Side",
-        "hex": "#888888"
-      },
-      {
         "name": "Ivory",
         "hex": "#F3F4F6"
       },
       {
-        "name": "Blue",
-        "hex": "#888888"
+        "name": "Ocean Blue",
+        "hex": "#0EA5E9"
       },
       {
         "name": "Salmon",
@@ -868,21 +784,20 @@
     "images": [
       "/images/APPAREL/CDA-APPAREL/CDA-SWIM-LONG-SLEEVE-SHIRT/Dark-Green.png",
       "/images/APPAREL/CDA-APPAREL/CDA-SWIM-LONG-SLEEVE-SHIRT/Light-Blue.png",
-      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-LONG-SLEEVE-SHIRT/Ocean-Blue-Backside.png",
       "/images/APPAREL/CDA-APPAREL/CDA-SWIM-LONG-SLEEVE-SHIRT/Sea-Green.png"
     ],
     "colors": [
       {
-        "name": "Green",
-        "hex": "#16A34A"
+        "name": "Dark Green",
+        "hex": "#166534"
       },
       {
-        "name": "Blue",
-        "hex": "#888888"
+        "name": "Light Blue",
+        "hex": "#7DD3FC"
       },
       {
-        "name": "Side",
-        "hex": "#888888"
+        "name": "Sea Green",
+        "hex": "#059669"
       }
     ],
     "sizes": [
@@ -905,25 +820,20 @@
     "images": [
       "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Midnight-Blue.png",
       "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Red.png",
-      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Green.png",
-      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Red-Backside.png"
+      "/images/APPAREL/CDA-APPAREL/CDA-SWIM-TEE/Green.png"
     ],
     "colors": [
       {
-        "name": "Green",
-        "hex": "#16A34A"
-      },
-      {
-        "name": "Blue",
-        "hex": "#888888"
-      },
-      {
-        "name": "Side",
-        "hex": "#888888"
+        "name": "Midnight Blue",
+        "hex": "#0F172A"
       },
       {
         "name": "Red",
         "hex": "#EF4444"
+      },
+      {
+        "name": "Green",
+        "hex": "#16A34A"
       }
     ],
     "sizes": [
@@ -950,16 +860,16 @@
     ],
     "colors": [
       {
-        "name": "685a34c055c76",
-        "hex": "#888888"
+        "name": "Black",
+        "hex": "#000000"
       },
       {
-        "name": "685a34c0560fb",
-        "hex": "#888888"
+        "name": "Grey",
+        "hex": "#6B7280"
       },
       {
-        "name": "685a34c055fc0",
-        "hex": "#888888"
+        "name": "Navy",
+        "hex": "#1E3A8A"
       }
     ],
     "sizes": [
@@ -1319,16 +1229,16 @@
     ],
     "colors": [
       {
-        "name": "685a419a5105b",
-        "hex": "#888888"
+        "name": "Black",
+        "hex": "#000000"
       },
       {
-        "name": "685a419a517e7",
-        "hex": "#888888"
+        "name": "Grey",
+        "hex": "#6B7280"
       },
       {
-        "name": "685a419a516b9",
-        "hex": "#888888"
+        "name": "Navy",
+        "hex": "#1E3A8A"
       }
     ],
     "sizes": [
@@ -1718,16 +1628,16 @@
     ],
     "colors": [
       {
-        "name": "685a36acf0e18",
-        "hex": "#888888"
+        "name": "Black",
+        "hex": "#000000"
       },
       {
-        "name": "685a36acf1215",
-        "hex": "#888888"
+        "name": "Grey",
+        "hex": "#6B7280"
       },
       {
-        "name": "685a36acf10e7",
-        "hex": "#888888"
+        "name": "Navy",
+        "hex": "#1E3A8A"
       }
     ],
     "sizes": [
@@ -1800,22 +1710,18 @@
     "price": 33,
     "images": [
       "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Black.png",
-      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Black-Front.png",
       "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Maroon.png",
-      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Navy.png"
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Navy.png",
+      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-CHARLES-LINDBERGH-POCKET-TEE/Black-Front.png"
     ],
     "colors": [
-      {
-        "name": "Default",
-        "hex": "#888888"
-      },
       {
         "name": "Black",
         "hex": "#000000"
       },
       {
         "name": "Maroon",
-        "hex": "#888888"
+        "hex": "#800000"
       },
       {
         "name": "Navy",
@@ -1834,45 +1740,6 @@
     "lake": "LINDBERGH"
   },
   {
-    "id": "lake-tahoe-surf-tee",
-    "name": "Lake Tahoe Surf Tee",
-    "category": "tees",
-    "description": "Lake Tahoe Surf Tee from our TAHOE APPAREL collection",
-    "price": 33,
-    "images": [
-      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/BLACK-BACK.png",
-      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/KHAKI-BACK.png",
-      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/WHITE-BACK.png",
-      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/BLACK-FRONT.png",
-      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/KHAKI-FRONT.png",
-      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/WHITE-FRONT.png"
-    ],
-    "colors": [
-      {
-        "name": "Black",
-        "hex": "#000000"
-      },
-      {
-        "name": "Khaki",
-        "hex": "#8B7355"
-      },
-      {
-        "name": "White",
-        "hex": "#FFFFFF"
-      }
-    ],
-    "sizes": [
-      "XS",
-      "S",
-      "M",
-      "L",
-      "XL",
-      "XXL"
-    ],
-    "featured": false,
-    "lake": "TAHOE"
-  },
-  {
     "id": "lindbergh-adidas-polo",
     "name": "Lindbergh Adidas Polo",
     "category": "polos",
@@ -1885,16 +1752,16 @@
     ],
     "colors": [
       {
-        "name": "(1)",
-        "hex": "#888888"
+        "name": "Navy",
+        "hex": "#1E3A8A"
       },
       {
-        "name": "(2)",
-        "hex": "#888888"
+        "name": "Black",
+        "hex": "#000000"
       },
       {
-        "name": "Default",
-        "hex": "#888888"
+        "name": "Grey",
+        "hex": "#6B7280"
       }
     ],
     "sizes": [
@@ -2229,25 +2096,20 @@
     "images": [
       "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-LONG-SLEEVE-SHIRT/MUSTARD.png",
       "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-LONG-SLEEVE-SHIRT/RED-FRONTSIDE.png",
-      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-LONG-SLEEVE-SHIRT/RED.png",
       "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-LONG-SLEEVE-SHIRT/SEA-FOAM.png"
     ],
     "colors": [
       {
         "name": "Mustard",
-        "hex": "#888888"
-      },
-      {
-        "name": "Side",
-        "hex": "#888888"
+        "hex": "#FBBF24"
       },
       {
         "name": "Red",
         "hex": "#EF4444"
       },
       {
-        "name": "Foam",
-        "hex": "#888888"
+        "name": "Sea Foam",
+        "hex": "#A7F3D0"
       }
     ],
     "sizes": [
@@ -2269,25 +2131,20 @@
     "price": 33,
     "images": [
       "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-TEE/Cumin.png",
-      "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-TEE/Khaki-Backside.png",
       "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-TEE/Khaki.png",
       "/images/APPAREL/LINDBERGH-APPAREL/LINDBERGH-SWIM-TEE/True-Navy.png"
     ],
     "colors": [
       {
         "name": "Cumin",
-        "hex": "#888888"
-      },
-      {
-        "name": "Side",
-        "hex": "#888888"
+        "hex": "#D97706"
       },
       {
         "name": "Khaki",
         "hex": "#8B7355"
       },
       {
-        "name": "Navy",
+        "name": "True Navy",
         "hex": "#1E3A8A"
       }
     ],
@@ -2315,16 +2172,16 @@
     ],
     "colors": [
       {
-        "name": "685a41d2b759d",
-        "hex": "#888888"
+        "name": "Black",
+        "hex": "#000000"
       },
       {
-        "name": "685a41d2b7ab3",
-        "hex": "#888888"
+        "name": "Grey",
+        "hex": "#6B7280"
       },
       {
-        "name": "685a41d2b797f",
-        "hex": "#888888"
+        "name": "Navy",
+        "hex": "#1E3A8A"
       }
     ],
     "sizes": [
@@ -2388,6 +2245,45 @@
     ],
     "featured": false,
     "lake": "LINDBERGH"
+  },
+  {
+    "id": "lake-tahoe-surf-tee",
+    "name": "Lake Tahoe Surf Tee",
+    "category": "tees",
+    "description": "Lake Tahoe Surf Tee from our TAHOE APPAREL collection",
+    "price": 33,
+    "images": [
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/BLACK-BACK.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/KHAKI-BACK.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/WHITE-BACK.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/BLACK-FRONT.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/KHAKI-FRONT.png",
+      "/images/APPAREL/TAHOE-APPAREL/LAKE-TAHOE-SURF-TEE/WHITE-FRONT.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Khaki",
+        "hex": "#8B7355"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": false,
+    "lake": "TAHOE"
   },
   {
     "id": "tahoe-board-tee",
@@ -2665,8 +2561,16 @@
     ],
     "colors": [
       {
-        "name": "Default",
-        "hex": "#888888"
+        "name": "Butter",
+        "hex": "#F9E79F"
+      },
+      {
+        "name": "Island Green",
+        "hex": "#16A34A"
+      },
+      {
+        "name": "Island Reef",
+        "hex": "#B2E2D0"
       }
     ],
     "sizes": [
@@ -2693,16 +2597,16 @@
     ],
     "colors": [
       {
-        "name": "685a41b58b5bc",
-        "hex": "#888888"
+        "name": "Black",
+        "hex": "#000000"
       },
       {
-        "name": "685a41b58bf71",
-        "hex": "#888888"
+        "name": "Grey",
+        "hex": "#6B7280"
       },
       {
-        "name": "685a41b58bd50",
-        "hex": "#888888"
+        "name": "Navy",
+        "hex": "#1E3A8A"
       }
     ],
     "sizes": [
@@ -2828,21 +2732,16 @@
     "images": [
       "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/BAYVIEW-GREEN.png",
       "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/BLOSSOM.png",
-      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/WATERMELON-FRONTSIDE.png",
-      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/WATERMELON.png"
+      "/images/APPAREL/WASHINGTON-APPAREL/WASHINGTON-BOAT-LONGSLEEVE/WATERMELON-FRONTSIDE.png"
     ],
     "colors": [
       {
-        "name": "Green",
+        "name": "Bayview Green",
         "hex": "#16A34A"
       },
       {
         "name": "Blossom",
-        "hex": "#888888"
-      },
-      {
-        "name": "Side",
-        "hex": "#888888"
+        "hex": "#F9A8D4"
       },
       {
         "name": "Watermelon",
@@ -3133,16 +3032,16 @@
     ],
     "colors": [
       {
-        "name": "685a41fd72504",
-        "hex": "#888888"
+        "name": "Black",
+        "hex": "#000000"
       },
       {
-        "name": "685a41fd72988",
-        "hex": "#888888"
+        "name": "Grey",
+        "hex": "#6B7280"
       },
       {
-        "name": "685a41fd72841",
-        "hex": "#888888"
+        "name": "Navy",
+        "hex": "#1E3A8A"
       }
     ],
     "sizes": [

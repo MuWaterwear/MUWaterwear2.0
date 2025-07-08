@@ -1,5 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
+import { stripeConfig } from '@/lib/stripe-config'
+import { getStripeUrls, debugUrls } from '@/lib/url-utils'
+
+// Initialize Stripe configuration
+stripeConfig.initialize().then((success) => {
+  if (!success) {
+    console.error('🚨 Failed to initialize Stripe configuration')
+  }
+})
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-05-28.basil',
@@ -7,28 +16,66 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function POST(request: NextRequest) {
   try {
+    // Check environment variables
+    if (!process.env.STRIPE_SECRET_KEY) {
+      console.error('🚨 Missing STRIPE_SECRET_KEY environment variable')
+      return NextResponse.json(
+        { 
+          error: 'Stripe configuration error: Missing secret key',
+          details: 'STRIPE_SECRET_KEY environment variable is not set'
+        },
+        { status: 500 }
+      )
+    }
+
+    if (!process.env.NEXT_PUBLIC_BASE_URL) {
+      console.error('🚨 Missing NEXT_PUBLIC_BASE_URL environment variable')
+      return NextResponse.json(
+        { 
+          error: 'Configuration error: Missing base URL',
+          details: 'NEXT_PUBLIC_BASE_URL environment variable is not set'
+        },
+        { status: 500 }
+      )
+    }
+
     const { items, couponCode, actualCosts, effectiveTotal, customerInfo } = await request.json()
 
-    console.log('Received items for checkout:', JSON.stringify(items, null, 2))
+    // Validate request data
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      console.error('🚨 Invalid cart items:', items)
+      return NextResponse.json(
+        { 
+          error: 'Invalid cart data',
+          details: 'Cart items are empty or invalid'
+        },
+        { status: 400 }
+      )
+    }
+
+    console.log('✅ Stripe checkout session creation started')
+    console.log('🛒 Items count:', items.length)
+    console.log('📦 Received items for checkout:', JSON.stringify(items, null, 2))
+    
     if (couponCode) {
-      console.log('Coupon code provided:', couponCode)
+      console.log('🎫 Coupon code provided:', couponCode)
     }
     if (actualCosts) {
       console.log(
-        'Actual costs provided for Lindbergh coupon:',
+        '💰 Actual costs provided for Lindbergh coupon:',
         JSON.stringify(actualCosts, null, 2)
       )
       const totalShipping = Object.values(actualCosts).reduce(
         (sum: number, cost: any) => sum + cost.shippingCost,
         0
       )
-      console.log('Total actual shipping cost:', totalShipping)
+      console.log('🚚 Total actual shipping cost:', totalShipping)
     }
     if (effectiveTotal) {
-      console.log('Effective total provided:', effectiveTotal)
+      console.log('💵 Effective total provided:', effectiveTotal)
     }
     if (customerInfo) {
-      console.log('Customer info provided for auto-fill:', {
+      console.log('👤 Customer info provided for auto-fill:', {
         name: `${customerInfo.firstName} ${customerInfo.lastName}`,
         email: customerInfo.email,
       })
@@ -145,13 +192,16 @@ export async function POST(request: NextRequest) {
 
     console.log('Generated line items:', JSON.stringify(lineItems, null, 2))
 
+    // Get properly formatted URLs for Stripe
+    const urls = debugUrls()
+
     // Prepare session configuration
     const sessionConfig: Stripe.Checkout.SessionCreateParams = {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://muwaterwear.com'}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://muwaterwear.com'}`,
+      success_url: urls.success,
+      cancel_url: urls.cancel,
       automatic_tax: {
         enabled: true,
       },
@@ -299,7 +349,18 @@ export async function POST(request: NextRequest) {
     }
 
     // Create Stripe checkout session (hosted)
-    const session = await stripe.checkout.sessions.create(sessionConfig)
+    const session = await stripeConfig.createCheckoutSession(sessionConfig)
+    
+    if (!session) {
+      console.error('🚨 Failed to create checkout session with enhanced configuration')
+      return NextResponse.json(
+        { 
+          error: 'Failed to create checkout session',
+          details: 'Session creation returned null'
+        },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json({
       sessionId: session.id,

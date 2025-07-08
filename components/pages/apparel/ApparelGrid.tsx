@@ -59,8 +59,22 @@ export default function ApparelGrid({
 
   // Helper function to map color index to correct image index for special products
   const getImageIndexForColor = (product: any, colorIndex: number) => {
-    // Add special handling for products with non-standard image arrays
-    // Currently no apparel products need this, but keeping for consistency
+    // Special handling for MU Ski Rip Tee - images and colors are in different orders
+    if (product.id === 'mu-ski-rip-tee') {
+      const colorName = product.colors[colorIndex]?.name
+      const imageMapping: { [key: string]: number } = {
+        'Bay': 1,        // Back, Bay.png
+        'Black': 0,      // Back, Black.png  
+        'Boysenberry': 2, // Back, Boysenberry.png
+        'Island Reef': 3, // Back, Island Reef.png
+        'Ivory': 4,      // Back, Ivory.png
+        'Lagoon Blue': 5, // Back, Lagoon Blue.png
+        'Seafoam': 6     // Back, Seafoam.png
+      }
+      return imageMapping[colorName] ?? colorIndex
+    }
+    
+    // Default behavior for other products
     return colorIndex
   }
 
@@ -72,36 +86,28 @@ export default function ApparelGrid({
     <section className="py-8 md:py-12">
       <div className="container mx-auto px-4">
         {isMobile ? (
-          // Mobile Layout with alternating pattern
+          // Mobile Layout - Simple 2x2 grid
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            {products.map((product, index) => {
-              const isFullWidth = index % 3 === 2;
-              return (
-                <div
-                  key={product.id}
-                  className={`${isFullWidth ? 'col-span-2' : 'col-span-1'} relative transform transition-all duration-300`}
-                >
-                  <UnifiedProductCard
-                    key={product.id}
-                    product={product}
-                    variant="apparel"
-                    onQuickAdd={handleUnifiedQuickAdd}
-                    onImageClick={onImageClick}
-                    selectedSize={selectedSize[product.id] || ''}
-                    selectedColorIndex={selectedColor[product.id] || 0}
-                    onSizeChange={(size: string) => setSelectedSize({ ...selectedSize, [product.id]: size })}
-                    onColorChange={(index: number) => handleColorChange(product.id, index)}
-                    expandedDetails={expandedDetails === product.id}
-                    onToggleDetails={() => toggleDetails(product.id)}
-                    isFullWidth={isFullWidth}
-                    isMobile={isMobile}
-                    showImageNavigation={true}
-                    imageScale={150}
-                    getImageIndexForColor={getImageIndexForColor}
-                  />
-                </div>
-              );
-            })}
+            {products.map((product) => (
+              <UnifiedProductCard
+                key={product.id}
+                product={product}
+                variant="apparel"
+                onQuickAdd={handleUnifiedQuickAdd}
+                onImageClick={onImageClick}
+                selectedSize={selectedSize[product.id] || ''}
+                selectedColorIndex={selectedColor[product.id] || 0}
+                onSizeChange={(size: string) => setSelectedSize({ ...selectedSize, [product.id]: size })}
+                onColorChange={(index: number) => handleColorChange(product.id, index)}
+                expandedDetails={expandedDetails === product.id}
+                onToggleDetails={() => toggleDetails(product.id)}
+                isFullWidth={false}
+                isMobile={isMobile}
+                showImageNavigation={true}
+                imageScale={150}
+                getImageIndexForColor={getImageIndexForColor}
+              />
+            ))}
           </div>
         ) : (
           // Desktop Layout

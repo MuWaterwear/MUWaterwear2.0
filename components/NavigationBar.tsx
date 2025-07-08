@@ -6,6 +6,7 @@ import { ShoppingCart, Menu, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useCart } from "@/contexts/CartContext"
+import { useState, useEffect } from "react"
 
 interface NavigationBarProps {
   onMobileMenuOpen?: () => void
@@ -13,6 +14,11 @@ interface NavigationBarProps {
 
 export default function NavigationBar({ onMobileMenuOpen }: NavigationBarProps) {
   const { setIsCartOpen, getCartItemCount } = useCart()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <header className="border-b border-gray-800 bg-black/95 backdrop-blur-sm sticky top-0 z-50">
@@ -168,7 +174,7 @@ export default function NavigationBar({ onMobileMenuOpen }: NavigationBarProps) 
               aria-label="Open shopping cart"
             >
               <ShoppingCart className="h-5 w-5 pointer-events-none" />
-              {getCartItemCount() > 0 && (
+              {mounted && getCartItemCount() > 0 && (
                 <span className="absolute -top-1 -right-1 bg-cyan-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center pointer-events-none">
                   {getCartItemCount()}
                 </span>

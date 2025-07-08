@@ -192,23 +192,56 @@ export default function ShoppingCartSidebar() {
 
       if (!response.ok) {
         const errorData = await response.json()
+        console.error('🚨 Checkout session creation failed:', errorData)
+        
         if (errorData.error && errorData.error.includes('coupon')) {
           setCouponError(errorData.error)
           setAppliedCoupon(null)
           return
         }
-        throw new Error('Failed to create checkout session')
+        
+        // Provide specific error messages based on the response
+        if (errorData.error && errorData.error.includes('Stripe configuration')) {
+          alert('🚨 Payment system configuration error. Please contact support.')
+          return
+        }
+        
+        if (errorData.error && errorData.error.includes('Configuration error')) {
+          alert('🚨 System configuration error. Please contact support.')
+          return
+        }
+        
+        throw new Error(errorData.error || 'Failed to create checkout session')
       }
 
       const { sessionId, appliedCoupon: confirmedCoupon } = await response.json()
+      
+      if (!sessionId) {
+        console.error('🚨 No session ID received from checkout session creation')
+        alert('🚨 Payment session could not be created. Please try again.')
+        return
+      }
+      
+      console.log('✅ Checkout session created successfully:', sessionId)
+      
+      if (!stripePromise) {
+        console.error('🚨 Stripe not initialized - missing NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY')
+        alert('🚨 Payment system not configured. Please contact support.')
+        return
+      }
+      
       const stripe = await stripePromise
 
       if (stripe) {
+        console.log('🚀 Redirecting to Stripe checkout...')
         const { error } = await stripe.redirectToCheckout({ sessionId })
         if (error) {
-          console.error('Stripe checkout error:', error)
-          alert('There was an error processing your payment. Please try again.')
+          console.error('🚨 Stripe checkout redirect error:', error)
+          alert('🚨 Payment redirect failed: ' + error.message)
         }
+      } else {
+        console.error('🚨 Stripe instance not available')
+        alert('🚨 Payment system not available. Please contact support.')
       }
     } catch (error) {
       console.error('Checkout error:', error)

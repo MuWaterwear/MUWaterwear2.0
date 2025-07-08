@@ -304,58 +304,69 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
               )}
             </div>
             
-            {/* Color Selection */}
+            {/* Color Selection - Keep visible on mobile (compact circles) */}
             {product.colors && product.colors.length > 1 && (
               <div className="mb-2">
-                <div className="flex flex-wrap gap-1">
-                  {product.colors.slice(0, 4).map((color, index) => (
+                <div className="text-xs text-slate-500 mb-1.5 font-medium">Colors:</div>
+                <div className={`flex flex-wrap gap-1.5 ${isMobile ? 'gap-1' : 'gap-1.5'}`}>
+                  {product.colors.map((color, index) => (
                     <button
                       key={index}
                       onClick={() => handleColorChange(index)}
-                      className={`w-4 h-4 rounded-full border-2 transition-all ${
+                      className={`${isMobile ? 'w-4 h-4' : 'w-5 h-5'} rounded-full border-2 transition-all hover:scale-110 ${
                         selectedColorIndex === index 
-                          ? 'border-cyan-400 ring-2 ring-cyan-400/30' 
+                          ? 'border-cyan-400 ring-2 ring-cyan-400/30 scale-110' 
                           : 'border-slate-600 hover:border-slate-400'
                       }`}
                       style={{ backgroundColor: color.hex }}
                       aria-label={`Select ${color.name} color`}
+                      title={color.name}
                     />
                   ))}
-                  {product.colors.length > 4 && (
-                    <span className="text-xs text-slate-400 self-center ml-1">
-                      +{product.colors.length - 4}
-                    </span>
-                  )}
                 </div>
               </div>
             )}
             
-            {/* Size Selection */}
-            {product.sizes && product.sizes.length > 0 && (
+            {/* Size Selection - Dropdown on mobile, buttons on desktop */}
+            {product.sizes && product.sizes.length > 1 && (
               <div className="mb-3">
-                <div className="flex flex-wrap gap-1">
-                  {product.sizes.slice(0, 4).map((size, index) => {
-                    const sizeValue = typeof size === 'string' ? size : size.name
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => handleSizeChange(sizeValue)}
-                        className={`text-xs px-2 py-1 rounded border transition-all ${
-                          selectedSize === sizeValue
-                            ? 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30'
-                            : 'bg-slate-800/50 text-slate-300 border-slate-600 hover:border-slate-400'
-                        }`}
-                      >
-                        {sizeValue}
-                      </button>
-                    )
-                  })}
-                  {product.sizes.length > 4 && (
-                    <span className="text-xs text-slate-400 self-center ml-1">
-                      +{product.sizes.length - 4}
-                    </span>
-                  )}
-                </div>
+                <div className="text-xs text-slate-500 mb-1.5 font-medium">Sizes:</div>
+                {isMobile ? (
+                  <select
+                    value={selectedSize || ''}
+                    onChange={(e) => handleSizeChange(e.target.value)}
+                    className="w-full text-xs px-3 py-2 rounded border bg-slate-800/50 text-slate-300 border-slate-600 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400/30"
+                  >
+                    <option value="">Select size</option>
+                    {product.sizes.map((size, index) => {
+                      const sizeValue = typeof size === 'string' ? size : size.name
+                      return (
+                        <option key={index} value={sizeValue}>
+                          {sizeValue}
+                        </option>
+                      )
+                    })}
+                  </select>
+                ) : (
+                  <div className="flex flex-wrap gap-1.5">
+                    {product.sizes.map((size, index) => {
+                      const sizeValue = typeof size === 'string' ? size : size.name
+                      return (
+                        <button
+                          key={index}
+                          onClick={() => handleSizeChange(sizeValue)}
+                          className={`text-xs px-2.5 py-1.5 rounded border transition-all hover:scale-105 font-medium ${
+                            selectedSize === sizeValue
+                              ? 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30 scale-105'
+                              : 'bg-slate-800/50 text-slate-300 border-slate-600 hover:border-slate-400 hover:bg-slate-700/50'
+                          }`}
+                        >
+                          {sizeValue}
+                        </button>
+                      )
+                    })}
+                  </div>
+                )}
               </div>
             )}
           </div>
