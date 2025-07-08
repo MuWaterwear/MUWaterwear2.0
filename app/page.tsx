@@ -118,8 +118,9 @@ export default function Component() {
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950 z-15" />
-        <div className="relative z-20 max-w-6xl mx-auto px-4 flex flex-col items-center justify-start pt-8 h-full md:flex-row md:items-end md:justify-center md:pb-20 md:pt-0">
-          <div className="flex flex-row items-center gap-3 md:flex-row md:gap-8">
+        <div className="relative z-20 max-w-6xl mx-auto px-4 flex flex-col h-full md:flex-row md:items-end md:justify-center md:pb-20 md:pt-0">
+          {/* Mobile: Top section with logo and title */}
+          <div className="flex flex-row items-center gap-3 justify-center pt-8 md:flex-row md:gap-8">
             <div className="flex items-center">
               <Image
                 src="/images/Mu full hallow logo (3).svg"
@@ -134,6 +135,21 @@ export default function Component() {
               BE UNDENIABLE.
             </h2>
           </div>
+          
+          {/* Mobile: Bottom third - Clean Water Initiatives Link */}
+          <div className="flex-1 flex flex-col items-center justify-end pb-16 md:hidden">
+            <div className="text-center">
+              <Link 
+                href="/about#clean-water-events"
+                className="text-2xl font-bold mb-4 tracking-tight bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-500 transition-all duration-300 block"
+              >
+                CLEAN WATER INITIATIVES
+              </Link>
+              <p className="text-sm text-slate-400 max-w-xs mx-auto font-light">
+                Support Clean Water by Shopping Our Products or By Clicking The Link Above
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -141,12 +157,15 @@ export default function Component() {
       <section className="hidden md:block py-20 bg-slate-900/50 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
-              FORGED IN WATER
-            </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">
-              Every piece engineered for the relentless pursuit of living a life near water
-            </p>
+            <Link 
+              href="/about#clean-water-events"
+              className="text-4xl md:text-5xl font-bold mb-4 tracking-tight bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-500 transition-all duration-300 block"
+            >
+              CLEAN WATER INITIATIVES
+            </Link>
+                          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">
+                Support Clean Water by Shopping Our Products or By Clicking The Link Above
+              </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -182,7 +201,7 @@ export default function Component() {
                   <div className="absolute bottom-6 left-6">
                     <Mountain className="h-8 w-8 text-cyan-400 mb-2" />
                     <h3 className="text-2xl font-bold mb-2 text-white">APPAREL</h3>
-                    <p className="text-slate-400 font-light">Performance waterweaer</p>
+                    <p className="text-slate-400 font-light">Graphic Tees and More</p>
                   </div>
                 </div>
               </div>

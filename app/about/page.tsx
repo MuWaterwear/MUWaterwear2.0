@@ -118,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* Clean Water Events */}
-      <section className="py-16 bg-black">
+      <section id="clean-water-events" className="py-16 bg-black">
         <div className="max-w-6xl mx-auto px-6">
           <h3 className="text-2xl font-bold text-center mb-8 text-cyan-400">Clean Water Events</h3>
 

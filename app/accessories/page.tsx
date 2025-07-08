@@ -22,7 +22,7 @@ import { DesktopOnly, MobileOnly } from '@/components/responsive/ResponsiveLayou
 import MobileProductGrid from '@/components/responsive/MobileProductGrid'
 import Footer from '@/components/Footer'
 import ProductCard from '@/components/Product/ProductCard'
-import OptimizedImage from '@/components/ui/optimized-image'
+// Removed OptimizedImage import - using standard Next.js Image
 import { preloadProductImages } from '@/lib/core/image-preloader'
 
 export default function AccessoriesPage() {
@@ -688,17 +688,8 @@ export default function AccessoriesPage() {
                   >
                     {/* Product Image */}
                     <div className="relative aspect-square overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50">
-                      {/* Hero Background SVG behind product image */}
-                      <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
-                        <OptimizedImage
-                          src="/Untitled design (68).svg"
-                          alt="Background"
-                          fill
-                          className="object-cover"
-                          priority={false}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                      </div>
+                      {/* Clean gradient background for elegant presentation */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-800/30 via-slate-900/50 to-slate-950/70 pointer-events-none z-0" />
                       <div
                         className="absolute inset-0 cursor-pointer z-10"
                         onClick={e => {
@@ -710,7 +701,7 @@ export default function AccessoriesPage() {
                           )
                         }}
                       >
-                        <OptimizedImage
+                        <Image
                           src={product.images[currentColorIndex] || product.images[0]}
                           alt={product.name}
                           fill
@@ -883,7 +874,7 @@ export default function AccessoriesPage() {
                 onMouseLeave={handleMouseUp}
                 style={{ cursor: imageZoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default' }}
               >
-                <OptimizedImage
+                <Image
                   src={currentFeaturedImage || '/placeholder.svg'}
                   alt="Expanded Product"
                   width={800}
