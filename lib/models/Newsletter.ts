@@ -38,7 +38,8 @@ const NewsletterSchema = new mongoose.Schema(
 )
 
 // Compound index for efficient queries
-NewsletterSchema.index({ email: 1, status: 1 })
+// Note: email index is already created by unique: true above
+NewsletterSchema.index({ status: 1 }) // Separate status index
 NewsletterSchema.index({ source: 1, createdAt: -1 })
 
 // Create or get the model (handle hot reloads in development)

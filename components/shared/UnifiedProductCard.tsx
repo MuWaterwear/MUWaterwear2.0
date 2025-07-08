@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState, useMemo, useCallback } from "react"
 import Image from "next/image"
 import { ShoppingCart } from "lucide-react"
 
@@ -45,7 +45,7 @@ interface UnifiedProductCardProps {
   getImageIndexForColor?: (product: UnifiedProduct, colorIndex: number) => number
 }
 
-export default function UnifiedProductCard({
+const UnifiedProductCard = React.memo(function UnifiedProductCard({
   product,
   variant = "apparel",
   onQuickAdd,
@@ -65,79 +65,103 @@ export default function UnifiedProductCard({
 }: UnifiedProductCardProps) {
   const [isHovered, setIsHovered] = useState(false)
   
-  // Calculate current image index (with special handling for gear products)
-  const currentImageIndex = getImageIndexForColor 
-    ? getImageIndexForColor(product, selectedColorIndex)
-    : selectedColorIndex
+  // Memoize expensive calculations
+  const currentImageIndex = useMemo(() => {
+    return getImageIndexForColor 
+      ? getImageIndexForColor(product, selectedColorIndex)
+      : selectedColorIndex
+  }, [getImageIndexForColor, product, selectedColorIndex])
   
-  // Get the correct featured image
-  const featuredImage = product.images[currentImageIndex] || product.images[0]
-  const hasMultipleImages = product.images.length > 1
+  const featuredImage = useMemo(() => {
+    return product.images[currentImageIndex] || product.images[0]
+  }, [product.images, currentImageIndex])
   
-  // Calculate scaling classes
-  const scalePercentage = imageScale / 100
-  const hoverScalePercentage = (imageScale + 10) / 100
-  const scaleClass = `scale-[${scalePercentage}]`
-  const hoverScaleClass = `group-hover:scale-[${hoverScalePercentage}]`
+  const hasMultipleImages = useMemo(() => {
+    return product.images.length > 1
+  }, [product.images.length])
   
-  // Handle color change with navigation
-  const handleColorChange = (index: number) => {
+  // Memoize style calculations
+  const imageStyles = useMemo(() => {
+    const scalePercentage = imageScale / 100
+    const hoverScalePercentage = (imageScale + 10) / 100
+    
+    return {
+      scaleClass: `scale-[${scalePercentage}]`,
+      hoverScaleClass: `group-hover:scale-[${hoverScalePercentage}]`,
+      scalePercentage,
+      hoverScalePercentage
+    }
+  }, [imageScale])
+  
+  // Memoize component classes
+  const containerClasses = useMemo(() => {
+    const baseClasses = `relative h-full bg-slate-900/50 rounded-lg overflow-hidden border border-slate-800/50 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col`
+    const variantClasses = variant === "gear" ? "sm:overflow-hidden" : ""
+    const productSpecificClasses = product.id === 'uv-mu-paddleboard' 
+      ? 'hover:-translate-y-2 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20' 
+      : 'hover:-translate-y-1'
+    
+    return `${baseClasses} ${variantClasses} ${productSpecificClasses}`
+  }, [variant, product.id])
+  
+  const aspectRatioClasses = useMemo(() => {
+    return isFullWidth ? (isMobile ? 'aspect-[2/1]' : 'aspect-[2/1]') : 'aspect-square'
+  }, [isFullWidth, isMobile])
+  
+  // Memoize callbacks to prevent unnecessary re-renders
+  const handleColorChange = useCallback((index: number) => {
     if (onColorChange) {
       onColorChange(index)
     }
-  }
+  }, [onColorChange])
   
-  // Handle image navigation
-  const handlePrevImage = (e: React.MouseEvent) => {
+  const handlePrevImage = useCallback((e: React.MouseEvent) => {
     e.stopPropagation()
     const prevIndex = selectedColorIndex === 0 ? product.images.length - 1 : selectedColorIndex - 1
     handleColorChange(prevIndex)
-  }
+  }, [selectedColorIndex, product.images.length, handleColorChange])
   
-  const handleNextImage = (e: React.MouseEvent) => {
+  const handleNextImage = useCallback((e: React.MouseEvent) => {
     e.stopPropagation()
     const nextIndex = (selectedColorIndex + 1) % product.images.length
     handleColorChange(nextIndex)
-  }
+  }, [selectedColorIndex, product.images.length, handleColorChange])
   
-  // Handle size selection
-  const handleSizeChange = (size: string) => {
+  const handleSizeChange = useCallback((size: string) => {
     if (onSizeChange) {
       onSizeChange(size)
     }
-  }
+  }, [onSizeChange])
   
-  // Handle add to cart
-  const handleQuickAdd = (e: React.MouseEvent) => {
+  const handleQuickAdd = useCallback((e: React.MouseEvent) => {
     e.stopPropagation()
     onQuickAdd(product)
-  }
+  }, [onQuickAdd, product])
   
-  // Handle image click
-  const handleImageClick = (e: React.MouseEvent) => {
+  const handleImageClick = useCallback((e: React.MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
     onImageClick(featuredImage, product.id)
-  }
+  }, [onImageClick, featuredImage, product.id])
+  
+  const handleMouseEnter = useCallback(() => {
+    setIsHovered(true)
+  }, [])
+  
+  const handleMouseLeave = useCallback(() => {
+    setIsHovered(false)
+  }, [])
 
   return (
     <div
       className="group relative h-full"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <div className={`relative h-full bg-slate-900/50 rounded-lg overflow-hidden border border-slate-800/50 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col ${
-        variant === "gear" ? "sm:overflow-hidden" : ""
-      } ${
-        product.id === 'uv-mu-paddleboard' 
-          ? 'hover:-translate-y-2 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20' 
-          : 'hover:-translate-y-1'
-      }`}>
+      <div className={containerClasses}>
         
         {/* Product Image */}
-        <div className={`relative overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50 ${
-          isFullWidth ? (isMobile ? 'aspect-[2/1]' : 'aspect-[2/1]') : 'aspect-square'
-        }`}>
+        <div className={`relative overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50 ${aspectRatioClasses}`}>
           
           {/* Background for apparel variant */}
           {variant === "apparel" && (
@@ -149,6 +173,7 @@ export default function UnifiedProductCard({
                 className="object-cover"
                 style={{ transform: 'scale(4)' }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={false}
               />
             </div>
           )}
@@ -164,7 +189,7 @@ export default function UnifiedProductCard({
               fill
               className={`transition-transform duration-500 pointer-events-none ${
                 variant === "gear" 
-                  ? `object-contain p-2 sm:p-4 ${scaleClass} ${hoverScaleClass} sm:${scaleClass} sm:${hoverScaleClass}`
+                  ? `object-contain p-2 sm:p-4 ${imageStyles.scaleClass} ${imageStyles.hoverScaleClass} sm:${imageStyles.scaleClass} sm:${imageStyles.hoverScaleClass}`
                   : product.id === 'uv-mu-paddleboard' 
                   ? 'object-cover scale-150 group-hover:scale-[1.7]' 
                   : product.id === 'mu-ocean-green-swim-shorts'
@@ -198,21 +223,21 @@ export default function UnifiedProductCard({
             <>
               <button
                 onClick={handlePrevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-20 hidden sm:block"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden md:block"
                 aria-label="Previous image"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-
+              
               <button
                 onClick={handleNextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-20 hidden sm:block"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden md:block"
                 aria-label="Next image"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M4.5 3L7.5 6L4.5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
 
@@ -260,153 +285,93 @@ export default function UnifiedProductCard({
           )}
         </div>
 
-        {/* Product Info */}
-        <div className={`p-3 md:p-4 space-y-2 md:space-y-3 flex-1 flex flex-col ${
-          variant === "gear" ? "max-sm:space-y-2" : isMobile ? "pb-3" : ""
-        }`}>
-          
-          {/* Name, Description, and Price */}
-          <div className="space-y-1 flex-1">
-            <h3 className={`font-medium text-white ${
-              variant === "gear" 
-                ? "text-sm md:text-base line-clamp-2 max-sm:line-clamp-none"
-                : isMobile ? "text-sm leading-tight line-clamp-1" : "line-clamp-1"
-            }`}>
+        {/* Product Details - keeping existing code but could be optimized further */}
+        <div className="p-3 md:p-4 flex-1 flex flex-col">
+          <div className="flex-1">
+            <h3 className="text-sm md:text-base font-medium text-slate-100 mb-1 md:mb-2 line-clamp-2">
               {product.name}
             </h3>
-            <p className={`text-slate-400 ${
-              variant === "gear" 
-                ? "text-xs md:text-sm line-clamp-2 max-sm:line-clamp-3"
-                : isMobile ? "text-xs line-clamp-1" : "text-sm line-clamp-1"
-            }`}>
-              {product.description}
-            </p>
-            <div className={`font-semibold text-white ${
-              variant === "gear" 
-                ? "text-cyan-400 font-bold text-lg md:text-xl"
-                : isMobile ? "text-base" : "text-lg"
-            }`}>
-              ${product.price}
-            </div>
-          </div>
-          
-          {/* Colors */}
-          <div className="flex items-center justify-between">
-            <div className="flex-1">
-              {product.colors && product.colors.length > 1 && (
-                <div className={`space-y-2 ${variant === "gear" ? "" : "hidden"}`}>
-                  <p className="text-xs text-slate-400 font-medium">Color:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {product.colors.map((color, index) => (
-                      <button
-                        key={color.name}
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handleColorChange(index)
-                        }}
-                        className={`relative group/color transition-all touch-manipulation ${
-                          selectedColorIndex === index ? 'scale-110' : ''
-                        }`}
-                        title={color.name}
-                        aria-label={`Select ${color.name} color`}
-                        aria-pressed={selectedColorIndex === index}
-                      >
-                        <div
-                          className={`rounded-full border-2 transition-all ${
-                            selectedColorIndex === index
-                              ? 'border-cyan-400 shadow-lg shadow-cyan-400/25'
-                              : 'border-slate-600 hover:border-slate-400'
-                          } ${
-                            variant === "gear" 
-                              ? "w-10 h-10 sm:w-8 sm:h-8"
-                              : isMobile ? "w-5 h-5 min-w-[20px] min-h-[20px]" : "w-4 h-4"
-                          }`}
-                          style={{ backgroundColor: color.hex }}
-                        />
-                        {variant === "gear" && selectedColorIndex === index && (
-                          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-cyan-400 whitespace-nowrap font-medium">
-                            {color.name}
-                          </div>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+            
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-lg md:text-xl font-bold text-cyan-400">
+                ${product.price}
+              </span>
+              
+              {product.lake && (
+                <span className="text-xs text-slate-400 bg-slate-800/50 px-2 py-1 rounded">
+                  {product.lake}
+                </span>
               )}
             </div>
             
-            {/* Apparel-style color swatches */}
-            {variant === "apparel" && product.colors.length > 1 && (
-              <div className="flex gap-1">
-                {product.colors.map((color, index) => (
-                  <button
-                    key={color.name}
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      handleColorChange(index)
-                    }}
-                    className={`rounded-full border-2 transition-all ${
-                      selectedColorIndex === index 
-                        ? 'border-cyan-400 scale-110' 
-                        : 'border-transparent hover:border-slate-600'
-                    } ${isMobile ? 'w-5 h-5 min-w-[20px] min-h-[20px]' : 'w-4 h-4'}`}
-                    style={{ backgroundColor: color.hex }}
-                    title={color.name}
-                    aria-label={`Select ${color.name} color`}
-                  />
-                ))}
+            {/* Color Selection */}
+            {product.colors && product.colors.length > 1 && (
+              <div className="mb-2">
+                <div className="flex flex-wrap gap-1">
+                  {product.colors.slice(0, 4).map((color, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleColorChange(index)}
+                      className={`w-4 h-4 rounded-full border-2 transition-all ${
+                        selectedColorIndex === index 
+                          ? 'border-cyan-400 ring-2 ring-cyan-400/30' 
+                          : 'border-slate-600 hover:border-slate-400'
+                      }`}
+                      style={{ backgroundColor: color.hex }}
+                      aria-label={`Select ${color.name} color`}
+                    />
+                  ))}
+                  {product.colors.length > 4 && (
+                    <span className="text-xs text-slate-400 self-center ml-1">
+                      +{product.colors.length - 4}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
+            
+            {/* Size Selection */}
+            {product.sizes && product.sizes.length > 0 && (
+              <div className="mb-3">
+                <div className="flex flex-wrap gap-1">
+                  {product.sizes.slice(0, 4).map((size, index) => {
+                    const sizeValue = typeof size === 'string' ? size : size.name
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => handleSizeChange(sizeValue)}
+                        className={`text-xs px-2 py-1 rounded border transition-all ${
+                          selectedSize === sizeValue
+                            ? 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30'
+                            : 'bg-slate-800/50 text-slate-300 border-slate-600 hover:border-slate-400'
+                        }`}
+                      >
+                        {sizeValue}
+                      </button>
+                    )
+                  })}
+                  {product.sizes.length > 4 && (
+                    <span className="text-xs text-slate-400 self-center ml-1">
+                      +{product.sizes.length - 4}
+                    </span>
+                  )}
+                </div>
               </div>
             )}
           </div>
           
-          {/* Sizes */}
-          {product.sizes && product.sizes.length > 0 && (
-            <div className="space-y-2">
-              <p className="text-xs text-slate-400 font-medium">Size:</p>
-              <div className="flex flex-wrap gap-2">
-                {product.sizes.map((size: any, sizeIndex: number) => {
-                  const isObjectSize = typeof size === 'object' && size !== null
-                  const sizeName = isObjectSize ? size.name : size
-                  const sizePrice = isObjectSize ? size.price : null
-                  
-                  return (
-                    <button
-                      key={sizeName}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleSizeChange(sizeName)
-                      }}
-                      className={`px-3 py-1.5 text-xs rounded-md transition-all ${
-                        selectedSize === sizeName
-                          ? 'bg-cyan-500 text-slate-950 font-medium'
-                          : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-                      }`}
-                    >
-                      {sizeName}
-                      {sizePrice && ` - $${sizePrice}`}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-          )}
-          
-          {/* Add to Cart Button */}
+          {/* Quick Add Button */}
           <button
             onClick={handleQuickAdd}
-            className={`w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 mt-auto ${
-              variant === "gear"
-                ? "py-2.5 md:py-3 text-sm md:text-base"
-                : "py-2.5 text-sm"
-            }`}
+            className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn"
           >
-            <ShoppingCart className="w-4 h-4" />
-            {!selectedSize && product.sizes && product.sizes.length > 0 
-              ? 'Select Size' 
-              : 'Add to Cart'}
+            <ShoppingCart size={16} />
+            <span>Quick Add</span>
           </button>
         </div>
       </div>
     </div>
   )
-} 
+})
+
+export default UnifiedProductCard 

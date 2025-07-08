@@ -119,7 +119,7 @@ const UserSchema = new mongoose.Schema(
 )
 
 // Indexes for performance
-UserSchema.index({ email: 1 })
+// Note: email index is already created by unique: true above
 UserSchema.index({ 'addresses.isDefault': 1 })
 UserSchema.index({ createdAt: -1 })
 

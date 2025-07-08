@@ -5,13 +5,16 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     domains: [
       'api.wetmet.net',
       'vauth.command.verkada.com',
       'www.luckylablodge.com',
       'luckylablodge.com',
     ],
-    unoptimized: true,
   },
   async headers() {
     return [

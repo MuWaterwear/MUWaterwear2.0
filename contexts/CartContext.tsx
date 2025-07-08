@@ -1,12 +1,21 @@
 'use client'
 
-import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react'
+import { createContext, useContext, useState, useEffect, useCallback, ReactNode, useRef } from 'react'
 import { CartItem, CartError, CartState, CartContextType } from '@/lib/cart/cart-types'
 import { cartOperations } from '@/lib/cart/cart-operations'
 import { handleError, ErrorType } from '@/lib/core/error-handling'
 import { useToast } from '@/contexts/ToastContext'
 import { cartStorage } from '@/lib/cart/cart-storage'
 import { cartValidation } from '@/lib/cart/cart-validation'
+
+// Debounce utility
+function debounce<T extends (...args: any[]) => any>(func: T, delay: number): T {
+  let timeoutId: NodeJS.Timeout
+  return ((...args: any[]) => {
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => func(...args), delay)
+  }) as T
+}
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
@@ -19,6 +28,29 @@ export function CartProvider({ children }: { children: ReactNode }) {
   })
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [retryFunction, setRetryFunction] = useState<(() => Promise<boolean>) | null>(null)
+  
+  // Use refs to prevent unnecessary dependencies in useCallback
+  const cartStateRef = useRef(cartState)
+  cartStateRef.current = cartState
+  
+  // Debounced localStorage save function
+  const debouncedSaveCart = useCallback(
+    debounce((cartData: CartItem[]) => {
+      try {
+        cartStorage.saveCart(cartData)
+      } catch (error) {
+        console.error('Failed to save cart to localStorage:', error)
+      }
+    }, 300),
+    []
+  )
+  
+  // Save cart to localStorage whenever items change
+  useEffect(() => {
+    if (cartState.items.length >= 0) { // Allow saving empty cart
+      debouncedSaveCart(cartState.items)
+    }
+  }, [cartState.items, debouncedSaveCart])
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -52,16 +84,21 @@ export function CartProvider({ children }: { children: ReactNode }) {
     loadCart()
   }, [])
 
+  // Optimized state update function
+  const updateCartState = useCallback((updater: (prev: CartState) => CartState) => {
+    setCartState(updater)
+  }, [])
+
   const addToCart = useCallback(async (newItem: Omit<CartItem, 'quantity'>): Promise<boolean> => {
-    setCartState(prev => ({
+    updateCartState(prev => ({
       ...prev,
       isLoading: true,
       lastAction: `Adding ${newItem.name} to cart`,
     }))
 
-    const result = await cartOperations.addItemToCart(cartState.items, newItem)
+    const result = await cartOperations.addItemToCart(cartStateRef.current.items, newItem)
 
-    setCartState(prev => ({
+    updateCartState(prev => ({
       ...prev,
       items: result.data || prev.items,
       isLoading: false,
@@ -74,14 +111,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
 
     return result.success
-  }, [cartState.items])
+  }, [updateCartState])
 
   const updateQuantity = useCallback(async (id: string, quantity: number): Promise<boolean> => {
-    setCartState(prev => ({ ...prev, isLoading: true, lastAction: 'Updating quantity' }))
+    updateCartState(prev => ({ ...prev, isLoading: true, lastAction: 'Updating quantity' }))
 
-    const result = await cartOperations.updateItemQuantity(cartState.items, id, quantity)
+    const result = await cartOperations.updateItemQuantity(cartStateRef.current.items, id, quantity)
 
-    setCartState(prev => ({
+    updateCartState(prev => ({
       ...prev,
       items: result.data || prev.items,
       isLoading: false,
@@ -94,14 +131,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
 
     return result.success
-  }, [cartState.items])
+  }, [updateCartState])
 
-  const removeItem = async (id: string): Promise<boolean> => {
-    setCartState(prev => ({ ...prev, isLoading: true, lastAction: 'Removing item' }))
+  const removeItem = useCallback(async (id: string): Promise<boolean> => {
+    updateCartState(prev => ({ ...prev, isLoading: true, lastAction: 'Removing item' }))
 
-    const result = await cartOperations.removeItemFromCart(cartState.items, id)
+    const result = await cartOperations.removeItemFromCart(cartStateRef.current.items, id)
 
-    setCartState(prev => ({
+    updateCartState(prev => ({
       ...prev,
       items: result.data || prev.items,
       isLoading: false,
@@ -114,14 +151,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
 
     return result.success
-  }
+  }, [updateCartState])
 
   const clearCart = useCallback(async (): Promise<boolean> => {
-    setCartState(prev => ({ ...prev, isLoading: true, lastAction: 'Clearing cart' }))
+    updateCartState(prev => ({ ...prev, isLoading: true, lastAction: 'Clearing cart' }))
 
     const result = await cartOperations.clearCart()
 
-    setCartState(prev => ({
+    updateCartState(prev => ({
       ...prev,
       items: result.data || [],
       isLoading: false,
@@ -134,49 +171,65 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
 
     return result.success
+  }, [updateCartState])
+
+  // Memoized calculations to prevent unnecessary recalculations
+  const getCartTotal = useCallback((): string => {
+    return cartOperations.calculateCartTotal(cartStateRef.current.items)
   }, [])
 
-  const getCartTotal = (): string => {
-    return cartOperations.calculateCartTotal(cartState.items)
-  }
+  const getCartItemCount = useCallback((): number => {
+    return cartOperations.calculateItemCount(cartStateRef.current.items)
+  }, [])
 
-  const getCartItemCount = (): number => {
-    return cartOperations.calculateItemCount(cartState.items)
-  }
-
-  const clearError = () => {
-    setCartState(prev => ({ ...prev, error: null }))
+  const clearError = useCallback(() => {
+    updateCartState(prev => ({ ...prev, error: null }))
     setRetryFunction(null)
-  }
+  }, [updateCartState])
 
-  const retryLastAction = async () => {
+  const retryLastAction = useCallback(async () => {
     if (retryFunction) {
       const success = await retryFunction()
       if (success) {
         setRetryFunction(null)
       }
     }
-  }
+  }, [retryFunction])
+
+  // Memoize the context value to prevent unnecessary re-renders
+  const contextValue = useCallback((): CartContextType => ({
+    cart: cartState.items,
+    isCartOpen,
+    isLoading: cartState.isLoading,
+    error: cartState.error,
+    lastAction: cartState.lastAction,
+    setIsCartOpen,
+    addToCart,
+    updateQuantity,
+    removeItem,
+    clearCart,
+    getCartTotal,
+    getCartItemCount,
+    clearError,
+    retryLastAction,
+  }), [
+    cartState.items,
+    cartState.isLoading,
+    cartState.error,
+    cartState.lastAction,
+    isCartOpen,
+    addToCart,
+    updateQuantity,
+    removeItem,
+    clearCart,
+    getCartTotal,
+    getCartItemCount,
+    clearError,
+    retryLastAction,
+  ])
 
   return (
-    <CartContext.Provider
-      value={{
-        cart: cartState.items,
-        isCartOpen,
-        isLoading: cartState.isLoading,
-        error: cartState.error,
-        lastAction: cartState.lastAction,
-        setIsCartOpen,
-        addToCart,
-        updateQuantity,
-        removeItem,
-        clearCart,
-        getCartTotal,
-        getCartItemCount,
-        clearError,
-        retryLastAction,
-      }}
-    >
+    <CartContext.Provider value={contextValue()}>
       {children}
     </CartContext.Provider>
   )
