@@ -59,6 +59,19 @@ export default function ApparelGrid({
 
   // Helper function to map color index to correct image index for special products
   const getImageIndexForColor = (product: any, colorIndex: number) => {
+    // Special handling for Detroit Traditional Logo Tee - has extra Back, Watermelon.png image
+    if (product.id === 'detroit-traditional-logo-tee') {
+      const colorName = product.colors[colorIndex]?.name
+      const imageMapping: { [key: string]: number } = {
+        'Watermelon': 0,  // Front, Watermelon.png
+        'Black': 2,       // Front, Black.png
+        'Khaki': 3,       // Front, Khaki.png
+        'True Navy': 4,   // Front, True Navy.png
+        'White': 5        // Front, White.png
+      }
+      return imageMapping[colorName] ?? colorIndex
+    }
+    
     // Special handling for MU Ski Rip Tee - images and colors are in different orders
     if (product.id === 'mu-ski-rip-tee') {
       const colorName = product.colors[colorIndex]?.name
