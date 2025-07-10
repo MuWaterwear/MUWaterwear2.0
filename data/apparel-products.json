@@ -1,5 +1,59 @@
 [
   {
+    "id": "mu-waterwear-hoodie-black",
+    "name": "Mu Waterwear Hoodie - Black",
+    "category": "hoodies",
+    "description": "Mu Waterwear Hoodie in Black from our MU APPAREL collection",
+    "price": 57,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-black-front-686fc1ed98881.png",
+      "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-black-back-686fc1fdcbac9.png"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": true,
+    "lake": "MU"
+  },
+  {
+    "id": "mu-waterwear-hoodie-sandshell",
+    "name": "Mu Waterwear Hoodie - Sandshell",
+    "category": "hoodies",
+    "description": "Mu Waterwear Hoodie in Sandshell from our MU APPAREL collection",
+    "price": 57,
+    "images": [
+      "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-sandshell-front-686fc1ed98d46.png",
+      "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-sandshell-back-686fc1fdcbf39.png"
+    ],
+    "colors": [
+      {
+        "name": "Sandshell",
+        "hex": "#D2B48C"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "featured": true,
+    "lake": "MU"
+  },
+  {
     "id": "mu-gets-dark-tee",
     "name": "Mu Gets Dark Tee",
     "category": "tees",
@@ -425,6 +479,7 @@
     "featured": false,
     "lake": "MU"
   },
+
   {
     "id": "cda-board-tee",
     "name": "Cda Board Tee",

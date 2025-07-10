@@ -26,7 +26,7 @@ export function useOptimizedImageZoom({
   
   // Refs for performance optimization
   const preloadedImages = useRef<Set<string>>(new Set())
-  const debounceTimer = useRef<NodeJS.Timeout>()
+  const debounceTimer = useRef<NodeJS.Timeout | null>(null)
   const imageCache = useRef<Map<string, HTMLImageElement>>(new Map())
 
   // Memoized image sources for different zoom levels

@@ -1,12 +1,24 @@
 import OptimizedImage from './optimized-image'
-import { ImageProps } from 'next/image'
 
-interface FadeImageProps extends Omit<ImageProps, 'priority' | 'loading' | 'placeholder' | 'src'> {
+interface FadeImageProps {
   src: string
-  priority?: boolean
-  loading?: 'lazy' | 'eager'
-  placeholder?: 'blur' | 'empty' | 'skeleton'
+  alt: string
   size?: 'thumbnail' | 'small' | 'medium' | 'large' | 'hero'
+  className?: string
+  priority?: boolean
+  placeholder?: 'blur' | 'empty' | 'skeleton'
+  loading?: 'lazy' | 'eager'
+  onLoad?: (event: React.SyntheticEvent<HTMLImageElement>) => void
+  onError?: (event: React.SyntheticEvent<HTMLImageElement>) => void
+  fallbackSrc?: string
+  aspectRatio?: string
+  objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down'
+  quality?: number
+  fill?: boolean
+  width?: number
+  height?: number
+  sizes?: string
+  style?: React.CSSProperties
 }
 
 /**
