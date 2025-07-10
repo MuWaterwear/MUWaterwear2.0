@@ -161,11 +161,14 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
       <div className={containerClasses}>
         
         {/* Product Image */}
-        <div className={`relative overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50 ${aspectRatioClasses}`}>
+        <div className={`relative overflow-hidden ${aspectRatioClasses}`}>
           
-          {/* Background for apparel variant */}
-          {variant === "apparel" && (
-            <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
+          {/* Background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/30 to-slate-900/40 z-0"></div>
+          
+          {/* SVG Background pattern for all apparel */}
+          {variant !== "gear" && (
+            <div className="absolute inset-0 pointer-events-none z-[1] opacity-40">
               <Image
                 src="/Untitled design (68).svg"
                 alt="Background"
@@ -196,6 +199,8 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
                   ? 'object-cover scale-150 group-hover:scale-[1.7]'
                   : product.id === 'swim-mu-sky-blue-shorts'
                   ? 'object-cover scale-100 group-hover:scale-[1.2]'
+                  : product.id === 'mu-waterwear-hoodie-black' || product.id === 'mu-waterwear-hoodie-sandshell'
+                  ? 'object-cover group-hover:scale-110 mix-blend-multiply'
                   : 'object-cover group-hover:scale-110'
               }`}
               sizes={variant === "gear" 
@@ -206,6 +211,8 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
               priority={false}
             />
           </div>
+          
+
           
           {/* Featured Badge */}
           {product.featured && (

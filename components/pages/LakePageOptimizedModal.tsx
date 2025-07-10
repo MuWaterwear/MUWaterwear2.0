@@ -59,31 +59,56 @@ const LakePageOptimizedModal: React.FC<LakePageOptimizedModalProps> = ({
     setOptimizedImageSrc(null)
   }, [currentImageIndex, product])
 
-  // Load optimized image with fallback
+  // Load optimized image with fallback - OPTIMIZED VERSION
   useEffect(() => {
     if (!product || !product.images[currentImageIndex]) return
 
     const currentImageSrc = product.images[currentImageIndex]
     
-    // Try to load optimized image first
-    const optimizedPath = getOptimizedImagePath(
-      currentImageSrc, 
-      imageZoom > 2 ? 'hero' : imageZoom > 1 ? 'large' : 'medium'
-    )
-    
-    // Test if optimized image exists
-    const img = new Image()
-    img.onload = () => {
-      setOptimizedImageSrc(optimizedPath)
-      setImageError(false)
+    // Only change size category, not on every zoom level
+    const getSizeCategory = (zoom: number) => {
+      if (zoom > 2) return 'hero'
+      if (zoom > 1) return 'large'
+      return 'medium'
     }
-    img.onerror = () => {
-      // Fallback to original image if optimized doesn't exist
+    
+    const sizeCategory = getSizeCategory(imageZoom)
+    const optimizedPath = getOptimizedImagePath(currentImageSrc, sizeCategory)
+    
+    // Skip if we already have this optimized image
+    if (optimizedImageSrc === optimizedPath) return
+    
+    // Prefer AVIF, then WebP, then PNG
+    const testOptimizedImage = async () => {
+      const extensions = ['avif', 'webp', 'png']
+      const basePath = optimizedPath.replace(/\.[^/.]+$/, '')
+      
+      for (const ext of extensions) {
+        try {
+          const testPath = `${basePath}.${ext}`
+          const img = new Image()
+          
+          await new Promise((resolve, reject) => {
+            img.onload = resolve
+            img.onerror = reject
+            img.src = testPath
+          })
+          
+          setOptimizedImageSrc(testPath)
+          setImageError(false)
+          return
+        } catch {
+          // Try next format
+        }
+      }
+      
+      // Fallback to original if no optimized version works
       setOptimizedImageSrc(currentImageSrc)
       setImageError(false)
     }
-    img.src = optimizedPath
-  }, [product, currentImageIndex, imageZoom])
+    
+    testOptimizedImage()
+  }, [product, currentImageIndex, Math.floor(imageZoom)]) // Only update on major zoom changes
 
   // Zoom handlers
   const handleZoomIn = useCallback(() => {

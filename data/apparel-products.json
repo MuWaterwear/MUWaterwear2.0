@@ -5,10 +5,10 @@
     "category": "hoodies",
     "description": "Mu Waterwear Hoodie in Black from our MU APPAREL collection",
     "price": 57,
-    "images": [
-      "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-black-front-686fc1ed98881.png",
-      "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-black-back-686fc1fdcbac9.png"
-    ],
+                "images": [
+              "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-black-front-686fc1ed98881_optimized.jpg",
+              "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-black-back-686fc1fdcbac9_optimized.jpg"
+            ],
     "colors": [
       {
         "name": "Black",
@@ -32,10 +32,10 @@
     "category": "hoodies",
     "description": "Mu Waterwear Hoodie in Sandshell from our MU APPAREL collection",
     "price": 57,
-    "images": [
-      "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-sandshell-front-686fc1ed98d46.png",
-      "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-sandshell-back-686fc1fdcbf39.png"
-    ],
+                "images": [
+              "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-sandshell-front-686fc1ed98d46_optimized.jpg",
+              "/images/APPAREL/MU-APPAREL/MU-WATERWEAR-HOODIE/unisex-premium-mid-weight-hoodie-sandshell-back-686fc1fdcbf39_optimized.jpg"
+            ],
     "colors": [
       {
         "name": "Sandshell",
