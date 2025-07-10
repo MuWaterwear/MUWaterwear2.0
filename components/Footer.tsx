@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4 text-cyan-400">SUPPORT</h4>
             <ul className="space-y-2 text-slate-400">
-              <li><Link href="/sizeguide.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Size Guide</Link></li>
+              <li><Link href="/size%20guide.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Size Guide</Link></li>
               <li>
                 {showShippingPolicy ? (
                   <span className="text-slate-300">

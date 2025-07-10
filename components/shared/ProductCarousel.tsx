@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ArrowLeft } from 'lucide-react'
-import Image from 'next/image'
+import { ProductImage } from '@/components/ui/optimized-image'
 import { useCart } from '@/contexts/CartContext'
 
 interface Product {
@@ -154,13 +154,15 @@ export default function ProductCarousel({ products, onImageClick }: ProductCarou
                   className="flex-shrink-0 bg-gray-900 border-gray-800 text-white overflow-hidden"
                   style={{ width: `${cardWidth}px` }}
                 >
-                  <div className="relative h-80 bg-gray-800">
-                    <Image
+                  <div 
+                    className="relative h-80 bg-gray-800 cursor-pointer"
+                    onClick={() => onImageClick(product.images[0])}
+                  >
+                    <ProductImage
                       src={product.images[0]}
                       alt={product.name}
                       fill
-                      className="object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-                      onClick={() => onImageClick(product.images[0])}
+                      className="hover:scale-105 transition-transform duration-300"
                     />
                     <Badge className="absolute top-4 left-4 bg-cyan-500 text-black">
                       {typeof product.price === 'string' ? product.price : `$${product.price}`}

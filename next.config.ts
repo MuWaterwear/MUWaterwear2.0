@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       'vauth.command.verkada.com',
       'www.luckylablodge.com',
       'luckylablodge.com',
+      'cdn.weatherapi.com',
     ],
   },
   async headers() {

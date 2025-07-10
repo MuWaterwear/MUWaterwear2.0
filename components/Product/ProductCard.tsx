@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { FadeImage } from '@/components/ui/fade-image'
+import { ProductImage } from '@/components/ui/optimized-image'
 import { Button } from '@/components/ui/button'
 import { Eye, ShoppingCart, Heart } from 'lucide-react'
 import { useCart } from '@/contexts/CartContext'
@@ -66,11 +66,11 @@ export default function ProductCard({
         <div className={`relative overflow-hidden bg-gray-100 ${
           isFullWidth ? 'aspect-[16/9]' : 'aspect-[3/4]'
         }`}>
-          <FadeImage
+          <ProductImage
             src={isHovered && hoverImage ? hoverImage : image}
             alt={title}
             fill
-            className={`object-cover transition-transform duration-700 ${
+            className={`transition-transform duration-700 ${
               isHovered ? 'scale-110' : 'scale-100'
             }`}
             onLoad={() => setImageLoaded(true)}

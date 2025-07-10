@@ -8,8 +8,10 @@ import Footer from "@/components/Footer"
 import ApparelGrid from "@/components/pages/apparel/ApparelGrid"
 import dynamic from 'next/dynamic'
 import { allProducts, categories, getProductsByCategory } from "@/lib/features/apparel-products"
+import { useOptimizedImageZoom } from "@/hooks/useOptimizedImageZoom"
+import { useModalImagePreloader } from "@/components/shared/ModalImagePreloader"
 
-const ExpandedImageModal = dynamic(() => import('@/components/pages/apparel/ExpandedImageModal'), {
+const OptimizedExpandedImageModal = dynamic(() => import('@/components/pages/apparel/OptimizedExpandedImageModal'), {
   ssr: false,
   loading: () => null,
 })
@@ -18,28 +20,63 @@ export default function ApparelPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedColor, setSelectedColor] = useState<{ [key: string]: number }>({})
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-
-  // Expanded image modal state
-  const [expandedImage, setExpandedImage] = useState(false)
-  const [currentFeaturedImage, setCurrentFeaturedImage] = useState<string | null>(null)
   const [expandedProductId, setExpandedProductId] = useState<string | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Optimized image zoom hook
+  const {
+    expandedImage,
+    currentFeaturedImage,
+    handleImageClick: handleOptimizedImageClick,
+    closeModal,
+    preloadImages,
+    isPreloading
+  } = useOptimizedImageZoom({
+    preloadOnMount: true,
+    debounceMs: 30,
+    maxZoom: 3,
+    zoomStep: 0.5
+  })
 
   // Filter products based on selected category - order preserved from JSON file
   const filteredProducts = getProductsByCategory(selectedCategory)
 
+  // Get all product images for preloading
+  const allProductImages = filteredProducts.flatMap(product => product.images).slice(0, 20) // Limit to first 20 images
+
+  // Initialize image preloader for performance
+  useModalImagePreloader(allProductImages, {
+    trigger: 'mount',
+    delay: 500,
+    sizes: ['medium', 'large']
+  })
+
+  // Preload images when category changes
+  useEffect(() => {
+    if (allProductImages.length > 0) {
+      // Preload first batch of images with a small delay
+      const timeoutId = setTimeout(() => {
+        preloadImages(allProductImages.slice(0, 12))
+      }, 1000)
+      
+      return () => clearTimeout(timeoutId)
+    }
+  }, [selectedCategory, allProductImages, preloadImages])
+
+  // Enhanced image click handler that also sets product context
   const handleImageClick = (imageSrc: string, productId: string) => {
     const product = allProducts.find(p => p.id === productId)
     if (!product) return
 
-    setCurrentFeaturedImage(imageSrc)
-    setExpandedImage(true)
     setExpandedProductId(productId)
-
     const colorIndex = selectedColor[productId] || 0
     setCurrentImageIndex(colorIndex)
+    
+    // Use optimized image click handler
+    handleOptimizedImageClick(imageSrc)
   }
 
+  // Enhanced navigation that updates color selection
   const navigateExpandedImage = (direction: 'prev' | 'next') => {
     if (!expandedProductId) return
 
@@ -52,8 +89,10 @@ export default function ApparelPage() {
         : (currentImageIndex - 1 + totalImages) % totalImages
 
     setSelectedColor(prev => ({ ...prev, [expandedProductId]: newIndex }))
-    setCurrentFeaturedImage(product.images[newIndex])
     setCurrentImageIndex(newIndex)
+    
+    // Update the optimized modal with the new image
+    handleOptimizedImageClick(product.images[newIndex])
   }
 
   // Wave animation background
@@ -158,8 +197,14 @@ export default function ApparelPage() {
                 </button>
               ))}
             </div>
-              <div className="text-sm text-slate-400">
+              <div className="flex items-center gap-3 text-sm text-slate-400">
                 {filteredProducts.length} Products
+                {isPreloading && (
+                  <div className="flex items-center gap-1">
+                    <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-cyan-400">Optimizing</span>
+                  </div>
+                )}
               </div>
           </div>
         </div>
@@ -229,10 +274,10 @@ export default function ApparelPage() {
       {/* Footer */}
         <Footer />
 
-      {/* Expanded Image Modal */}
-        <ExpandedImageModal
+      {/* Optimized Expanded Image Modal */}
+        <OptimizedExpandedImageModal
           isOpen={expandedImage}
-          onClose={() => setExpandedImage(false)}
+          onClose={closeModal}
           currentImage={currentFeaturedImage}
           product={expandedProductId ? allProducts.find(p => p.id === expandedProductId) || null : null}
           currentImageIndex={currentImageIndex}

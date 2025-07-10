@@ -8,6 +8,9 @@ import { useCart } from '@/contexts/CartContext'
 import { MobileOnly, DesktopOnly } from '@/components/responsive/ResponsiveLayout'
 import WeatherWebcamSection from '@/components/Weather/WeatherWebcamSection'
 import { getProductsByLake } from '@/lib/features/apparel-products'
+import { CriticalImagePreloader } from '@/components/shared/ImagePreloader'
+import { HeroImage } from '@/components/ui/optimized-image'
+import { optimizeProducts, getCriticalImages } from '@/lib/utils/product-optimization'
 
 export default function CoeurDalenePage() {
   const { setIsCartOpen } = useCart()
@@ -71,14 +74,18 @@ export default function CoeurDalenePage() {
   ]
 
   // Get CDA products from centralized source
-  const cdaProducts = getProductsByLake('CDA').filter(
+  const rawCdaProducts = getProductsByLake('CDA').filter(
     product => product.lake === 'CDA' || product.name.toLowerCase().includes('cda') || product.name.toLowerCase().includes('coeur')
   )
 
-  const allCdaProducts = [...cdaProducts, ...accessories].map(product => ({
+  const rawAllCdaProducts = [...rawCdaProducts, ...accessories].map(product => ({
     ...product,
     name: product.name.replace(/Cda/g, 'CDA'),
   }))
+
+  // Optimize products for better performance
+  const allCdaProducts = optimizeProducts(rawAllCdaProducts)
+  const criticalProductImages = getCriticalImages(allCdaProducts, 6)
 
   const lakeInfo = {
     name: "Lake Coeur d'Alene",
@@ -99,6 +106,13 @@ export default function CoeurDalenePage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Preload critical images */}
+      <CriticalImagePreloader
+        heroImage={lakeInfo.heroImage}
+        iconImage={lakeInfo.icon}
+        productImages={criticalProductImages}
+      />
+      
       {/* Desktop Navigation */}
       <DesktopOnly>
         <NavigationBar onMobileMenuOpen={() => setMobileFiltersOpen(true)} />
@@ -121,9 +135,12 @@ export default function CoeurDalenePage() {
 
           <div className="relative z-10 px-6 pb-8 space-y-4">
             <div className="w-24 h-24 mx-auto mb-4">
-              <img
-                src={lakeInfo.icon}
+              <HeroImage
+                src={lakeInfo.icon!}
                 alt={`${lakeInfo.name} Icon`}
+                size="small"
+                width={96}
+                height={96}
                 className="w-full h-full object-contain opacity-90 brightness-0 saturate-100 invert"
                 style={{
                   filter:
