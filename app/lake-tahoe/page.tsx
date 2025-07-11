@@ -91,7 +91,7 @@ export default function LakeTahoePage() {
   }
 
   const webcamConfig = {
-    src: 'https://portal.hdontap.com/s/embed/?stream=northtahoepud_ttv-TOPIA',
+    src: 'https://portal.hdontap.com/s/embed/?stream=mourelatos_ttv-TOPIA',
     title: 'Lake Tahoe Live Webcam',
   }
 
