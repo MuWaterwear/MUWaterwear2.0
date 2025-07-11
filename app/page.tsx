@@ -211,7 +211,7 @@ export default function Component() {
               <div className="bg-slate-900/50 rounded-lg overflow-hidden border border-slate-800/50 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1 group cursor-pointer">
                 <div className="relative h-80">
                   <Image
-                    src="/images/Untitled design (51).svg"
+                    src="/images/accessory-card-main.png"
                     alt="MU Waterwear Accessories"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"

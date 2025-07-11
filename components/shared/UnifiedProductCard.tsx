@@ -166,20 +166,7 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-800/30 to-slate-900/40 z-0"></div>
           
-          {/* SVG Background pattern for all apparel */}
-          {variant !== "gear" && (
-            <div className="absolute inset-0 pointer-events-none z-[1] opacity-40">
-              <Image
-                src="/Untitled design (68).svg"
-                alt="Background"
-                fill
-                className="object-cover"
-                style={{ transform: 'scale(4)' }}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority={false}
-              />
-            </div>
-          )}
+
           
           {/* Main product image */}
           <div 
@@ -197,8 +184,8 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
                   ? 'object-cover scale-150 group-hover:scale-[1.7]' 
                   : product.id === 'mu-ocean-green-swim-shorts'
                   ? 'object-cover scale-150 group-hover:scale-[1.7]'
-                  : product.id === 'swim-mu-sky-blue-shorts'
-                  ? 'object-cover scale-100 group-hover:scale-[1.2]'
+                  : product.id === 'mu-sky-blue-swim-shorts'
+                  ? 'object-cover scale-150 group-hover:scale-[1.7]'
                   : product.id === 'mu-waterwear-hoodie-black' || product.id === 'mu-waterwear-hoodie-sandshell'
                   ? 'object-cover group-hover:scale-110 mix-blend-multiply'
                   : 'object-cover group-hover:scale-110'
@@ -207,7 +194,7 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
                 ? "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 : "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
               }
-              quality={75}
+              quality={100}
               priority={false}
             />
           </div>

@@ -51,17 +51,7 @@ export default function ProductCard({
         <div className={`relative overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50 ${
           isFullWidth ? (isMobile ? 'aspect-[2/1]' : 'aspect-[2/1]') : 'aspect-square'
         }`}>
-          {/* Hero Background SVG behind product image */}
-          <div className="absolute inset-0 opacity-15 pointer-events-none z-0">
-            <Image
-              src="/Untitled design (68).svg"
-              alt="Background"
-              fill
-              className="object-cover"
-              style={{ transform: 'scale(4)' }}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </div>
+
           <div 
             className="absolute inset-0 cursor-pointer z-10"
             onClick={(e) => {
@@ -80,9 +70,9 @@ export default function ProductCard({
                 product.id === 'uv-mu-paddleboard' 
                   ? 'object-cover scale-150 group-hover:scale-[1.7]' 
                   : product.id === 'mu-ocean-green-swim-shorts'
-                  ? 'object-cover scale-150 group-hover:scale-[1.7]'
-                  : product.id === 'swim-mu-sky-blue-shorts'
-                  ? 'object-cover scale-100 group-hover:scale-[1.2]'
+                  ? 'object-cover scale-150 group-hover:scale-[1.6]'
+                  : product.id === 'mu-sky-blue-swim-shorts'
+                  ? 'object-cover scale-150 group-hover:scale-[1.6]'
                   : 'object-cover group-hover:scale-110'
               }`}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"

@@ -85,6 +85,12 @@ export default function GearPage() {
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
 
+  // Progressive image loading utility
+  const getImageSrc = (imagePath: string, size: 'thumb' | 'med' | 'full' = 'thumb') => {
+    // Replace _thumb.png with the desired size
+    return imagePath.replace('_thumb.png', `_${size}.png`)
+  }
+
   // Helper function to map color index to correct image index for Cascade Backpack Compact
   const getImageIndexForColor = (product: any, colorIndex: number) => {
     if (product.id === 'gear-cascade-backpack-compact') {
@@ -161,7 +167,9 @@ export default function GearPage() {
     const product = [...bags, ...wetsuits, ...paddleBoards, ...coolers, ...wakeboards].find(p => p.id === productId)
     if (!product) return
 
-    setCurrentFeaturedImage(imageSrc)
+    // Use full-size image for expanded view
+    const fullSizeImage = getImageSrc(imageSrc, 'full')
+    setCurrentFeaturedImage(fullSizeImage)
     setExpandedImage(true)
     setExpandedProductId(productId)
 
@@ -243,7 +251,7 @@ export default function GearPage() {
         : (currentImageIndex - 1 + totalImages) % totalImages
 
     setSelectedColor(prev => ({ ...prev, [expandedProductId]: newIndex }))
-    setCurrentFeaturedImage(product.images[newIndex])
+    setCurrentFeaturedImage(getImageSrc(product.images[newIndex], 'full'))
     setCurrentImageIndex(newIndex)
 
     // Maintain zoom levels - 150% for all enhanced products, 100% for others
@@ -455,12 +463,18 @@ export default function GearPage() {
                         )}
                       >
                         <Image
-                          src={product.images[currentImageIndex] || product.images[0]}
+                          src={hoveredProduct === product.id 
+                            ? getImageSrc(product.images[currentImageIndex] || product.images[0], 'full')
+                            : getImageSrc(product.images[currentImageIndex] || product.images[0], 'med')
+                          }
                           alt={product.name}
                           fill
                           className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-[3] group-hover:scale-[3.1] sm:scale-[3] sm:group-hover:scale-[3.1]"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           priority={false}
+                          quality={100}
+                          unoptimized={true}
+                          loading="lazy"
                         />
                       </div>
 
@@ -566,7 +580,7 @@ export default function GearPage() {
                                       ? 'border-cyan-400 shadow-lg shadow-cyan-400/25'
                                       : 'border-slate-600 hover:border-slate-400'
                                   }`}
-                                  style={{ backgroundColor: color.hex }}
+                                  style={{ backgroundColor: (color as any).hex || (color as any).value }}
                                 />
                                 {selectedColor[product.id] === index && (
                                   <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-cyan-400 whitespace-nowrap font-medium">
@@ -646,7 +660,11 @@ export default function GearPage() {
               typeof size === 'object' ? size.name : size
             ),
             lake: '', // Add dummy lake property for type compatibility
-            category: gearProduct.category || ''
+            category: gearProduct.category || '',
+            colors: gearProduct.colors?.map((color: any) => ({
+              name: color.name,
+              hex: color.hex || color.value
+            })) || []
           }
         })() : null}
         currentImageIndex={currentImageIndex}
