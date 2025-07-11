@@ -24,14 +24,6 @@ export interface OptimizedProduct {
   primaryColor: string // Most prominent color for display
 }
 
-// Import image manifest for optimized paths
-let imageManifest: Record<string, any> = {}
-try {
-  imageManifest = require('@/public/images/optimized/manifest.json')
-} catch (error) {
-  console.warn('Image manifest not found. Using original images.')
-}
-
 // Function to get optimized image path with robust fallback handling
 export function getOptimizedImagePath(originalPath: string, size: 'thumbnail' | 'small' | 'medium' | 'large' | 'hero' = 'medium') {
   // Handle empty or invalid paths
@@ -39,33 +31,8 @@ export function getOptimizedImagePath(originalPath: string, size: 'thumbnail' | 
     return originalPath || ''
   }
   
-  try {
-    // For files with special characters (commas, spaces), prefer original image
-    // since these often have issues with optimization
-    const hasSpecialChars = originalPath.includes(',') || originalPath.includes(' ') || originalPath.includes('%')
-    
-    if (hasSpecialChars) {
-      return originalPath
-    }
-    
-    const imagePath = originalPath.replace('/images/', '').replace(/\.[^/.]+$/, '')
-    const manifestEntry = imageManifest[imagePath]
-    
-    if (manifestEntry && manifestEntry[size]) {
-      const webpPath = manifestEntry[size].webp
-      const fallbackPath = manifestEntry[size].fallback
-      
-      // Return WebP if available, otherwise fallback
-      return webpPath || fallbackPath || originalPath
-    }
-    
-    // No manifest entry found
-    return originalPath
-  } catch (error) {
-    // Graceful fallback on any error
-    console.warn(`Error getting optimized image path for ${originalPath}:`, error)
-    return originalPath
-  }
+  // Since we're not using the optimized images directory, return the original path
+  return originalPath
 }
 
 // Function to create consistent random selection based on product ID

@@ -138,7 +138,6 @@ export default function CoeurDalenePage() {
               <HeroImage
                 src={lakeInfo.icon!}
                 alt={`${lakeInfo.name} Icon`}
-                size="small"
                 width={96}
                 height={96}
                 className="w-full h-full object-contain opacity-90 brightness-0 saturate-100 invert"
