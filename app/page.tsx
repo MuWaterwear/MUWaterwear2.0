@@ -173,7 +173,7 @@ export default function Component() {
               <div className="bg-slate-900/50 rounded-lg overflow-hidden border border-slate-800/50 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1 group cursor-pointer">
                 <div className="relative h-80">
                   <Image
-                    src="/images/gear-bag.png"
+                    src="/images/gear-bag.jpg"
                     alt="Tactical Gear Bag"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -192,7 +192,7 @@ export default function Component() {
               <div className="bg-slate-900/50 rounded-lg overflow-hidden border border-slate-800/50 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1 group cursor-pointer">
                 <div className="relative h-80">
                   <Image
-                    src="/images/apparel-tshirt.png"
+                    src="/images/apparel-tshirt.jpg"
                     alt="Water Ski Community T-Shirt"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"

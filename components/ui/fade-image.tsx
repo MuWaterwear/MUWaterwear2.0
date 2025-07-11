@@ -3,15 +3,10 @@ import OptimizedImage from './optimized-image'
 interface FadeImageProps {
   src: string
   alt: string
-  size?: 'thumbnail' | 'small' | 'medium' | 'large' | 'hero'
   className?: string
   priority?: boolean
-  placeholder?: 'blur' | 'empty' | 'skeleton'
-  loading?: 'lazy' | 'eager'
-  onLoad?: (event: React.SyntheticEvent<HTMLImageElement>) => void
-  onError?: (event: React.SyntheticEvent<HTMLImageElement>) => void
-  fallbackSrc?: string
-  aspectRatio?: string
+  onLoad?: () => void
+  onError?: () => void
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down'
   quality?: number
   fill?: boolean
@@ -31,9 +26,6 @@ export const FadeImage = ({
   alt,
   className,
   priority = false,
-  loading = 'lazy',
-  placeholder = 'skeleton',
-  size = 'medium',
   ...props
 }: FadeImageProps) => (
   <OptimizedImage
@@ -41,9 +33,6 @@ export const FadeImage = ({
     alt={alt}
     className={`${className ?? ''} transition-opacity duration-300`}
     priority={priority}
-    loading={loading}
-    placeholder={placeholder}
-    size={size}
     {...props}
   />
 ) 
