@@ -313,11 +313,11 @@
     "id": "mu-ocean-green-swim-shorts",
     "name": "Mu Ocean Green Swim Shorts",
     "category": "swim",
-    "description": "Mu Ocean Green Swim Shorts from our MU APPAREL collection",
+    "description": "Dive into adventure with our premium Ocean Green swim shorts. Featuring quick-dry technology and water-resistant fabric, these shorts transition seamlessly from lake to shore. The deep ocean green colorway captures the essence of pristine mountain waters.",
     "price": 30,
     "images": [
-      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-SWIM-SHORTS/18_optimized.png",
-      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-SWIM-SHORTS/19_optimized.png"
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-SWIM-SHORTS/18.svg",
+      "/images/APPAREL/MU-APPAREL/MU-OCEAN-GREEN-SWIM-SHORTS/19.svg"
     ],
     "colors": [
       {
@@ -333,7 +333,8 @@
       "XL",
       "XXL"
     ],
-    "featured": false,
+    "featured": true,
+    "details": "Premium 4-way stretch fabric with UPF 50+ sun protection. Quick-dry technology and water-resistant coating. Secure zip pocket and adjustable waistband with drawstring. Perfect for swimming, paddleboarding, and lakeside adventures.",
     "lake": "MU"
   },
   {
@@ -370,7 +371,7 @@
     "id": "mu-red-tide-swim-shorts",
     "name": "Mu Red Tide Swim Shorts",
     "category": "swim",
-    "description": "Mu Red Tide Swim Shorts from our MU APPAREL collection",
+    "description": "Make a bold statement with our vibrant Red Tide swim shorts. Inspired by dramatic sunset reflections on alpine lakes, these performance shorts deliver style and functionality. The striking red colorway commands attention while providing premium comfort.",
     "price": 30,
     "images": [
       "/images/APPAREL/MU-APPAREL/MU-RED-TIDE-SWIM-SHORTS/Front.png"
@@ -390,6 +391,7 @@
       "XXL"
     ],
     "featured": false,
+    "details": "High-performance fabric with moisture-wicking technology. Reinforced seams for durability. Elastic waistband with secure drawstring closure. Side pockets for essentials. Ideal for swimming, beach volleyball, and water sports.",
     "lake": "MU"
   },
   {
@@ -429,10 +431,11 @@
     "id": "mu-sky-blue-swim-shorts",
     "name": "Mu Sky Blue Swim Shorts",
     "category": "swim",
-    "description": "Mu Sky Blue Swim Shorts from our MU APPAREL collection",
+    "description": "Embrace the endless summer with our Sky Blue swim shorts. The crisp azure tone mirrors perfect lake days and cloudless skies. Engineered for active water enthusiasts who demand both style and performance in their gear.",
     "price": 30,
     "images": [
-      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-SWIM-SHORTS/15_optimized.png"
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-SWIM-SHORTS/15.svg",
+      "/images/APPAREL/MU-APPAREL/MU-SKY-BLUE-SWIM-SHORTS/16.svg"
     ],
     "colors": [
       {
@@ -448,7 +451,8 @@
       "XL",
       "XXL"
     ],
-    "featured": false,
+    "featured": true,
+    "details": "Lightweight polyester blend with chlorine-resistant coating. Quick-dry mesh lining for comfort. Contrast stitching details. Adjustable waistband with logo drawstring. Perfect for swimming, kayaking, and lakeside lounging.",
     "lake": "MU"
   },
   {

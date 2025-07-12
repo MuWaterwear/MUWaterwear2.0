@@ -161,16 +161,49 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
       <div className={containerClasses}>
         
         {/* Product Image */}
-        <div className={`relative overflow-hidden ${aspectRatioClasses}`}>
+        <div className={`relative overflow-hidden ${aspectRatioClasses}`} 
+             style={{
+               ...(product.id === 'mu-ocean-green-swim-shorts' || 
+                   product.id === 'mu-sky-blue-swim-shorts' || 
+                   product.id === 'mu-red-tide-swim-shorts' ? {
+                 overflow: 'hidden',
+                 overflowX: 'hidden', 
+                 overflowY: 'hidden',
+                 contain: 'layout style paint'
+               } : {})
+             }}>
           
           {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/30 to-slate-900/40 z-0"></div>
+          <div className={`absolute inset-0 z-0 ${
+            product.id === 'mu-ocean-green-swim-shorts' 
+              ? 'bg-gradient-to-b from-emerald-900/20 via-slate-800/30 to-slate-900/40'
+              : product.id === 'mu-sky-blue-swim-shorts'
+              ? 'bg-gradient-to-b from-sky-900/20 via-slate-800/30 to-slate-900/40'
+              : product.id === 'mu-red-tide-swim-shorts'
+              ? 'bg-gradient-to-b from-red-900/20 via-slate-800/30 to-slate-900/40'
+              : 'bg-gradient-to-b from-slate-800/30 to-slate-900/40'
+          }`}></div>
           
 
           
           {/* Main product image */}
           <div 
-            className="absolute inset-0 cursor-pointer z-10 w-full h-full flex items-center justify-center"
+            className={`absolute inset-0 cursor-pointer z-10 w-full h-full flex items-center justify-center ${
+              product.id === 'mu-ocean-green-swim-shorts' || 
+              product.id === 'mu-sky-blue-swim-shorts' || 
+              product.id === 'mu-red-tide-swim-shorts' 
+                ? 'overflow-hidden' 
+                : ''
+            }`}
+            style={{
+              ...(product.id === 'mu-ocean-green-swim-shorts' || 
+                  product.id === 'mu-sky-blue-swim-shorts' || 
+                  product.id === 'mu-red-tide-swim-shorts' ? {
+                overflow: 'hidden',
+                overflowX: 'hidden',
+                overflowY: 'hidden'
+              } : {})
+            }}
             onClick={handleImageClick}
           >
             <Image
@@ -183,9 +216,11 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
                   : product.id === 'uv-mu-paddleboard' 
                   ? 'object-cover scale-150 group-hover:scale-[1.7]' 
                   : product.id === 'mu-ocean-green-swim-shorts'
-                  ? 'object-cover scale-150 group-hover:scale-[1.7]'
+                  ? 'object-contain scale-[2.7] group-hover:scale-[3.0] p-2'
                   : product.id === 'mu-sky-blue-swim-shorts'
-                  ? 'object-cover scale-150 group-hover:scale-[1.7]'
+                  ? 'object-contain scale-150 group-hover:scale-[1.7] p-2'
+                  : product.id === 'mu-red-tide-swim-shorts'
+                  ? 'object-contain scale-100 group-hover:scale-110 p-2'
                   : product.id === 'mu-waterwear-hoodie-black' || product.id === 'mu-waterwear-hoodie-sandshell'
                   ? 'object-cover group-hover:scale-110 mix-blend-multiply'
                   : 'object-cover group-hover:scale-110'
@@ -254,15 +289,21 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
             </>
           )}
 
-          {/* Mobile Image Counter */}
-          {hasMultipleImages && (
+          {/* Mobile Image Counter - hide for swim shorts */}
+          {hasMultipleImages && 
+           product.id !== 'mu-ocean-green-swim-shorts' && 
+           product.id !== 'mu-sky-blue-swim-shorts' && 
+           product.id !== 'mu-red-tide-swim-shorts' && (
             <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full sm:hidden">
               {currentImageIndex + 1}/{product.images.length}
             </div>
           )}
           
-          {/* Expand icon overlay - hide on mobile for apparel */}
-          {variant === "apparel" && !isMobile && (
+          {/* Expand icon overlay - hide on mobile for apparel and always hide for swim shorts */}
+          {variant === "apparel" && !isMobile && 
+           product.id !== 'mu-ocean-green-swim-shorts' && 
+           product.id !== 'mu-sky-blue-swim-shorts' && 
+           product.id !== 'mu-red-tide-swim-shorts' && (
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
               <div className={`bg-black/50 rounded-full p-3 ${
                 product.id === 'uv-mu-paddleboard' 

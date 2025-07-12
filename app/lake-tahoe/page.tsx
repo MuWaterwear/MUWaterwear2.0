@@ -91,7 +91,7 @@ export default function LakeTahoePage() {
   }
 
   const webcamConfig = {
-    src: 'https://portal.hdontap.com/s/embed/?stream=mourelatos_ttv-TOPIA',
+    src: 'https://portal.hdontap.com/s/embed/?stream=northtahoepud_ttv-TOPIA',
     title: 'Lake Tahoe Live Webcam',
   }
 
@@ -202,7 +202,7 @@ export default function LakeTahoePage() {
           location="Lake Tahoe, CA" 
           webcamSrc={webcamConfig.src}
           webcamTitle={webcamConfig.title}
-          lakemonsterUrl="https://tahoe.ucdavis.edu/real-time-conditions"
+          lakemonsterUrl="https://waterdata.usgs.gov/monitoring-location/391105120052301/"
         />
 
         {/* Lake Page Template with Tahoe-specific content */}
