@@ -12,7 +12,8 @@ export interface Product {
   images: string[]
   colors: { name: string; hex: string }[]
   sizes: string[]
-  featured: boolean
+  featured?: boolean
+  badge?: string
   lake: string
   details?: string
   featuresList?: string[]

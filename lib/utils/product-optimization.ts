@@ -10,7 +10,8 @@ export interface OptimizedProduct {
   images: string[]
   colors: Array<{ name: string; hex: string }>
   sizes: string[]
-  featured: boolean
+  featured?: boolean
+  badge?: string
   lake: string
   details: string
   // Performance optimizations
@@ -168,6 +169,7 @@ export function optimizeProduct(product: any): OptimizedProduct {
     colors: product.colors || [],
     sizes: product.sizes || [],
     featured: product.featured || false,
+    badge: product.badge,
     lake: product.lake,
     details: product.details,
     imagePreloads,

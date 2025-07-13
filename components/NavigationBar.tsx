@@ -27,7 +27,7 @@ export default function NavigationBar({ onMobileMenuOpen }: NavigationBarProps) 
           <div className="flex items-center space-x-2">
             <Link
               href="/"
-              className="flex flex-col items-center justify-center py-1 cursor-pointer hover:opacity-80 transition-opacity focus:ring-2 focus:ring-cyan-400/50 focus:outline-none rounded w-fit"
+              className="inline-flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity focus:ring-2 focus:ring-cyan-400/50 focus:outline-none rounded"
               aria-label="MU Waterwear Home"
             >
               <p className="text-xs text-gray-400 tracking-[0.2em] font-light mb-0">CA • OR • WA • ID • MT</p>

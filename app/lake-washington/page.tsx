@@ -182,7 +182,7 @@ export default function LakeWashingtonPage() {
 
       <div className="container mx-auto px-4 py-8">
         <WeatherWebcamSection
-          location="Lake Washington, WA"
+          location="Seattle, WA"
           webcamSrc={webcamConfig.src}
           webcamTitle={webcamConfig.title}
           lakemonsterUrl="https://waterdata.usgs.gov/monitoring-location/12119000/"

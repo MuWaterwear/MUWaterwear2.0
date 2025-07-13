@@ -169,11 +169,21 @@ export async function POST(request: NextRequest) {
         )
       }
 
+      // Apply InstaMU 10% discount
+      if (couponCode.toUpperCase() === 'INSTAMU') {
+        unitAmount = Math.round(unitAmount * 0.9) // 10% discount
+        console.log(
+          `Applied InstaMU discount to ${item.name}: $${(unitAmount / 100).toFixed(2)} per unit`
+        )
+      }
+
       return {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: couponCode === 'LINDBERGH-LAKE737' ? `${item.name} (Actual Cost)` : item.name,
+            name: couponCode === 'LINDBERGH-LAKE737' ? `${item.name} (Actual Cost)` 
+                  : couponCode.toUpperCase() === 'INSTAMU' ? `${item.name} (InstaMU 10% Off)` 
+                  : item.name,
             images: [
               item.image.startsWith('/')
                 ? `${process.env.NEXT_PUBLIC_BASE_URL || 'https://muwaterwear.com'}${encodeURI(item.image)}`
@@ -182,6 +192,7 @@ export async function POST(request: NextRequest) {
             metadata: {
               size: item.size || 'N/A',
               actualCost: couponCode === 'LINDBERGH-LAKE737' ? 'true' : 'false',
+              instaMuDiscount: couponCode.toUpperCase() === 'INSTAMU' ? 'true' : 'false',
             },
           },
           unit_amount: unitAmount,
@@ -220,6 +231,7 @@ export async function POST(request: NextRequest) {
         lindbergh_coupon: couponCode === 'LINDBERGH-LAKE737' ? 'true' : 'false',
         actual_costs_used: couponCode === 'LINDBERGH-LAKE737' && actualCosts ? 'true' : 'false',
         free_shipping_coupon: freeShippingCoupon ? 'true' : 'false',
+        instamu_coupon: couponCode.toUpperCase() === 'INSTAMU' ? 'true' : 'false',
         coupon_applied: couponCode || 'none',
         effective_total: effectiveTotal ? effectiveTotal.toString() : '',
         // Add customer info to metadata for order processing
@@ -318,10 +330,13 @@ export async function POST(request: NextRequest) {
 
     // Handle coupon codes
     if (couponCode) {
-      // Skip Stripe validation for our custom free shipping coupons
+      // Skip Stripe validation for our custom free shipping coupons and InstaMU
       if (freeShippingCoupon) {
         console.log('✅ Free shipping coupon applied (frontend only):', couponCode)
         // Don't send to Stripe, we handle shipping cost reduction ourselves
+      } else if (couponCode.toUpperCase() === 'INSTAMU') {
+        console.log('✅ InstaMU coupon applied (frontend only):', couponCode)
+        // Don't send to Stripe, we handle discount calculation in frontend
       } else {
         // For other coupons, validate with Stripe
         try {

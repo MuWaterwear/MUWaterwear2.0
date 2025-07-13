@@ -122,34 +122,38 @@ export default function FlatheadLakePage() {
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/90" />
 
-          <div className="relative z-10 px-6 pb-8 space-y-4">
-            {/* Icon */}
-            <div className="w-24 h-24 mx-auto mb-4">
+          <div className="relative z-10 px-6 pb-8 space-y-1">
+            {/* Icon with overlayed title, subtitle, and data */}
+            <div className="mx-auto mb-1 relative" style={{ width: '30rem', height: '30rem' }}>
               <img
                 src={lakeInfo.icon}
                 alt={`${lakeInfo.name} Icon`}
                 className="w-full h-full object-contain opacity-90 brightness-0 saturate-100 invert"
-                  style={{
-                    filter:
-                      'brightness(0) saturate(100%) invert(65%) sepia(98%) saturate(3207%) hue-rotate(163deg) brightness(101%) contrast(101%)',
-                  }}
+                style={{
+                  filter:
+                    'brightness(0) saturate(100%) invert(65%) sepia(98%) saturate(3207%) hue-rotate(163deg) brightness(101%) contrast(101%)',
+                  transform: 'translateY(-11.5%)'
+                }}
                 />
+              
+              {/* Title, subtitle, and data overlayed on icon */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-30 space-y-3 pt-10">
+                <h1 className="text-4xl font-bold text-center tracking-tight text-white">
+                  {lakeInfo.name.toUpperCase()}
+                </h1>
+                <p className="text-xl text-gray-300 text-center font-light">{lakeInfo.description}</p>
+                
+                <div className="bg-black/50 rounded-lg p-4 text-center">
+                  <p className="text-sm text-gray-200 space-x-2">
+                    <span>Elevation: {lakeInfo.elevation}</span>
+                    <span>•</span>
+                    <span>GPS: {lakeInfo.gpsCoordinates}</span>
+                    <span>•</span>
+                    <span>Max Depth: {lakeInfo.maxDepth}</span>
+                  </p>
+                </div>
               </div>
-
-            <h1 className="text-4xl font-bold text-center tracking-tight text-white">
-              {lakeInfo.name.toUpperCase()}
-            </h1>
-            <p className="text-xl text-gray-300 text-center font-light">{lakeInfo.description}</p>
-
-            <div className="bg-black/50 rounded-lg p-4 text-center">
-              <p className="text-sm text-gray-200 space-x-2">
-                <span>Elevation: {lakeInfo.elevation}</span>
-                <span>•</span>
-                <span>GPS: {lakeInfo.gpsCoordinates}</span>
-                <span>•</span>
-                <span>Max Depth: {lakeInfo.maxDepth}</span>
-              </p>
-          </div>
+            </div>
         </div>
       </section>
       </MobileOnly>
@@ -165,8 +169,9 @@ export default function FlatheadLakePage() {
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+
           <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
-            <div className="w-32 h-32 flex items-center justify-center mb-6 mx-auto">
+            <div className="flex items-center justify-center mb-1 mx-auto relative" style={{ width: '40rem', height: '40rem' }}>
               <img
                 src={lakeInfo.icon}
                 alt={`${lakeInfo.name} Icon`}
@@ -174,27 +179,31 @@ export default function FlatheadLakePage() {
                 style={{
                   filter:
                     'brightness(0) saturate(100%) invert(65%) sepia(98%) saturate(3207%) hue-rotate(163deg) brightness(101%) contrast(101%)',
+                  transform: 'translateY(-16.5%)'
                 }}
               />
-                            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight text-white">
-              {lakeInfo.name.toUpperCase()}
-            </h1>
-            <p className="text-xl text-gray-300 mb-6 font-light leading-relaxed">
-              {lakeInfo.description}
-            </p>
-            <div className="text-center text-gray-300">
-              <p className="text-sm">
-                Elevation: {lakeInfo.elevation} • GPS: {lakeInfo.gpsCoordinates} • Max Depth: {lakeInfo.maxDepth}
-              </p>
-          </div>
+              
+              {/* Title, subtitle, and data overlayed on icon */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-40 space-y-4 pt-16">
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white">
+                  {lakeInfo.name.toUpperCase()}
+                </h1>
+                <p className="text-xl text-gray-300 font-light leading-relaxed">{lakeInfo.description}</p>
+                
+                <div className="text-center text-gray-300">
+                  <p className="text-sm">
+                    Elevation: {lakeInfo.elevation} • GPS: {lakeInfo.gpsCoordinates} • Max Depth: {lakeInfo.maxDepth}
+                  </p>
+                </div>
+              </div>
+            </div>
         </div>
       </section>
       </DesktopOnly>
 
       <div className="container mx-auto px-4 py-8">
         <WeatherWebcamSection
-          location="Flathead Lake, MT"
+          location="Bigfork, Montana"
           webcamSrc={webcamConfig.src}
           webcamTitle={webcamConfig.title}
           lakemonsterUrl="https://waterdata.usgs.gov/monitoring-location/12304000/"

@@ -32,6 +32,40 @@ export interface CartError {
 }
 
 /**
+ * Represents a discount/coupon code
+ */
+export interface CartDiscount {
+  /** The coupon code */
+  code: string
+  /** Type of discount */
+  type: 'percentage' | 'fixed_amount' | 'free_shipping'
+  /** Discount value (percentage as decimal or fixed amount) */
+  value: number
+  /** Maximum discount amount for percentage discounts */
+  maxDiscount?: number
+  /** Whether the discount is currently valid */
+  isValid: boolean
+  /** Human-readable description */
+  description?: string
+}
+
+/**
+ * Cart totals with discount information
+ */
+export interface CartTotals {
+  /** Subtotal before discount */
+  subtotal: number
+  /** Discount amount */
+  discount: number
+  /** Shipping cost */
+  shipping: number
+  /** Final total after discount */
+  total: number
+  /** Applied discount code if any */
+  appliedDiscount?: CartDiscount
+}
+
+/**
  * Internal cart state management
  */
 export interface CartState {
@@ -43,6 +77,8 @@ export interface CartState {
   error: CartError | null
   /** Description of current/last action being performed */
   lastAction: string | null
+  /** Applied discount code */
+  appliedDiscount?: CartDiscount
 }
 
 /**
@@ -154,6 +190,7 @@ export interface CartContextType {
   isLoading: boolean
   error: CartError | null
   lastAction: string | null
+  appliedDiscount?: CartDiscount
   setIsCartOpen: (open: boolean) => void
   addToCart: (item: Omit<CartItem, 'quantity'>) => Promise<boolean>
   updateQuantity: (id: string, quantity: number) => Promise<boolean>
@@ -161,6 +198,9 @@ export interface CartContextType {
   clearCart: () => Promise<boolean>
   getCartTotal: () => string
   getCartItemCount: () => number
+  applyDiscount: (code: string) => Promise<boolean>
+  removeDiscount: () => void
+  getCartTotals: () => CartTotals
   clearError: () => void
   retryLastAction: () => void
 }

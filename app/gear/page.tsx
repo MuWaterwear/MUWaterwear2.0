@@ -484,6 +484,12 @@ export default function GearPage() {
                           FEATURED
                         </div>
                       )}
+                      {/* Waterproof Badge */}
+                      {product.badge && (
+                        <div className="absolute top-3 left-3 bg-blue-500/20 backdrop-blur-sm text-blue-400 text-xs font-medium px-3 py-1 rounded-full border border-blue-500/30 z-10">
+                          {product.badge}
+                        </div>
+                      )}
 
                       {/* Image Navigation for Multiple Images - Desktop Only */}
                       {hasMultipleImages && (

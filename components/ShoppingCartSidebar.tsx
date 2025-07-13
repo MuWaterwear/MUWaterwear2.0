@@ -166,6 +166,8 @@ export default function ShoppingCartSidebar() {
       let stripeCouponCode = appliedCoupon
       if (appliedCoupon?.toLowerCase() === 'lindbergh@lake737') {
         stripeCouponCode = 'LINDBERGH-LAKE737'
+      } else if (appliedCoupon?.toLowerCase() === 'instamu') {
+        stripeCouponCode = 'INSTAMU'
       }
 
       // Store cart data and total for success page
@@ -459,6 +461,11 @@ export default function ShoppingCartSidebar() {
         console.log('💰 Calling calculateActualCosts...')
         await calculateActualCosts()
         console.log('✅ Actual costs calculation completed')
+      } else if (processedCode.toLowerCase() === 'instamu') {
+        console.log('🎯 InstaMU coupon detected! 10% discount applied')
+        processedCode = 'INSTAMU'
+        // Clear actual costs for InstaMU coupon
+        setActualCosts(null)
       } else {
         console.log('🔤 Regular coupon, converting to uppercase:', processedCode.toUpperCase())
         processedCode = processedCode.toUpperCase()
@@ -491,6 +498,14 @@ export default function ShoppingCartSidebar() {
         .reduce((sum, cost) => sum + cost.productionCost + cost.taxCost, 0)
         .toFixed(2)
     }
+    
+    // Apply 10% discount for InstaMU coupon
+    if (appliedCoupon?.toLowerCase() === 'instamu') {
+      const subtotal = parseFloat(getCartTotal())
+      const discount = subtotal * 0.1
+      return (subtotal - discount).toFixed(2)
+    }
+    
     return getCartTotal()
   }
 
@@ -805,8 +820,18 @@ export default function ShoppingCartSidebar() {
                   <>
                     <div className="flex justify-between items-center">
                       <span className="text-gray-400">Subtotal</span>
-                      <span className="text-white font-bold">${getEffectiveCartTotal()}</span>
+                      <span className="text-white font-bold">${getCartTotal()}</span>
                     </div>
+
+                    {/* Discount for InstaMU coupon */}
+                    {appliedCoupon?.toLowerCase() === 'instamu' && (
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-400">Discount (InstaMU)</span>
+                        <span className="text-green-400 font-medium">
+                          -${(parseFloat(getCartTotal()) * 0.1).toFixed(2)}
+                        </span>
+                      </div>
+                    )}
 
                     {/* Shipping Calculation */}
                     <div className="flex justify-between items-center">

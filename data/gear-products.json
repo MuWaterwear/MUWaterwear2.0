@@ -4,7 +4,7 @@
     "name": "Cascade Backpack Portland Gear",
     "category": "packs",
     "description": "Premium cascade backpack designed for extended outdoor adventures",
-    "price": 129,
+    "price": 106,
     "images": [
       "/images/gear/Cascade-Backpack-PORTLAND-GEAR/BLACK_thumb.png",
       "/images/gear/Cascade-Backpack-PORTLAND-GEAR/BEIGE_thumb.png",
@@ -31,7 +31,7 @@
     "sizes": [
       "One Size"
     ],
-    "featured": true
+    "badge": "Waterproof"
   },
   {
     "id": "gear-cascade-backpack-compact",
@@ -82,7 +82,7 @@
     "sizes": [
       "One Size"
     ],
-    "featured": true
+    "badge": "Waterproof"
   },
   {
     "id": "gear-cascade-duffle-bag",
@@ -130,7 +130,7 @@
     "sizes": [
       "One Size"
     ],
-    "featured": true
+    "badge": "Waterproof"
   },
   {
     "id": "gear-cascade-crossbody-bag",
@@ -177,7 +177,7 @@
     "sizes": [
       "One Size"
     ],
-    "featured": true
+    "badge": "Waterproof"
   },
   {
     "id": "gear-2025-mens-fusion-wetsuit",
@@ -292,7 +292,7 @@
     "name": "Tusa Paragon Mask - Energy Orange",
     "category": "diving",
     "description": "High-quality diving mask with crystal-clear vision and comfortable fit.",
-    "price": 79.99,
+    "price": 221,
     "originalPrice": 95,
     "featured": false,
     "sizes": ["One Size"],
@@ -309,7 +309,7 @@
     "name": "TUSA HyFlex Vesna",
     "category": "diving",
     "description": "Professional diving fins with advanced hydrodynamic design for maximum efficiency.",
-    "price": 89.99,
+    "price": 109,
     "originalPrice": 120,
     "featured": false,
     "sizes": ["XS", "S", "M", "L", "XL"],

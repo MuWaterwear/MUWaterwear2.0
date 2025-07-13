@@ -55,6 +55,12 @@ export default function MobileCartSidebar() {
       localStorage.setItem('checkout-cart-data', JSON.stringify(cart))
       localStorage.setItem('checkout-order-total', orderTotal.toString())
 
+      // Convert user-friendly coupon to API format
+      let apiCouponCode = appliedCoupon
+      if (appliedCoupon?.toLowerCase() === 'instamu') {
+        apiCouponCode = 'INSTAMU'
+      }
+
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: {
@@ -62,7 +68,7 @@ export default function MobileCartSidebar() {
         },
         body: JSON.stringify({
           items: cart,
-          couponCode: appliedCoupon || undefined,
+          couponCode: apiCouponCode || undefined,
           effectiveTotal: orderTotal,
         }),
       })
@@ -99,7 +105,7 @@ export default function MobileCartSidebar() {
     }
 
     // Simple coupon validation - you can expand this
-    const validCoupons = ['WELCOME10', 'SAVE20', 'FIRSTORDER']
+    const validCoupons = ['WELCOME10', 'SAVE20', 'FIRSTORDER', 'INSTAMU']
     
     if (validCoupons.includes(couponCode.toUpperCase())) {
       setAppliedCoupon(couponCode.toUpperCase())
@@ -148,6 +154,8 @@ export default function MobileCartSidebar() {
       discount = subtotal * 0.2
     } else if (appliedCoupon === 'FIRSTORDER') {
       discount = Math.min(subtotal * 0.15, 25) // 15% off up to $25
+    } else if (appliedCoupon === 'INSTAMU') {
+      discount = subtotal * 0.1 // 10% off
     }
 
     return (subtotal + shipping - discount).toFixed(2)
