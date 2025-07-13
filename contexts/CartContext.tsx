@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode, useRef } from 'react'
 import { CartItem, CartError, CartState, CartContextType } from '@/lib/cart/cart-types'
 import { cartOperations } from '@/lib/cart/cart-operations'
+import { CartCalculations } from '@/lib/cart/cart-calculations'
 import { handleError, ErrorType } from '@/lib/core/error-handling'
 import { useToast } from '@/contexts/ToastContext'
 import { cartStorage } from '@/lib/cart/cart-storage'
@@ -187,6 +188,73 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setRetryFunction(null)
   }, [updateCartState])
 
+  // Discount methods
+  const applyDiscount = useCallback(async (code: string): Promise<boolean> => {
+    try {
+      const upperCode = code.toUpperCase()
+      let discount = null
+      
+      // Check for valid discount codes
+      if (upperCode === 'INSTAMU') {
+        discount = {
+          code: upperCode,
+          type: 'percentage' as const,
+          value: 0.1, // 10% discount
+          isValid: true,
+          description: '10% off with InstaMU'
+        }
+      }
+      
+      if (discount) {
+        updateCartState(prev => ({
+          ...prev,
+          appliedDiscount: discount
+        }))
+        return true
+      }
+      
+      return false
+    } catch (error) {
+      console.error('Error applying discount:', error)
+      return false
+    }
+  }, [updateCartState])
+
+  const removeDiscount = useCallback(() => {
+    updateCartState(prev => ({
+      ...prev,
+      appliedDiscount: undefined
+    }))
+  }, [updateCartState])
+
+  const getCartTotals = useCallback(() => {
+    const subtotal = CartCalculations.calculateSubtotal(cartStateRef.current.items)
+    const appliedDiscount = cartStateRef.current.appliedDiscount
+    
+    let discount = 0
+    if (appliedDiscount && appliedDiscount.isValid) {
+      if (appliedDiscount.type === 'percentage') {
+        discount = subtotal * appliedDiscount.value
+        if (appliedDiscount.maxDiscount) {
+          discount = Math.min(discount, appliedDiscount.maxDiscount)
+        }
+      } else if (appliedDiscount.type === 'fixed_amount') {
+        discount = appliedDiscount.value
+      }
+    }
+    
+    const shipping = 0 // Assuming free shipping for now
+    const total = subtotal - discount + shipping
+    
+    return {
+      subtotal,
+      discount,
+      shipping,
+      total,
+      appliedDiscount
+    }
+  }, [])
+
   const retryLastAction = useCallback(async () => {
     if (retryFunction) {
       const success = await retryFunction()
@@ -203,6 +271,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     isLoading: cartState.isLoading,
     error: cartState.error,
     lastAction: cartState.lastAction,
+    appliedDiscount: cartState.appliedDiscount,
     setIsCartOpen,
     addToCart,
     updateQuantity,
@@ -210,6 +279,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
     clearCart,
     getCartTotal,
     getCartItemCount,
+    applyDiscount,
+    removeDiscount,
+    getCartTotals,
     clearError,
     retryLastAction,
   }), [
@@ -217,6 +289,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     cartState.isLoading,
     cartState.error,
     cartState.lastAction,
+    cartState.appliedDiscount,
     isCartOpen,
     addToCart,
     updateQuantity,
@@ -224,6 +297,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
     clearCart,
     getCartTotal,
     getCartItemCount,
+    applyDiscount,
+    removeDiscount,
+    getCartTotals,
     clearError,
     retryLastAction,
   ])
