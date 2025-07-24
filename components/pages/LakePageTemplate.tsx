@@ -46,6 +46,22 @@ type LakePageTemplateProps = {
   webcamConfig: WebcamConfig
 }
 
+// ImageKit base URL for optimized apparel images
+const IK_URL_ENDPOINT = 'https://ik.imagekit.io/0rtzbgl5y'
+
+// Convert repo image path to ImageKit URL
+const getIKUrl = (imagePath: string) => {
+  // Remove leading /images prefix used in repo paths
+  let normalizedPath = imagePath.startsWith('/images/') ? imagePath.slice('/images'.length) : imagePath
+
+  // Ensure leading slash
+  if (!normalizedPath.startsWith('/')) {
+    normalizedPath = '/' + normalizedPath
+  }
+
+  return `${IK_URL_ENDPOINT}${encodeURI(normalizedPath)}`
+}
+
 export const LakePageTemplate: React.FC<LakePageTemplateProps> = ({
   lakeInfo,
   apparelProducts,
@@ -195,7 +211,7 @@ export const LakePageTemplate: React.FC<LakePageTemplateProps> = ({
       id: selectedProduct.id,
       name: selectedProduct.name,
       price: (selectedProduct.price || 0).toString(),
-      image: selectedProduct.images[currentImageIndex],
+      image: getIKUrl(selectedProduct.images[currentImageIndex]),
       color: selectedColor,
       size: selectedSize,
       quantity: 1
@@ -252,7 +268,7 @@ export const LakePageTemplate: React.FC<LakePageTemplateProps> = ({
                     onClick={() => handleProductSelect(product)}
                   >
                     <img 
-                      src={displayData.image} 
+                      src={getIKUrl(displayData.image)} 
                       alt={`${product.name} - ${displayData.color}`} 
                       className="w-full h-48 object-cover rounded-md"
                     />
@@ -295,7 +311,7 @@ export const LakePageTemplate: React.FC<LakePageTemplateProps> = ({
                     onClick={() => handleProductSelect(product)}
                   >
                     <img 
-                      src={displayData.image} 
+                      src={getIKUrl(displayData.image)} 
                       alt={`${product.name} - ${displayData.color}`} 
                       className="w-full h-48 object-cover rounded-md"
                     />

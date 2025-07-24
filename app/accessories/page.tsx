@@ -22,10 +22,34 @@ import { DesktopOnly, MobileOnly } from '@/components/responsive/ResponsiveLayou
 import MobileProductGrid from '@/components/responsive/MobileProductGrid'
 import Footer from '@/components/Footer'
 import ProductCard from '@/components/Product/ProductCard'
-// Removed OptimizedImage import - using standard Next.js Image
-import { preloadProductImages } from '@/lib/core/image-preloader'
+import { IKImage } from 'imagekitio-react'
+
+// ImageKit base URL for optimized images
+const IK_URL_ENDPOINT = 'https://ik.imagekit.io/0rtzbgl5y'
 
 export default function AccessoriesPage() {
+  // Convert repo image path to ImageKit path (removes "/images" prefix)
+  const getIKPath = (imagePath: string) => {
+    // Remove leading /images prefix used in repo paths
+    let normalizedPath = imagePath.startsWith('/images/') ? imagePath.slice('/images'.length) : imagePath
+
+    // Strip size suffixes (_thumb, _med, _full) to point to the original asset in ImageKit
+    normalizedPath = normalizedPath.replace(/_(thumb|med|full)\.png$/i, '.png')
+
+    // Ensure leading slash as required by IKImage path spec
+    if (!normalizedPath.startsWith('/')) {
+      normalizedPath = '/' + normalizedPath
+    }
+
+    return encodeURI(normalizedPath) // encode spaces and special chars
+  }
+
+  // Helper to convert to absolute URL (for non-IK components like cart thumbs)
+  const getIKUrl = (imagePath: string) => {
+    const path = getIKPath(imagePath)
+    return `${IK_URL_ENDPOINT}${path}`
+  }
+
   const [showContactEmail, setShowContactEmail] = useState(false)
   const [showReturnsPolicy, setShowReturnsPolicy] = useState(false)
   const [showShippingPolicy, setShowShippingPolicy] = useState(false)
@@ -390,15 +414,7 @@ export default function AccessoriesPage() {
 
   // Preload critical images for better performance
   useEffect(() => {
-    const preloadCriticalImages = async () => {
-      try {
-        await preloadProductImages(filteredProducts, 8)
-      } catch (error) {
-        console.warn('Failed to preload product images:', error)
-      }
-    }
-    
-    preloadCriticalImages()
+    // No need for preloading - ImageKit handles this
   }, [filteredProducts])
 
   const handleQuickAdd = (product: any) => {
@@ -410,7 +426,7 @@ export default function AccessoriesPage() {
       name: `${product.name} - ${product.colors[colorIndex].name}`,
       price: `$${product.price}`,
       size: size,
-      image: product.images[colorIndex] || product.images[0],
+      image: getIKUrl(product.images[colorIndex] || product.images[0]),
     }
 
     addToCart(cartItem)
@@ -701,18 +717,29 @@ export default function AccessoriesPage() {
                           )
                         }}
                       >
-                        <Image
-                          src={product.images[currentColorIndex] || product.images[0]}
-                          alt={product.name}
-                          fill
-                          className={`transition-transform duration-500 pointer-events-none ${
-                            product.category === 'supplements'
-                              ? 'object-cover scale-[0.7] group-hover:scale-[0.85]'
-                              : 'object-contain scale-[0.7] group-hover:scale-[0.85]'
-                          }`}
-                          priority={isAboveFold}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
+                        {(() => {
+                          const imagePath = getIKPath(product.images[currentColorIndex] || product.images[0])
+                          return (
+                            <IKImage
+                              key={imagePath} // force rerender when path changes
+                              path={imagePath}
+                              alt={product.name}
+                              lqip={{ active: true }}
+                              transformation={[
+                                {
+                                  quality: 90,
+                                  width: hoveredProduct === product.id ? 1000 : 600,
+                                },
+                              ]}
+                              className={`w-full h-full transition-transform duration-500 pointer-events-none ${
+                                product.category === 'supplements'
+                                  ? 'object-cover scale-[0.7] group-hover:scale-[0.85]'
+                                  : 'object-contain scale-[0.7] group-hover:scale-[0.85]'
+                              }`}
+                              loading="lazy"
+                            />
+                          )
+                        })()}
                       </div>
 
                       {/* Expand icon overlay */}
@@ -874,18 +901,22 @@ export default function AccessoriesPage() {
                 onMouseLeave={handleMouseUp}
                 style={{ cursor: imageZoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default' }}
               >
-                <Image
-                  src={currentFeaturedImage || '/placeholder.svg'}
+                <IKImage
+                  path={getIKPath(currentFeaturedImage || '/placeholder.svg')}
                   alt="Expanded Product"
-                  width={800}
-                  height={800}
+                  lqip={{ active: true }}
+                  transformation={[
+                    {
+                      quality: 90,
+                      width: 2000,
+                    },
+                  ]}
                   className={`w-auto object-contain transition-transform duration-200 ${
                     expandedProductId === 'supplement-magnesium-zinc'
                       ? 'max-h-[98vh] min-h-[80vh]'
                       : 'max-h-[90vh]'
                   }`}
-                  priority={true}
-                  sizes="(max-width: 768px) 100vw, 80vw"
+                  loading="lazy"
                 />
               </div>
 

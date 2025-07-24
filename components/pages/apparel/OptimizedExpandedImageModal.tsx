@@ -33,8 +33,6 @@ const OptimizedExpandedImageModal = React.memo(({
   const currentImageSrc = useMemo(() => {
     if (!currentImage) return null
     
-    console.log('🔍 OptimizedExpandedImageModal - using currentImage:', currentImage)
-    
     // Use the original image path directly
     return currentImage
   }, [currentImage])
@@ -51,16 +49,16 @@ const OptimizedExpandedImageModal = React.memo(({
         const nextImageSrc = product.images[nextIndex]
         const img = new window.Image()
         img.src = nextImageSrc
-        img.onload = () => console.log('🔍 Preloaded next:', nextImageSrc)
-        img.onerror = () => console.warn('🔍 Failed to preload next:', nextImageSrc)
+        img.onload = () => {}
+        img.onerror = () => {}
       }
       
       if (prevIndex !== currentImageIndex) {
         const prevImageSrc = product.images[prevIndex]
         const img = new window.Image()
         img.src = prevImageSrc
-        img.onload = () => console.log('🔍 Preloaded prev:', prevImageSrc)
-        img.onerror = () => console.warn('🔍 Failed to preload prev:', prevImageSrc)
+        img.onload = () => {}
+        img.onerror = () => {}
       }
     }
 
@@ -161,8 +159,6 @@ const OptimizedExpandedImageModal = React.memo(({
   const totalImages = product.images.length
   const isSpecialProduct = product.id === 'uv-mu-paddleboard'
 
-  console.log('🔍 OptimizedExpandedImageModal - rendering with currentImageSrc:', currentImageSrc)
-
   return (
     <div
       className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4 max-sm:p-0"
@@ -231,7 +227,6 @@ const OptimizedExpandedImageModal = React.memo(({
               priority
               onLoad={() => setImageLoaded(true)}
               onError={(e) => {
-                console.error('🔍 Image load error:', e)
                 setImageLoaded(true) // Still show controls even if image fails
               }}
             />

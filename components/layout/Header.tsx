@@ -40,7 +40,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/Mu (2).svg" alt="MU Waterwear" width={32} height={32} />
+            <Image src="/images/Mu (2).svg" alt="MU Waterwear" width={32} height={32} priority />
             <span className="hidden md:inline text-lg font-semibold text-white">MU Waterwear</span>
           </Link>
 

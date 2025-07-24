@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
+import { ProductImage } from "@/components/ui/optimized-image"
 import { Product } from "@/lib/features/apparel-products"
 
 interface ProductCardProps {
@@ -60,7 +60,7 @@ export default function ProductCard({
               onImageClick(featuredImage, product.id)
             }}
           >
-            <Image
+            <ProductImage
               src={featuredImage}
               alt={product.name}
               width={400}
@@ -76,6 +76,7 @@ export default function ProductCard({
                   : 'object-cover group-hover:scale-110'
               }`}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+              priority={false}
             />
           </div>
           

@@ -10,6 +10,7 @@ import { ToastProvider } from '@/contexts/ToastContext'
 import { Responsive, MobileOnly, DesktopOnly } from '@/components/responsive/ResponsiveLayout'
 import MobileCartSidebar from '@/components/responsive/MobileCartSidebar'
 import ShoppingCartSidebar from '@/components/ShoppingCartSidebarClient'
+import ImageKitProvider from '@/components/ImageKitProvider'
 
 const actor = Actor({
   weight: '400',
@@ -36,7 +37,9 @@ export default function RootLayout({
           <ToastProvider>
             <SessionProvider>
               <CartProvider>
-                {children}
+                <ImageKitProvider>
+                  {children}
+                </ImageKitProvider>
                 <CartErrorNotification />
                 <GlobalMobileNav />
                 <ShoppingCartSidebar />

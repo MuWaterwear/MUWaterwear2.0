@@ -1,8 +1,14 @@
 "use client"
 
-import React, { useState, useMemo, useCallback } from "react"
+import React, { useState, useEffect, useMemo, useCallback } from "react"
 import Image from "next/image"
-import { ShoppingCart } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ArrowLeft, ArrowRight, ChevronDown, ChevronUp, ShoppingCart } from "lucide-react"
+import { IKImage } from "imagekitio-react"
+
+// ImageKit base URL for optimized images
+const IK_URL_ENDPOINT = 'https://ik.imagekit.io/0rtzbgl5y'
 
 // Unified product interface that works for both gear and apparel
 interface UnifiedProduct {
@@ -138,11 +144,36 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
     onQuickAdd(product)
   }, [onQuickAdd, product])
   
+  // Convert repo image path to ImageKit path (removes "/images" prefix)
+  const getIKPath = useCallback((imagePath: string) => {
+    // Remove leading /images prefix used in repo paths
+    let normalizedPath = imagePath.startsWith('/images/') ? imagePath.slice('/images'.length) : imagePath
+
+    // Only strip suffixes from gear images, apparel images use full names
+    if (variant === "gear") {
+      normalizedPath = normalizedPath.replace(/_(thumb|med|full)\.png$/i, '.png')
+    }
+
+    // Ensure leading slash as required by IKImage path spec
+    if (!normalizedPath.startsWith('/')) {
+      normalizedPath = '/' + normalizedPath
+    }
+
+    return encodeURI(normalizedPath) // encode spaces and special chars
+  }, [variant])
+
+  // Helper to convert to absolute URL (for places where URL string is needed)
+  const getIKUrl = useCallback((imagePath: string) => {
+    const path = getIKPath(imagePath)
+    return `${IK_URL_ENDPOINT}${path}`
+  }, [getIKPath])
+  
   const handleImageClick = useCallback((e: React.MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    onImageClick(featuredImage, product.id)
-  }, [onImageClick, featuredImage, product.id])
+    // Pass the full ImageKit URL for expanded modal
+    onImageClick(getIKUrl(featuredImage), product.id)
+  }, [onImageClick, featuredImage, product.id, getIKUrl])
   
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true)
@@ -163,7 +194,7 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
         {/* Product Image */}
         <div className={`relative overflow-hidden ${aspectRatioClasses}`} 
              style={{
-               ...(product.id === 'mu-ocean-green-swim-shorts' || 
+               ...(product.id === 'mu-mu-paddleboard' || 
                    product.id === 'mu-sky-blue-swim-shorts' || 
                    product.id === 'mu-red-tide-swim-shorts' ? {
                  overflow: 'hidden',
@@ -175,7 +206,7 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
           
           {/* Background gradient */}
           <div className={`absolute inset-0 z-0 ${
-            product.id === 'mu-ocean-green-swim-shorts' 
+            product.id === 'mu-mu-paddleboard' 
               ? 'bg-gradient-to-b from-emerald-900/20 via-slate-800/30 to-slate-900/40'
               : product.id === 'mu-sky-blue-swim-shorts'
               ? 'bg-gradient-to-b from-sky-900/20 via-slate-800/30 to-slate-900/40'
@@ -189,14 +220,14 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
           {/* Main product image */}
           <div 
             className={`absolute inset-0 cursor-pointer z-10 w-full h-full flex items-center justify-center ${
-              product.id === 'mu-ocean-green-swim-shorts' || 
+              product.id === 'mu-mu-paddleboard' || 
               product.id === 'mu-sky-blue-swim-shorts' || 
               product.id === 'mu-red-tide-swim-shorts' 
                 ? 'overflow-hidden' 
                 : ''
             }`}
             style={{
-              ...(product.id === 'mu-ocean-green-swim-shorts' || 
+              ...(product.id === 'mu-mu-paddleboard' || 
                   product.id === 'mu-sky-blue-swim-shorts' || 
                   product.id === 'mu-red-tide-swim-shorts' ? {
                 overflow: 'hidden',
@@ -206,32 +237,39 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
             }}
             onClick={handleImageClick}
           >
-            <Image
-              src={featuredImage}
-              alt={product.name}
-              fill
-              className={`transition-transform duration-500 pointer-events-none ${
-                variant === "gear" 
-                  ? `object-contain p-2 sm:p-4 ${imageStyles.scaleClass} ${imageStyles.hoverScaleClass} sm:${imageStyles.scaleClass} sm:${imageStyles.hoverScaleClass}`
-                  : product.id === 'uv-mu-paddleboard' 
-                  ? 'object-cover scale-150 group-hover:scale-[1.7]' 
-                  : product.id === 'mu-ocean-green-swim-shorts'
-                  ? 'object-contain scale-[2.7] group-hover:scale-[3.0] p-2'
-                  : product.id === 'mu-sky-blue-swim-shorts'
-                  ? 'object-contain scale-150 group-hover:scale-[1.7] p-2'
-                  : product.id === 'mu-red-tide-swim-shorts'
-                  ? 'object-contain scale-100 group-hover:scale-110 p-2'
-                  : product.id === 'mu-waterwear-hoodie-black' || product.id === 'mu-waterwear-hoodie-sandshell'
-                  ? 'object-cover group-hover:scale-110 mix-blend-multiply'
-                  : 'object-cover group-hover:scale-110'
-              }`}
-              sizes={variant === "gear" 
-                ? "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                : "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
-              }
-              quality={100}
-              priority={false}
-            />
+            {(() => {
+              const imagePath = getIKPath(featuredImage)
+              return (
+                <IKImage
+                  key={imagePath} // force rerender when path changes
+                  path={imagePath}
+                  alt={product.name}
+                  lqip={{ active: true }}
+                  transformation={[
+                    {
+                      quality: 90,
+                      width: isHovered ? 1000 : 600,
+                    },
+                  ]}
+                  className={`w-full h-full transition-transform duration-500 pointer-events-none ${
+                    variant === "gear" 
+                      ? `object-contain p-2 sm:p-4 ${imageStyles.scaleClass} ${imageStyles.hoverScaleClass} sm:${imageStyles.scaleClass} sm:${imageStyles.hoverScaleClass}`
+                      : product.id === 'uv-mu-paddleboard' 
+                      ? 'object-cover scale-150 group-hover:scale-[1.7]' 
+                      : product.id === 'mu-ocean-green-swim-shorts'
+                      ? 'object-contain scale-[2.7] group-hover:scale-[3.0] p-2'
+                      : product.id === 'mu-sky-blue-swim-shorts'
+                      ? 'object-contain scale-150 group-hover:scale-[1.7] p-2'
+                      : product.id === 'mu-red-tide-swim-shorts'
+                      ? 'object-contain scale-100 group-hover:scale-110 p-2'
+                      : product.id === 'mu-waterwear-hoodie-black' || product.id === 'mu-waterwear-hoodie-sandshell'
+                      ? 'object-cover group-hover:scale-110 mix-blend-multiply'
+                      : 'object-cover group-hover:scale-110'
+                  }`}
+                  loading="lazy"
+                />
+              )
+            })()}
           </div>
           
 
@@ -291,7 +329,7 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
 
           {/* Mobile Image Counter - hide for swim shorts */}
           {hasMultipleImages && 
-           product.id !== 'mu-ocean-green-swim-shorts' && 
+           product.id !== 'mu-mu-paddleboard' && 
            product.id !== 'mu-sky-blue-swim-shorts' && 
            product.id !== 'mu-red-tide-swim-shorts' && (
             <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full sm:hidden">
@@ -301,7 +339,7 @@ const UnifiedProductCard = React.memo(function UnifiedProductCard({
           
           {/* Expand icon overlay - hide on mobile for apparel and always hide for swim shorts */}
           {variant === "apparel" && !isMobile && 
-           product.id !== 'mu-ocean-green-swim-shorts' && 
+           product.id !== 'mu-mu-paddleboard' && 
            product.id !== 'mu-sky-blue-swim-shorts' && 
            product.id !== 'mu-red-tide-swim-shorts' && (
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">

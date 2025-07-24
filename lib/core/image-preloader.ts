@@ -82,7 +82,7 @@ export const preloadImages = async (
   try {
     await Promise.all(promises)
   } catch (error) {
-    console.warn('Some images failed to preload:', error)
+    // Silently handle failed preloads
   }
 }
 

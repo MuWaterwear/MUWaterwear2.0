@@ -19,6 +19,10 @@ import { DesktopOnly, MobileOnly } from '@/components/responsive/ResponsiveLayou
 import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic'
 import { wetsuits, paddleBoards, bags, coolers, wakeboards } from '@/data/gear-products'
+import { IKImage } from 'imagekitio-react'
+
+// ImageKit base URL for optimized gear images
+const IK_URL_ENDPOINT = 'https://ik.imagekit.io/0rtzbgl5y'
 
 // Dynamically load the expanded image modal only when needed (client-side only)
 const ExpandedImageModal = dynamic(() => import('@/components/pages/apparel/ExpandedImageModal'), {
@@ -86,9 +90,26 @@ export default function GearPage() {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
 
   // Progressive image loading utility
-  const getImageSrc = (imagePath: string, size: 'thumb' | 'med' | 'full' = 'thumb') => {
-    // Replace _thumb.png with the desired size
-    return imagePath.replace('_thumb.png', `_${size}.png`)
+  // Convert repo image path to ImageKit path (removes "/images" prefix)
+  const getIKPath = (imagePath: string) => {
+    // Remove leading /images prefix used in repo paths
+    let normalizedPath = imagePath.startsWith('/images/') ? imagePath.slice('/images'.length) : imagePath
+
+    // Strip size suffixes (_thumb, _med, _full) to point to the original asset in ImageKit
+    normalizedPath = normalizedPath.replace(/_(thumb|med|full)\.png$/i, '.png')
+
+    // Ensure leading slash as required by IKImage path spec
+    if (!normalizedPath.startsWith('/')) {
+      normalizedPath = '/' + normalizedPath
+    }
+
+    return encodeURI(normalizedPath) // encode spaces and special chars
+  }
+
+  // Helper to convert to absolute URL (for non-IK components like cart thumbs)
+  const getIKUrl = (imagePath: string) => {
+    const path = getIKPath(imagePath)
+    return `${IK_URL_ENDPOINT}${path.startsWith('/') ? path : '/' + path}`
   }
 
   // Helper function to map color index to correct image index for Cascade Backpack Compact
@@ -155,7 +176,8 @@ export default function GearPage() {
       name: `${product.name} - ${colorName}${product.id === 'gear-havana-inflatable-sup' ? ` - ${sizeName}` : product.id === 'gear-2025-mens-sprint-wetsuit' || product.id === 'gear-2025-womens-fusion-wetsuit' || product.id === 'gear-2025-mens-fusion-wetsuit' || product.id === 'gear-2025-mens-thermal-wetsuit' || product.id === 'gear-2025-womens-thermal-wetsuit' ? ` - Size ${sizeName}` : ''}`,
       price: `$${itemPrice}`,
       size: product.id === 'gear-havana-inflatable-sup' ? sizeName : size,
-      image: product.images[getImageIndexForColor(product, colorIndex)] || product.images[0],
+      // Use ImageKit URL for cart thumbnails (medium size for sidebar display)
+      image: getIKUrl(product.images[getImageIndexForColor(product, colorIndex)] || product.images[0]),
     }
 
     addToCart(cartItem)
@@ -168,7 +190,7 @@ export default function GearPage() {
     if (!product) return
 
     // Use full-size image for expanded view
-    const fullSizeImage = getImageSrc(imageSrc, 'full')
+    const fullSizeImage = getIKUrl(imageSrc)
     setCurrentFeaturedImage(fullSizeImage)
     setExpandedImage(true)
     setExpandedProductId(productId)
@@ -251,7 +273,7 @@ export default function GearPage() {
         : (currentImageIndex - 1 + totalImages) % totalImages
 
     setSelectedColor(prev => ({ ...prev, [expandedProductId]: newIndex }))
-    setCurrentFeaturedImage(getImageSrc(product.images[newIndex], 'full'))
+    setCurrentFeaturedImage(getIKUrl(product.images[newIndex]))
     setCurrentImageIndex(newIndex)
 
     // Maintain zoom levels - 150% for all enhanced products, 100% for others
@@ -454,28 +476,35 @@ export default function GearPage() {
                 >
                   <div className="relative bg-slate-900/50 rounded-lg border border-slate-800/50 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full sm:overflow-hidden">
                     {/* Product Image */}
-                    <div className="relative aspect-square bg-gradient-to-b from-slate-800/50 to-slate-900/50 overflow-hidden sm:aspect-square">
+                    <div className="relative aspect-square bg-gradient-to-b from-slate-800/50 to-slate-900/50 overflow-hidden sm:aspect-square touch-none">
                       <div
                         className="w-full h-full cursor-pointer flex items-center justify-center"
                         onClick={() => handleImageClick(
                             product.images[currentImageIndex] || product.images[0],
                             product.id
                         )}
+                        onTouchMove={(e) => e.preventDefault()}
+                        style={{ touchAction: 'none' }}
                       >
-                        <Image
-                          src={hoveredProduct === product.id 
-                            ? getImageSrc(product.images[currentImageIndex] || product.images[0], 'full')
-                            : getImageSrc(product.images[currentImageIndex] || product.images[0], 'med')
-                          }
-                          alt={product.name}
-                          fill
-                          className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-[3] group-hover:scale-[3.1] sm:scale-[3] sm:group-hover:scale-[3.1]"
-                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                          priority={false}
-                          quality={100}
-                          unoptimized={true}
-                          loading="lazy"
-                        />
+                        {(() => {
+                          const imagePath = getIKPath(product.images[currentImageIndex] || product.images[0])
+                          return (
+                            <IKImage
+                              key={imagePath} // force rerender when path changes
+                              path={imagePath}
+                              alt={product.name}
+                              lqip={{ active: true }}
+                              transformation={[
+                                {
+                                  quality: 90,
+                                  width: hoveredProduct === product.id ? 1000 : 600,
+                                },
+                              ]}
+                              className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-[3] group-hover:scale-[3.1] sm:scale-[3] sm:group-hover:scale-[3.1] w-full h-full touch-none pointer-events-none select-none"
+                              loading="lazy"
+                            />
+                          )
+                        })()}
                       </div>
 
                       {/* Featured Badge */}

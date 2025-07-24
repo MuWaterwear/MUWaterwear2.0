@@ -1,7 +1,24 @@
 "use client"
 
 import React, { useState, useCallback, useEffect } from "react"
+import { IKImage } from "imagekitio-react"
 import { getOptimizedImagePath } from "@/lib/utils/product-optimization"
+
+// ImageKit base URL for optimized apparel images
+const IK_URL_ENDPOINT = 'https://ik.imagekit.io/0rtzbgl5y'
+
+// Convert repo image path to ImageKit path
+const getIKPath = (imagePath: string) => {
+  // Remove leading /images prefix used in repo paths
+  let normalizedPath = imagePath.startsWith('/images/') ? imagePath.slice('/images'.length) : imagePath
+
+  // Ensure leading slash as required by IKImage path spec
+  if (!normalizedPath.startsWith('/')) {
+    normalizedPath = '/' + normalizedPath
+  }
+
+  return encodeURI(normalizedPath) // encode spaces and special chars
+}
 
 type LakeProduct = {
   id: string
@@ -283,11 +300,9 @@ const LakePageOptimizedModal: React.FC<LakePageOptimizedModalProps> = ({
         )}
 
         {/* Product Image with Touch Gestures */}
-        {!imageError && currentImageSrc ? (
-          <img
-            src={currentImageSrc}
-            alt={product.name}
-            className={`max-w-full max-h-[70vh] object-contain transition-transform duration-200 ${
+        {!imageError && product.images[currentImageIndex] ? (
+          <div
+            className={`max-w-full max-h-[70vh] flex items-center justify-center ${
               isSwiping ? 'cursor-grabbing' : 'cursor-grab'
             }`}
             style={{
@@ -295,7 +310,6 @@ const LakePageOptimizedModal: React.FC<LakePageOptimizedModalProps> = ({
               transformOrigin: 'center center',
               cursor: imageZoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default'
             }}
-            onError={handleImageError}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -303,8 +317,22 @@ const LakePageOptimizedModal: React.FC<LakePageOptimizedModalProps> = ({
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
-            draggable={false}
-          />
+          >
+            <IKImage
+              key={getIKPath(product.images[currentImageIndex])} // force rerender when path changes
+              path={getIKPath(product.images[currentImageIndex])}
+              alt={product.name}
+              lqip={{ active: true }}
+              transformation={[
+                {
+                  quality: 90,
+                  width: imageZoom > 2 ? 2000 : (imageZoom > 1 ? 1500 : 1000),
+                },
+              ]}
+              className="object-contain transition-transform duration-200"
+              onError={handleImageError}
+            />
+          </div>
         ) : (
           <div className="flex items-center justify-center text-white">
             <p>Image not available</p>

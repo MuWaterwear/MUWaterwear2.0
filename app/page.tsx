@@ -177,6 +177,8 @@ export default function Component() {
                     alt="Tactical Gear Bag"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    priority={false}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-6 left-6">
@@ -196,6 +198,8 @@ export default function Component() {
                     alt="Water Ski Community T-Shirt"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    priority={false}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-6 left-6">
@@ -215,6 +219,8 @@ export default function Component() {
                     alt="MU Waterwear Accessories"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    priority={false}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-6 left-6">

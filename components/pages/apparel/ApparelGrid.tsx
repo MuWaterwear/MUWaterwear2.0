@@ -13,6 +13,22 @@ interface ApparelGridProps {
   onColorChange?: (productId: string, index: number) => void
 }
 
+// ImageKit base URL for optimized apparel images
+const IK_URL_ENDPOINT = 'https://ik.imagekit.io/0rtzbgl5y'
+
+// Convert repo image path to ImageKit URL
+const getIKUrl = (imagePath: string) => {
+  // Remove leading /images prefix used in repo paths
+  let normalizedPath = imagePath.startsWith('/images/') ? imagePath.slice('/images'.length) : imagePath
+
+  // Ensure leading slash
+  if (!normalizedPath.startsWith('/')) {
+    normalizedPath = '/' + normalizedPath
+  }
+
+  return `${IK_URL_ENDPOINT}${encodeURI(normalizedPath)}`
+}
+
 export default function ApparelGrid({ 
   products, 
   onImageClick, 
@@ -44,7 +60,7 @@ export default function ApparelGrid({
       name: `${product.name} - ${product.colors[colorIndex].name}`,
       price: `$${product.price}`,
       size: size,
-      image: product.images[colorIndex] || product.images[0],
+      image: getIKUrl(product.images[colorIndex] || product.images[0]),
     }
     
     addToCart(cartItem)

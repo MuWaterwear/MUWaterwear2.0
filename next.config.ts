@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
       'www.luckylablodge.com',
       'luckylablodge.com',
       'cdn.weatherapi.com',
+      'ik.imagekit.io',
     ],
   },
   async headers() {
