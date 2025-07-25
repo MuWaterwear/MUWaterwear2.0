@@ -449,7 +449,6 @@ export default function AccessoriesPage() {
     // Reset zoom state when opening new image
     setImageZoom(1)
     setImagePosition({ x: 0, y: 0 })
-    setIsDragging(false)
   }
 
   // Zoom utility functions
@@ -494,17 +493,24 @@ export default function AccessoriesPage() {
   }
 
   // Navigation functions for expanded image modal
-  const navigateExpandedImage = (direction: 'prev' | 'next') => {
+  const navigateExpandedImage = (directionOrIndex: 'prev' | 'next' | number) => {
     if (!expandedProductId) return
 
     const product = allProducts.find(p => p.id === expandedProductId)
     if (!product || !product.images) return
 
     const totalImages = product.images.length
-    const newIndex =
-      direction === 'next'
+    let newIndex: number
+    
+    if (typeof directionOrIndex === 'number') {
+      // Direct index navigation
+      newIndex = Math.max(0, Math.min(directionOrIndex, totalImages - 1))
+    } else {
+      // Direction-based navigation
+      newIndex = directionOrIndex === 'next'
         ? (currentImageIndex + 1) % totalImages
         : (currentImageIndex - 1 + totalImages) % totalImages
+    }
 
     setSelectedColor(prev => ({ ...prev, [expandedProductId]: newIndex }))
     setCurrentFeaturedImage(product.images[newIndex])
@@ -902,6 +908,7 @@ export default function AccessoriesPage() {
                 style={{ cursor: imageZoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default' }}
               >
                 <IKImage
+                  key={`${currentFeaturedImage}-${currentImageIndex}`}
                   path={getIKPath(currentFeaturedImage || '/placeholder.svg')}
                   alt="Expanded Product"
                   lqip={{ active: true }}
@@ -916,6 +923,10 @@ export default function AccessoriesPage() {
                       ? 'max-h-[98vh] min-h-[80vh]'
                       : 'max-h-[90vh]'
                   }`}
+                  style={{
+                    transform: `scale(${expandedProductId === 'supplement-magnesium-zinc' ? imageZoom * 1.5 : imageZoom}) translate(${imagePosition.x / imageZoom}px, ${imagePosition.y / imageZoom}px)`,
+                    transformOrigin: 'center center'
+                  }}
                   loading="lazy"
                 />
               </div>

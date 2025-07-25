@@ -5,6 +5,29 @@ import Image from "next/image"
 import { Product } from "@/lib/features/apparel-products"
 import { getOptimizedImagePath } from "@/lib/utils/product-optimization"
 
+// ImageKit base URL for optimized images
+const IK_URL_ENDPOINT = 'https://ik.imagekit.io/0rtzbgl5y'
+
+// Convert repo image path to ImageKit URL
+const getIKUrl = (imagePath: string) => {
+  if (!imagePath) return ''
+  
+  // If it's already an ImageKit URL, return as is
+  if (imagePath.includes('ik.imagekit.io')) {
+    return imagePath
+  }
+  
+  // Remove leading /images prefix used in repo paths
+  let normalizedPath = imagePath.startsWith('/images/') ? imagePath.slice('/images'.length) : imagePath
+
+  // Ensure leading slash
+  if (!normalizedPath.startsWith('/')) {
+    normalizedPath = '/' + normalizedPath
+  }
+
+  return `${IK_URL_ENDPOINT}${encodeURI(normalizedPath)}`
+}
+
 interface OptimizedExpandedImageModalProps {
   isOpen: boolean
   onClose: () => void
@@ -29,12 +52,13 @@ const OptimizedExpandedImageModal = React.memo(({
   const [imageLoaded, setImageLoaded] = useState(false)
   const [highResLoaded, setHighResLoaded] = useState(false)
 
-  // Current image source - use original path directly
+  // Current image source - use ImageKit URL
   const currentImageSrc = useMemo(() => {
     if (!currentImage) return null
     
-    // Use the original image path directly
-    return currentImage
+    // Convert to ImageKit URL
+    const ikUrl = getIKUrl(currentImage)
+    return ikUrl
   }, [currentImage])
 
   // Preload images for smooth navigation
@@ -46,7 +70,7 @@ const OptimizedExpandedImageModal = React.memo(({
       const prevIndex = (currentImageIndex - 1 + product.images.length) % product.images.length
       
       if (nextIndex !== currentImageIndex) {
-        const nextImageSrc = product.images[nextIndex]
+        const nextImageSrc = getIKUrl(product.images[nextIndex])
         const img = new window.Image()
         img.src = nextImageSrc
         img.onload = () => {}
@@ -54,7 +78,7 @@ const OptimizedExpandedImageModal = React.memo(({
       }
       
       if (prevIndex !== currentImageIndex) {
-        const prevImageSrc = product.images[prevIndex]
+        const prevImageSrc = getIKUrl(product.images[prevIndex])
         const img = new window.Image()
         img.src = prevImageSrc
         img.onload = () => {}
@@ -74,7 +98,7 @@ const OptimizedExpandedImageModal = React.memo(({
       setImageLoaded(false)
       setHighResLoaded(false)
     }
-  }, [currentImageIndex, isOpen])
+  }, [currentImageIndex, currentImage, isOpen])
 
   // Zoom handlers
   const handleZoomIn = useCallback(() => {
@@ -211,7 +235,8 @@ const OptimizedExpandedImageModal = React.memo(({
 
             {/* Main Image - Using Next.js Image component directly */}
             <Image
-              src={currentImageSrc}
+              key={`${currentImageSrc}-${currentImageIndex}`}
+              src={currentImageSrc || '/images/apparel-background-pattern.png'}
               alt="Expanded Product"
               width={1200}
               height={1200}
@@ -219,12 +244,13 @@ const OptimizedExpandedImageModal = React.memo(({
                 isSpecialProduct 
                   ? 'max-h-[98vh] min-h-[80vh]' 
                   : 'max-h-[90vh] max-sm:max-h-[80vh] max-sm:max-w-full'
-              }`}
+              } ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               style={{
                 transform: `scale(${isSpecialProduct ? imageZoom * 1.5 : imageZoom}) translate(${imagePosition.x / imageZoom}px, ${imagePosition.y / imageZoom}px)`,
                 transformOrigin: 'center center'
               }}
               priority
+              unoptimized={true}
               onLoad={() => setImageLoaded(true)}
               onError={(e) => {
                 setImageLoaded(true) // Still show controls even if image fails

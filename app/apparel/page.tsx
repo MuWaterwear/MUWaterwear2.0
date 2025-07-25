@@ -28,6 +28,7 @@ export default function ApparelPage() {
     expandedImage,
     currentFeaturedImage,
     handleImageClick: handleOptimizedImageClick,
+    updateCurrentImage,
     closeModal,
     preloadImages,
     isPreloading
@@ -77,22 +78,30 @@ export default function ApparelPage() {
   }
 
   // Enhanced navigation that updates color selection
-  const navigateExpandedImage = (direction: 'prev' | 'next') => {
+  const navigateExpandedImage = (directionOrIndex: 'prev' | 'next' | number) => {
     if (!expandedProductId) return
 
     const product = allProducts.find(p => p.id === expandedProductId)
     if (!product || !product.images) return
 
     const totalImages = product.images.length
-    const newIndex = direction === 'next' 
-        ? (currentImageIndex + 1) % totalImages
-        : (currentImageIndex - 1 + totalImages) % totalImages
+    let newIndex: number
+    
+    if (typeof directionOrIndex === 'number') {
+      // Direct index navigation
+      newIndex = Math.max(0, Math.min(directionOrIndex, totalImages - 1))
+    } else {
+      // Direction-based navigation
+      newIndex = directionOrIndex === 'next' 
+          ? (currentImageIndex + 1) % totalImages
+          : (currentImageIndex - 1 + totalImages) % totalImages
+    }
 
     setSelectedColor(prev => ({ ...prev, [expandedProductId]: newIndex }))
     setCurrentImageIndex(newIndex)
     
-    // Update the optimized modal with the new image
-    handleOptimizedImageClick(product.images[newIndex])
+    // Update the optimized modal with the new image without resetting modal state
+    updateCurrentImage(product.images[newIndex])
   }
 
   // Wave animation background

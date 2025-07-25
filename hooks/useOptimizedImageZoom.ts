@@ -90,6 +90,20 @@ export function useOptimizedImageZoom({
     }
   }, [minZoom, preloadOnMount, preloadAllSizes])
 
+  // Update current image without resetting modal state
+  const updateCurrentImage = useCallback((imageSrc: string) => {
+    setCurrentFeaturedImage(imageSrc)
+    // Reset zoom and position for new image
+    setImageZoom(minZoom)
+    setImagePosition({ x: 0, y: 0 })
+    setIsDragging(false)
+    
+    // Preload all sizes for smooth zooming
+    if (preloadOnMount) {
+      preloadAllSizes(imageSrc)
+    }
+  }, [minZoom, preloadOnMount, preloadAllSizes])
+
   // Debounced zoom handlers
   const handleZoomIn = useCallback(() => {
     if (debounceTimer.current) {
@@ -242,6 +256,7 @@ export function useOptimizedImageZoom({
     
     // Handlers
     handleImageClick,
+    updateCurrentImage,
     handleZoomIn,
     handleZoomOut,
     handleZoomReset,

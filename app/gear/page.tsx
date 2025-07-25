@@ -496,8 +496,11 @@ export default function GearPage() {
                               lqip={{ active: true }}
                               transformation={[
                                 {
-                                  quality: 90,
-                                  width: hoveredProduct === product.id ? 1000 : 600,
+                                  quality: 100,
+                                  width: 1400,
+                                  format: 'auto',
+                                  dpr: 2,
+                                  sharpen: 50
                                 },
                               ]}
                               className="object-contain p-2 sm:p-4 transition-transform duration-500 scale-[3] group-hover:scale-[3.1] sm:scale-[3] sm:group-hover:scale-[3.1] w-full h-full touch-none pointer-events-none select-none"
