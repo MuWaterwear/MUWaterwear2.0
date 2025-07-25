@@ -34,6 +34,7 @@ export default function GearPage() {
   const [showContactEmail, setShowContactEmail] = useState(false)
   const [showReturnsPolicy, setShowReturnsPolicy] = useState(false)
   const [showShippingPolicy, setShowShippingPolicy] = useState(false)
+  const [initialModalZoom, setInitialModalZoom] = useState(1)
 
   const categories = [
     { id: 'all', name: 'All Gear', count: wetsuits.length + paddleBoards.length + bags.length + coolers.length + wakeboards.length },
@@ -199,8 +200,11 @@ export default function GearPage() {
     const colorIndex = selectedColor[productId] || 0
     setCurrentImageIndex(colorIndex)
 
-    // Set initial zoom level - 150% for all enhanced products, 100% for others
-    const initialZoom =
+    // Check if we're on mobile
+    const isMobile = window.innerWidth < 768
+
+    // Set initial zoom level - 250% for mobile, 150% for enhanced products on desktop, 100% for others
+    const initialZoom = isMobile ? 2.5 : (
       productId === 'gear-cascade-backpack' ||
       productId === 'gear-cascade-backpack-compact' ||
       productId === 'gear-cascade-duffle-bag' ||
@@ -213,6 +217,8 @@ export default function GearPage() {
       productId === 'gear-2025-womens-thermal-wetsuit'
         ? 1.5
         : 1
+    )
+    setInitialModalZoom(initialZoom)
     setImageZoom(initialZoom)
     setImagePosition({ x: 0, y: 0 })
     setIsDragging(false)
@@ -276,8 +282,11 @@ export default function GearPage() {
     setCurrentFeaturedImage(getIKUrl(product.images[newIndex]))
     setCurrentImageIndex(newIndex)
 
-    // Maintain zoom levels - 150% for all enhanced products, 100% for others
-    const maintainZoom =
+    // Check if we're on mobile
+    const isMobile = window.innerWidth < 768
+
+    // Maintain zoom levels - 250% for mobile, 150% for enhanced products on desktop, 100% for others
+    const maintainZoom = isMobile ? 2.5 : (
       expandedProductId === 'gear-cascade-backpack' ||
       expandedProductId === 'gear-cascade-backpack-compact' ||
       expandedProductId === 'gear-cascade-duffle-bag' ||
@@ -290,6 +299,8 @@ export default function GearPage() {
       expandedProductId === 'gear-2025-womens-thermal-wetsuit'
         ? 1.5
         : 1
+    )
+    setInitialModalZoom(maintainZoom)
     setImageZoom(maintainZoom)
     setImagePosition({ x: 0, y: 0 })
   }
@@ -707,6 +718,7 @@ export default function GearPage() {
         })() : null}
         currentImageIndex={currentImageIndex}
         onNavigate={navigateExpandedImage}
+        initialZoom={initialModalZoom}
       />
     </div>
   )

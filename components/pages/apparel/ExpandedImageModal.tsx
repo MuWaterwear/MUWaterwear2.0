@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Product } from "@/lib/features/apparel-products"
 
@@ -11,6 +11,7 @@ interface ExpandedImageModalProps {
   product: Product | null
   currentImageIndex: number
   onNavigate: (direction: 'prev' | 'next') => void
+  initialZoom?: number
 }
 
 export default function ExpandedImageModal({
@@ -19,17 +20,26 @@ export default function ExpandedImageModal({
   currentImage,
   product,
   currentImageIndex,
-  onNavigate
+  onNavigate,
+  initialZoom = 1
 }: ExpandedImageModalProps) {
-  const [imageZoom, setImageZoom] = useState(1)
+  const [imageZoom, setImageZoom] = useState(initialZoom)
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
 
+  // Update zoom when modal opens with a new initial zoom
+  useEffect(() => {
+    if (isOpen) {
+      setImageZoom(initialZoom)
+      setImagePosition({ x: 0, y: 0 })
+    }
+  }, [isOpen, initialZoom])
+
   if (!isOpen || !currentImage || !product) return null
 
   const handleZoomIn = () => {
-    setImageZoom(prev => Math.min(prev + 0.5, 3))
+    setImageZoom(prev => Math.min(prev + 0.5, 5))
   }
 
   const handleZoomOut = () => {
@@ -193,7 +203,7 @@ export default function ExpandedImageModal({
               }}
               className="bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-colors shadow-lg"
               aria-label="Zoom in"
-              disabled={imageZoom >= 3}
+              disabled={imageZoom >= 5}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
